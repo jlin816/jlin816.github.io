@@ -1,0 +1,159 @@
+---
+---
+
+$text-color: #46433A;
+$anchor-text-color: #CE534D;
+$background-color: #f8f8f8;
+
+body {
+	font-family: 'Markazi Text', serif;
+    font-size: 1.5em;
+	color: $text-color;
+	background-color: $background-color;
+}
+
+header,
+main {
+}
+
+header {
+    min-width: 250px;
+    flex: 1 1 auto;
+    padding: 60px 20px 50px 20px;
+}
+
+main {
+    flex: 1 1 auto;
+    margin: 0 10%;
+}
+
+.note {
+    font-size: .5em;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    margin: 30px 0px 5px 0px;
+}
+
+.sidebar-nav {
+    margin: auto;
+    display: flex;
+}
+
+.sidebar-nav-item {
+    margin: 5px;
+    flex: 1 1 auto;
+}
+
+/*** wrapper div for both header and main ***/
+.wrapper {
+    display: flex;
+    height: 100vh;
+    padding: 0px 10px;
+    margin: auto;
+}
+
+/*** anchor tags ***/
+a:link,
+a:visited,
+a:hover,
+a:active {
+	color: $anchor-text-color;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+/*** main content list ***/
+.main-list-item {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin: 0.8em 0;
+}
+
+/* override the left margin added by font awesome for the main content list,
+since it must be aligned with the content */
+.fa-ul.main-list {
+	margin-left: 0;
+}
+
+/*** author ***/
+.author-container h1 {
+	font-size: 2.8em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/******/
+hr {
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), $text-color, rgba(0,0,0,0));
+	background-image: -moz-linear-gradient(left, rgba(0,0,0,0), $text-color, rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left, rgba(0,0,0,0), $text-color, rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left, rgba(0,0,0,0), $text-color, rgba(0,0,0,0));
+}
+
+/* X-Small devices */
+@media (max-width: 768px) {
+    body {
+        overflow: scroll;
+    }
+	.wrapper {
+        margin: auto;
+        flex-direction: column;
+		width: 100%;
+	}
+   
+    .sidebar-nav {
+        flex-direction: row;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    main {
+        margin: 0 10%;
+    }
+}
+
+/* All other devices (768px and up) */
+@media (min-width: 768px) {
+	/* past 768px the layout is changed and the wrapper has a fixed width of 680px
+	to accomodate both the header column and the content column */
+	.wrapper {
+        flex-direction: row;
+		width: 75%;
+	}
+
+    .sidebar-nav {
+        flex-direction: column;
+    }
+
+	/* the header column stays left and has a dynamic width with all contents
+	aligned right */
+	header {
+		float: left;
+		width: 25%;
+		text-align: right;
+	}
+
+    main {
+        overflow-y: scroll;
+        margin: 70px 5%;
+    }
+}
+
+//::-webkit-scrollbar {
+//display: none;
+//}

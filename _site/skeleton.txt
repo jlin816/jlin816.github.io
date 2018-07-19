@@ -1,0 +1,27 @@
+- about me
+hi!
+I'm currently a rising senior at MIT, double-majoring in computer science / electrical engineering and philosophy. 
+I'm at Google Research NYC summer 2018  
+I've done research on  adversarial examples with LabSix
+
+Previously, I directed corporate relations and worked on devops for HackMIT (I currently maintain our open-source hackathon registration system, Quill!), helped build software for  
+as an intern at Fin, 
+
+I'm interested in  
+
+for things I've built, see [work + play]
+for ideas I've been thinking about, see [musings]
+for stuff I take pictures of, see [photography]
+
+- work + play
+some recent projects i'm proud of
+    - black-box adversarial attacks
+    - sajal 
+    - paint floyd
+    - cubic 
+    - fort + geodesic dome + (loft/desk)
+
+- musings
+<feed: current thoughts (would love to talk about these!)>
+
+- photography
