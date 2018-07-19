@@ -3,16 +3,20 @@
     {% include head.html %}
     <div class="wrapper">
         <header>
-            <div class="author-container"><h1>jessy lin</h1></div>
+            <div class="author-container"><h1 id="author-name">Jessy Lin</h1></div>
 
             <ul class="sidebar-nav">
-                <li class="sidebar-nav-item">[work + play]</li>
-                <li class="sidebar-nav-item">[blog]</li>
-                <li class="sidebar-nav-item">[photography]</li>
+                <li class="sidebar-nav-item"><a href="/projects">[work + play]</a></li>
+                <li class="sidebar-nav-item"><a href="/blog">[blog]</a></li>
+                <li class="sidebar-nav-item"><a href="/photo">[photography]</a></li>
             </ul>
         </header>
 
-        {{ content }}
+        <main>
+            <div class="content-container">
+            {{ content }}
+            </div>
+        </main>
 
     </div>
 </html>

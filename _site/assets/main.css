@@ -1,8 +1,12 @@
 body {
-  font-family: 'Markazi Text', serif;
-  font-size: 1.5em;
+  font-family: "Neuton", serif;
+  font-size: 1em;
   color: #46433A;
   background-color: #f8f8f8; }
+
+h1, h2, h3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 2em; }
 
 header {
   min-width: 250px;
