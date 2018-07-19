@@ -19,8 +19,8 @@ h1, h2, h3 {
 
 header {
     min-width: 250px;
-    flex: 1 1 auto;
-    padding: 60px 20px 50px 20px;
+    flex: 0 0 auto;
+    padding: 15% 20px 50px 20px;
 }
 
 main {
@@ -71,6 +71,10 @@ a:active {
 
 a:hover {
 	text-decoration: underline;
+}
+
+a#name-link {
+    color: $text-color;
 }
 
 
@@ -145,13 +149,13 @@ hr {
 	aligned right */
 	header {
 		float: left;
-		width: 25%;
+//		width: 25%;
 		text-align: right;
 	}
 
     main {
         overflow-y: scroll;
-        margin: 70px 5%;
+        margin: 10% 5%;
     }
 }
 
