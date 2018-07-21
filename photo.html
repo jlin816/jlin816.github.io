@@ -1,4 +1,10 @@
 ---
 layout: base
 ---
-Currently under construction!
+<div id="gallery">
+    {% for image in site.static_files %}
+        {% if image.path contains 'images/photography/thumbnails' %}
+            <img src="{{ image.path }}" itemprop="image" />
+        {% endif %}
+    {% endfor %}
+</div>

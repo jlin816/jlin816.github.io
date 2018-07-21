@@ -57,34 +57,25 @@ a:hover {
 a#name-link {
   color: #46433A; }
 
-/*** main content list ***/
-.main-list-item {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin: 0.8em 0; }
-
-/* override the left margin added by font awesome for the main content list,
-since it must be aligned with the content */
-.fa-ul.main-list {
-  margin-left: 0; }
-
 /*** author ***/
 .author-container h1 {
   font-size: 2.8em;
   margin-top: 0;
   margin-bottom: 0; }
 
-/******/
-hr {
-  border: 0;
-  height: 1px;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #46433A, rgba(0, 0, 0, 0));
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #46433A, rgba(0, 0, 0, 0));
-  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0), #46433A, rgba(0, 0, 0, 0));
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0), #46433A, rgba(0, 0, 0, 0)); }
+/* Photography page */
+#gallery {
+  column-gap: 10px;
+  line-height: 2; }
+
+#gallery img {
+  width: 100%; }
+
+#gallery img:hover {
+  opacity: .9; }
 
 /* X-Small devices */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   body {
     overflow: scroll; }
 
@@ -100,9 +91,14 @@ hr {
     text-align: center; }
 
   main {
-    margin: 0 10%; } }
+    margin: 0 10%; }
+
+  #gallery {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1; } }
 /* All other devices (768px and up) */
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   /* past 768px the layout is changed and the wrapper has a fixed width of 680px
   to accomodate both the header column and the content column */
   .wrapper {
@@ -112,12 +108,17 @@ hr {
   .sidebar-nav {
     flex-direction: column; }
 
-  /* the header column stays left and has a dynamic width with all contents
-  aligned right */
+  /* the header column stays left and has a dynamic width with all contents aligned right */
   header {
     float: left;
     text-align: right; }
 
   main {
     overflow-y: scroll;
-    margin: 10% 5%; } }
+    margin: 0 5%;
+    padding: 10% 0; }
+
+  #gallery {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2; } }
