@@ -134,7 +134,8 @@ a#name-link {
 	to accomodate both the header column and the content column */
 	.wrapper {
         flex-direction: row;
-		width: 75%;
+		width: 85%;
+        margin-left: 10%;
 	}
 
     .sidebar-nav {
