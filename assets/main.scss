@@ -38,12 +38,32 @@ ul {
     margin: 0;
 }
 
+ul.social {
+    margin: 5px auto;
+    display: block;
+    text-align: right;
+}
+
+ul.social li {
+    display: inline-block;
+    margin: 0 5%;
+}
+
+i {
+    opacity: .75;
+}
+
+i:hover {
+    opacity: 1;
+}
+
 h2 {
     margin: 30px 0px 5px 0px;
 }
 
 .sidebar-nav {
     margin: auto;
+    margin-top: 30px;
     display: flex;
 }
 
@@ -119,6 +139,11 @@ a#name-link {
 
     main {
         margin: 0 10%;
+    }
+
+    ul.social {
+        width: 50%;
+        text-align: center;
     }
 
     #gallery {
