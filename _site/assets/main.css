@@ -85,10 +85,15 @@ a#name-link {
   line-height: 2; }
 
 #gallery img {
-  width: 100%; }
+  width: 100%;
+  position: relative; }
 
 #gallery img:hover {
-  opacity: .9; }
+  opacity: .9;
+  transition: opacity .2s ease-out;
+  -moz-transition: opacity .2s ease-out;
+  -webkit-transition: opacity .2s ease-out;
+  -o-transition: opacity .2s ease-out; }
 
 /* X-Small devices */
 @media (max-width: 900px) {

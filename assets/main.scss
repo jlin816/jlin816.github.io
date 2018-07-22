@@ -112,10 +112,15 @@ a#name-link {
 
 #gallery img {
     width: 100%;
+    position: relative;
 }
 
 #gallery img:hover {
     opacity: .9;
+    transition: opacity .2s ease-out;
+    -moz-transition: opacity .2s ease-out;
+    -webkit-transition: opacity .2s ease-out;
+    -o-transition: opacity .2s ease-out;
 }
 
 /* X-Small devices */
