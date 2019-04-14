@@ -4,7 +4,11 @@ layout: base
 <div id="gallery">
     {% for image in site.static_files %}
         {% if image.path contains 'images/photography/thumbnails' %}
+          {% if image.path contains 'wide' %}
+            <img class="wide" src="{{ image.path }}" itemprop="image" />
+          {% else %}
             <img src="{{ image.path }}" itemprop="image" />
+          {% endif %}
         {% endif %}
     {% endfor %}
 </div>

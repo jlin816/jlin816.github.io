@@ -5,16 +5,32 @@ $text-color: #46433A;
 $anchor-text-color: #CE534D;
 $background-color: #f8f8f8;
 
+// Other body fonts:
+// - Neuton
+
 body {
-	font-family: "Neuton", serif;
-    font-size: 1em;
+	font-family: "system-ui", sans-serif;
+    font-size: .8em;
 	color: $text-color;
 	background-color: $background-color;
+    line-height: 1.5;
 }
 
-h1, h2, h3 {
-    font-family: "Rubik", sans-serif;
+h1 {
     font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h6 {
+    font-size: 11px;
+    font-weight: 100;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Rubik", sans-serif;
 }
 
 header {
@@ -26,6 +42,10 @@ header {
 main {
     flex: 1 1 auto;
     margin: 0 10%;
+}
+
+.text-content-container {
+    max-width: 600px;
 }
 
 .note {
@@ -77,7 +97,6 @@ h2 {
     display: flex;
     height: 100vh;
     padding: 0px 10px;
-    margin: auto;
 }
 
 /*** anchor tags ***/
@@ -102,6 +121,19 @@ a#name-link {
 	font-size: 2.8em;
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+/* Project page */
+.project {
+  margin-top: 15px;
+}
+
+.project-title {
+  font-weight: bold;
+}
+
+.project-description {
+  margin-top: 3px;
 }
 
 /* Photography page */ 
@@ -165,7 +197,7 @@ a#name-link {
 	.wrapper {
         flex-direction: row;
 		width: 85%;
-        margin-left: 10%;
+        margin-left: 5%;
 	}
 
     .sidebar-nav {
@@ -174,21 +206,20 @@ a#name-link {
 
 	/* the header column stays left and has a dynamic width with all contents aligned right */
 	header {
-		float: left;
+	  float: left;
 //		width: 25%;
 		text-align: right;
 	}
 
     main {
-        overflow-y: scroll;
-        margin: 0 5%;
-        padding: 10% 0;
+      margin: 0 5%;
+      padding: 10% 0;
     }
 
     #gallery {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
+      -moz-column-count: 2;
+      -webkit-column-count: 2;
+      column-count: 2;
     }
 }
 

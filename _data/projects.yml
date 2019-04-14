@@ -1,0 +1,28 @@
+- title: sajal 
+  description: a lightweight mobile electronic record for refugees. Worked with the Red Cross and humanitarian NGO Emergency to bring to refugee reception centers in Italy.
+
+- title: onatrip!
+  link: https://www.youtube.com/watch?v=gP2WblugDQM 
+  description: Trip planning / arbitrary queries on maps ("I want to go to the movies, then find a dessert place nearby").
+
+- title: fRender 
+  link: https://github.com/jlin816/fRender
+  description: Robust, fault-tolerant distributed rendering system for Blender (final project for 6.824 Distributed Systems). 
+
+- title: paint floyd
+  link: https://devpost.com/software/paint-with-all-the-colors-of-the-rainbow
+  description: Paint-mixing robot that dispenses the right combination of primary colors to produce a given color.
+
+- title: cubic
+  link: https://devpost.com/software/cubic-9qu4ga
+  description: Chrome extension to make Internet research more intuitive. Allows a user to navigate to more/less complex articles and view a timeline of events.
+
+- title: fpga 3d scanner
+  link: https://www.dropbox.com/s/4g4yx86q6ocib5d/6.111FinalReport.pdf?dl=0o
+  description: Fast, FPGA implementation of a 3D laser scanner. Reconstructs a point cloud of a physical object in real-time (final project for 6.111 Digital Systems).
+
+- title: fort
+  description: A three-story fort in my dorm's courtyard.
+
+- title: geodesic dome
+  description: A six-foot-tall dome structure in my dorm's courtyard. 

@@ -1,12 +1,22 @@
 body {
-  font-family: "Neuton", serif;
-  font-size: 1em;
+  font-family: "system-ui", sans-serif;
+  font-size: .8em;
   color: #46433A;
-  background-color: #f8f8f8; }
+  background-color: #f8f8f8;
+  line-height: 1.5; }
 
-h1, h2, h3 {
-  font-family: "Rubik", sans-serif;
+h1 {
   font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h6 {
+  font-size: 11px;
+  font-weight: 100; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Rubik", sans-serif; }
 
 header {
   min-width: 250px;
@@ -16,6 +26,9 @@ header {
 main {
   flex: 1 1 auto;
   margin: 0 10%; }
+
+.text-content-container {
+  max-width: 600px; }
 
 .note {
   font-size: .5em; }
@@ -56,8 +69,7 @@ h2 {
 .wrapper {
   display: flex;
   height: 100vh;
-  padding: 0px 10px;
-  margin: auto; }
+  padding: 0px 10px; }
 
 /*** anchor tags ***/
 a:link,
@@ -78,6 +90,16 @@ a#name-link {
   font-size: 2.8em;
   margin-top: 0;
   margin-bottom: 0; }
+
+/* Project page */
+.project {
+  margin-top: 15px; }
+
+.project-title {
+  font-weight: bold; }
+
+.project-description {
+  margin-top: 3px; }
 
 /* Photography page */
 #gallery {
@@ -129,7 +151,7 @@ a#name-link {
   .wrapper {
     flex-direction: row;
     width: 85%;
-    margin-left: 10%; }
+    margin-left: 5%; }
 
   .sidebar-nav {
     flex-direction: column; }
@@ -140,7 +162,6 @@ a#name-link {
     text-align: right; }
 
   main {
-    overflow-y: scroll;
     margin: 0 5%;
     padding: 10% 0; }
 
