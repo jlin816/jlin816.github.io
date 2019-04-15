@@ -1,0 +1,18 @@
+---
+layout: base
+---
+
+<div class="text-content-container">
+  I've kept track of everything I've read since 2008 on <a href="https://www.goodreads.com/user/show/1576868-jessy">Goodreads</a> (complete with some cringy selections from way back), but here are my all-time favorites:
+  <ul>
+    {% for project in site.data.books %}
+    {% assign project = project_hash[1] %}
+      <li class="project">
+        <a class="project-title" href={{ project.link }}>
+          {{ project.title }}
+        </a>
+        <p class="project-description">{{ project.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

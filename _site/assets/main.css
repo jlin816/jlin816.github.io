@@ -96,10 +96,12 @@ a#name-link {
   margin-top: 15px; }
 
 .project-title {
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: 14px; }
 
 .project-description {
-  margin-top: 3px; }
+  margin-top: 3px;
+  display: inline; }
 
 /* Photography page */
 #gallery {

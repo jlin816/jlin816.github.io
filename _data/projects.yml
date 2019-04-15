@@ -1,5 +1,5 @@
 - title: sajal 
-  description: a lightweight mobile electronic record for refugees. Worked with the Red Cross and humanitarian NGO Emergency to bring to refugee reception centers in Italy.
+  description: A lightweight mobile electronic record for refugees. Worked with the Red Cross and humanitarian NGO Emergency to bring to refugee reception centers in Italy.
 
 - title: onatrip!
   link: https://www.youtube.com/watch?v=gP2WblugDQM 
@@ -22,6 +22,7 @@
   description: Fast, FPGA implementation of a 3D laser scanner. Reconstructs a point cloud of a physical object in real-time (final project for 6.111 Digital Systems).
 
 - title: fort
+  link: https://youtu.be/yb83rzasszU
   description: A three-story fort in my dorm's courtyard.
 
 - title: geodesic dome
