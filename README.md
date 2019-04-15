@@ -12,10 +12,8 @@ Compass is a Jekyll theme designed with something very specific in mind: to be a
 6. Run the Jekyll server with `bundle exec jekyll serve`
 7. Go to `http://localhost:4000`
 
-## Deploy your site to GitHub Pages
-
-If you want to use Compass as your personal landing page you can deploy your site to GitHub Pages as a [User Page](https://help.github.com/articles/user-organization-and-project-pages/#user--organization-pages). To do so, when you are done modifying your clone, you should rename your repository to `username.github.io` where username is your username. When GitHub builds the page it will be made available at `https://username.github.io`.
-
-If you are planning on using a custom domain to direct to your site, modify the CNAME file as described [here](https://help.github.com/articles/adding-a-cname-file-to-your-repository/).
-
-Check the [GitHub Pages Basics](https://help.github.com/categories/github-pages-basics/) for more information.
+# Photos
+- Export reasonably sized photo
+- Add to `images/photography/thumbnails`
+- Import in Photoshop and export tiny compressed version with size 42x42px to `/images/photography/compressed`
+- Run `images/photography/processPhotos.py` (generates image name with aspect ratio)

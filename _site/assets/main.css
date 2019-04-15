@@ -106,18 +106,43 @@ a#name-link {
 /* Photography page */
 #gallery {
   column-gap: 10px;
-  line-height: 2; }
+  line-height: 2;
+  margin-bottom: 60px; }
 
 #gallery img {
-  width: 100%;
-  position: relative; }
+  width: 100%; }
 
-#gallery img:hover {
+#gallery .placeholder:hover {
   opacity: .9;
   transition: opacity .2s ease-out;
   -moz-transition: opacity .2s ease-out;
   -webkit-transition: opacity .2s ease-out;
   -o-transition: opacity .2s ease-out; }
+
+.placeholder {
+  background-color: #background-color;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  break-inside: avoid-column; }
+
+.placeholder img {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s linear; }
+
+.placeholder img.loaded {
+  opacity: 1; }
+
+.img-small {
+  filter: blur(50px);
+  /* this is needed so Safari keeps sharp edges */
+  transform: scale(1); }
 
 /* X-Small devices */
 @media (max-width: 900px) {

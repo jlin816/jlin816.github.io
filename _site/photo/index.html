@@ -84,56 +84,115 @@
         
     
         
+    
+        
+        <div class="placeholder" data-large="/images/photography/thumbnails/IMG_07286--0.667--.jpg">
           
-            <img src="/images/photography/thumbnails/IMG_0764.jpg" itemprop="image" />
           
+          
+          <img src="/images/photography/compressed/IMG_07286.jpg" class="img-small" />
+          <div style="padding-bottom: calc(0.667 * 100%);"></div>
+        </div>
         
     
         
+        <div class="placeholder" data-large="/images/photography/thumbnails/IMG_0764--0.667--.jpg">
           
-            <img src="/images/photography/thumbnails/IMG_1207.jpg" itemprop="image" />
           
+          
+          <img src="/images/photography/compressed/IMG_0764.jpg" class="img-small" />
+          <div style="padding-bottom: calc(0.667 * 100%);"></div>
+        </div>
         
     
         
+        <div class="placeholder" data-large="/images/photography/thumbnails/IMG_1207--0.667--.jpg">
           
-            <img src="/images/photography/thumbnails/IMG_3075.jpg" itemprop="image" />
           
+          
+          <img src="/images/photography/compressed/IMG_1207.jpg" class="img-small" />
+          <div style="padding-bottom: calc(0.667 * 100%);"></div>
+        </div>
         
     
         
+        <div class="placeholder" data-large="/images/photography/thumbnails/IMG_3075--1.500--.jpg">
           
-            <img src="/images/photography/thumbnails/IMG_3361.jpg" itemprop="image" />
           
+          
+          <img src="/images/photography/compressed/IMG_3075.jpg" class="img-small" />
+          <div style="padding-bottom: calc(1.500 * 100%);"></div>
+        </div>
         
     
         
+        <div class="placeholder" data-large="/images/photography/thumbnails/IMG_3361--0.570--.jpg">
           
-            <img src="/images/photography/thumbnails/IMG_7286.jpg" itemprop="image" />
           
+          
+          <img src="/images/photography/compressed/IMG_3361.jpg" class="img-small" />
+          <div style="padding-bottom: calc(0.570 * 100%);"></div>
+        </div>
         
     
         
+        <div class="placeholder" data-large="/images/photography/thumbnails/IMG_8451-2--0.667--.jpg">
           
-            <img src="/images/photography/thumbnails/IMG_8451-2.jpg" itemprop="image" />
           
+          
+          <img src="/images/photography/compressed/IMG_8451-2.jpg" class="img-small" />
+          <div style="padding-bottom: calc(0.667 * 100%);"></div>
+        </div>
         
     
         
+        <div class="placeholder" data-large="/images/photography/thumbnails/IMG_8521-2--0.649--.jpg">
           
-            <img src="/images/photography/thumbnails/IMG_8521-2.jpg" itemprop="image" />
           
+          
+          <img src="/images/photography/compressed/IMG_8521-2.jpg" class="img-small" />
+          <div style="padding-bottom: calc(0.649 * 100%);"></div>
+        </div>
         
     
         
+        <div class="placeholder" data-large="/images/photography/thumbnails/IMG_8527-2--0.667--.jpg">
           
-            <img src="/images/photography/thumbnails/IMG_8527-2.jpg" itemprop="image" />
           
+          
+          <img src="/images/photography/compressed/IMG_8527-2.jpg" class="img-small" />
+          <div style="padding-bottom: calc(0.667 * 100%);"></div>
+        </div>
         
     
         
     
 </div>
+
+<script>
+  window.onload = function () {
+    var placeholders = document.getElementsByClassName('placeholder');
+    placeholders = Array.prototype.slice.call(placeholders);
+    console.log(placeholders);
+    placeholders.forEach(function (placeholder) { 
+      console.log(placeholder);
+      small = placeholder.querySelector('.img-small');
+
+      var img = new Image();
+      img.src = small.src;
+      img.onload = function () {
+        small.classList.add('loaded');
+      };
+
+      var imgLarge = new Image();
+      imgLarge.src = placeholder.dataset.large;
+      imgLarge.onload = function () {
+        imgLarge.classList.add('loaded');
+      };
+      placeholder.appendChild(imgLarge);
+    });
+  }
+</script>
 
         </main>
 
