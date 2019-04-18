@@ -1,10 +1,13 @@
 ---
 layout: base
 ---
+<h1>Posts</h1>
 <ul>
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
+    <li class="post">
+      <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
+      <span class="post-date">{{ post.date | date_to_string }}</span>
+      <p class="post-subtitle">{{ post.subtitle }}</p>
     </li>
   {% endfor %}
 </ul>

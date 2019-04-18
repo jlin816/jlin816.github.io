@@ -189,9 +189,7 @@
   window.onload = function () {
     var placeholders = document.getElementsByClassName('placeholder');
     placeholders = Array.prototype.slice.call(placeholders);
-    console.log(placeholders);
     placeholders.forEach(function (placeholder) { 
-      console.log(placeholder);
       small = placeholder.querySelector('.img-small');
 
       var img = new Image();

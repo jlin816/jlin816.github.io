@@ -4,16 +4,17 @@
 $text-color: #46433A;
 $anchor-text-color: #CE534D;
 $background-color: #f8f8f8;
+$gray-text-color: #adadad;
 
 // Other body fonts:
 // - Neuton
 
 body {
 	font-family: "system-ui", sans-serif;
-    font-size: .8em;
+  font-size: .9em;
 	color: $text-color;
 	background-color: $background-color;
-    line-height: 1.5;
+  line-height: 1.6;
 }
 
 h1 {
@@ -39,13 +40,9 @@ header {
     padding: 15% 20px 50px 20px;
 }
 
-main {
-    flex: 1 1 auto;
-    margin: 0 10%;
-}
-
 .text-content-container {
     max-width: 600px;
+    margin-bottom: 150px;
 }
 
 .note {
@@ -138,11 +135,30 @@ a#name-link {
   display: inline;
 }
 
+/* Blog page */
+.post {
+  margin-bottom: 20px;
+}
+
+.post-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.post-date {
+  font-size: 10px;
+  color: $gray-text-color; 
+  padding: 4px;
+}
+
+.post-subtitle {
+  margin-top: 3px;
+}
+
 /* Photography page */ 
 #gallery {
     column-gap: 10px;
     line-height: 2;
-    margin-bottom: 60px;
 }
 
 #gallery img {
@@ -190,12 +206,14 @@ a#name-link {
 @media (max-width: 900px) {
     body {
         overflow: scroll;
+        width: 95%;
     }
-	.wrapper {
+
+	  .wrapper {
         margin: auto;
         flex-direction: column;
-		width: 100%;
-	}
+		    width: 100%;
+	  }
    
     .sidebar-nav {
         flex-direction: row;
@@ -206,7 +224,9 @@ a#name-link {
     }
 
     main {
+        flex: 1 1 auto;
         margin: 0 10%;
+        margin-bottom: 60px;
     }
 
     ul.social {
@@ -226,9 +246,9 @@ a#name-link {
 	/* past 768px the layout is changed and the wrapper has a fixed width of 680px
 	to accomodate both the header column and the content column */
 	.wrapper {
-        flex-direction: row;
-		width: 85%;
-        margin-left: 5%;
+      flex-direction: row;
+		  width: 85%;
+      margin-left: 5%;
 	}
 
     .sidebar-nav {
@@ -236,15 +256,15 @@ a#name-link {
     }
 
 	/* the header column stays left and has a dynamic width with all contents aligned right */
-	header {
-	  float: left;
-//		width: 25%;
-		text-align: right;
-	}
+    header {
+      float: left;
+      text-align: right;
+    }
 
     main {
       margin: 0 5%;
       padding: 10% 0;
+      max-width: 600px;
     }
 
     #gallery {

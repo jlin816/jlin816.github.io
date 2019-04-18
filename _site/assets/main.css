@@ -1,9 +1,9 @@
 body {
   font-family: "system-ui", sans-serif;
-  font-size: .8em;
+  font-size: .9em;
   color: #46433A;
   background-color: #f8f8f8;
-  line-height: 1.5; }
+  line-height: 1.6; }
 
 h1 {
   font-size: 2em; }
@@ -23,12 +23,9 @@ header {
   flex: 0 0 auto;
   padding: 15% 20px 50px 20px; }
 
-main {
-  flex: 1 1 auto;
-  margin: 0 10%; }
-
 .text-content-container {
-  max-width: 600px; }
+  max-width: 600px;
+  margin-bottom: 150px; }
 
 .note {
   font-size: .5em; }
@@ -103,11 +100,26 @@ a#name-link {
   margin-top: 3px;
   display: inline; }
 
+/* Blog page */
+.post {
+  margin-bottom: 20px; }
+
+.post-title {
+  font-weight: bold;
+  font-size: 14px; }
+
+.post-date {
+  font-size: 10px;
+  color: #adadad;
+  padding: 4px; }
+
+.post-subtitle {
+  margin-top: 3px; }
+
 /* Photography page */
 #gallery {
   column-gap: 10px;
-  line-height: 2;
-  margin-bottom: 60px; }
+  line-height: 2; }
 
 #gallery img {
   width: 100%; }
@@ -147,7 +159,8 @@ a#name-link {
 /* X-Small devices */
 @media (max-width: 900px) {
   body {
-    overflow: scroll; }
+    overflow: scroll;
+    width: 95%; }
 
   .wrapper {
     margin: auto;
@@ -161,7 +174,9 @@ a#name-link {
     text-align: center; }
 
   main {
-    margin: 0 10%; }
+    flex: 1 1 auto;
+    margin: 0 10%;
+    margin-bottom: 60px; }
 
   ul.social {
     width: 50%;
@@ -190,7 +205,8 @@ a#name-link {
 
   main {
     margin: 0 5%;
-    padding: 10% 0; }
+    padding: 10% 0;
+    max-width: 600px; }
 
   #gallery {
     -moz-column-count: 2;
