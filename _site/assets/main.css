@@ -116,6 +116,11 @@ a#name-link {
 .post-subtitle {
   margin-top: 3px; }
 
+.post-footnote {
+  font-size: 12px;
+  color: #adadad;
+  font-style: italic; }
+
 /* Photography page */
 #gallery {
   column-gap: 10px;

@@ -3,6 +3,7 @@ layout: post
 title: The Impact of Ideas
 subtitle: A case for caring more about the intangible value of changing how people think
 date: 2019-04-17
+ack: Thanks to Kshitij, Timmy, and Basil for feedback! :)
 ---
 A lot of people in tech talk about measurable outcomes. Set a goal, figure out how you can tell you've succeeded, and channel your efforts into optimizing for that metric. It's a principle that has helped me focus well, but I've been thinking about how this mindset makes people revere the quantifiable and discount the intangible change that can't (yet) be measured: slow change that happens in the space of thoughts and ideas.
 
