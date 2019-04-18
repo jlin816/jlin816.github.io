@@ -40,6 +40,11 @@ header {
     padding: 15% 20px 50px 20px;
 }
 
+main {
+  flex: 1 1 auto;
+  margin: 0 10%;
+}
+
 .text-content-container {
     max-width: 600px;
     margin-bottom: 150px;
@@ -270,7 +275,6 @@ a#name-link {
     main {
       margin: 0 5%;
       padding: 10% 0;
-      max-width: 600px;
     }
 
     #gallery {
