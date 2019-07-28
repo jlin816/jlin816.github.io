@@ -23,9 +23,9 @@ header {
   flex: 0 0 auto;
   padding: 15% 20px 50px 20px; }
 
-.text-content-container {
-  max-width: 600px;
-  margin-bottom: 150px; }
+main {
+  flex: 1 1 auto;
+  margin: 0 10%; }
 
 .note {
   font-size: .5em; }
@@ -121,6 +121,15 @@ a#name-link {
   color: #adadad;
   font-style: italic; }
 
+img + em {
+  font-size: 12px;
+  color: #adadad;
+  font-style: italic; }
+
+.text-content-container {
+  max-width: 600px;
+  margin-bottom: 150px; }
+
 /* Photography page */
 #gallery {
   column-gap: 10px;
@@ -163,6 +172,10 @@ a#name-link {
 
 /* X-Small devices */
 @media (max-width: 900px) {
+  .text-content-container img {
+    width: 100%;
+    margin-top: 20px; }
+
   body {
     overflow: scroll;
     width: 95%; }
@@ -193,8 +206,12 @@ a#name-link {
     column-count: 1; } }
 /* All other devices (768px and up) */
 @media (min-width: 900px) {
-  /* past 768px the layout is changed and the wrapper has a fixed width of 680px
-  to accomodate both the header column and the content column */
+  /* past 768px the layout is changed and the wrapper has a fixed width of 680px to accomodate both the header column and the content column */
+  .text-content-container img {
+    width: 150%;
+    margin-top: 20px;
+    transform: translateX(-15%); }
+
   .wrapper {
     flex-direction: row;
     width: 85%;
@@ -210,8 +227,7 @@ a#name-link {
 
   main {
     margin: 0 5%;
-    padding: 10% 0;
-    max-width: 600px; }
+    padding: 10% 0; }
 
   #gallery {
     -moz-column-count: 2;
