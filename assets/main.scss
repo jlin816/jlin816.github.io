@@ -215,6 +215,12 @@ a#name-link {
 
 /* X-Small devices */
 @media (max-width: 900px) {
+    .text-content-container img {
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
     body {
         overflow: scroll;
         width: 95%;
@@ -254,8 +260,14 @@ a#name-link {
 
 /* All other devices (768px and up) */
 @media (min-width: 900px) {
-	/* past 768px the layout is changed and the wrapper has a fixed width of 680px
-	to accomodate both the header column and the content column */
+	/* past 768px the layout is changed and the wrapper has a fixed width of 680px to accomodate both the header column and the content column */
+  .text-content-container img {
+    width: 150%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transform: translateX(-15%);
+  }
+
 	.wrapper {
       flex-direction: row;
 		  width: 85%;
