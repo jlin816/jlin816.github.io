@@ -37,6 +37,9 @@ These two points combined, then, means that we should be especially concerned ab
 
 It’s an unintuitive point: we should be more concerned that mediocre technology will depress labor than brilliant technology that is significantly better than humans, because the counterbalances to job displacement may not be big enough. 
 
+![Grid of displacement and productivity](/assets/posts/productivity-displacement_grid.png)
+*One way to visualize the different regimes that different kinds of tech might lie in when it comes to their impact on labor.*
+
 Automation in certain industries has been highly productive — but many hot applications like facial recognition and customer service chatbots are known to be merely “so-so.” The paper posits several reasons for why we’re seeing these trends recently, but the _culture around ML academia / industry_ as a driver struck me as particularly accurate / reflective of what I see.
 
 **AGI is an attractive problem, both in research and industry.**
