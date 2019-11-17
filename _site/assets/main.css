@@ -2,8 +2,8 @@ body {
   font-family: "system-ui", sans-serif;
   font-size: .9em;
   color: #46433A;
-  background-color: #f8f8f8;
-  line-height: 1.6; }
+  background-color: #fdfdfd;
+  line-height: 1.7; }
 
 h1 {
   font-size: 2em; }
@@ -127,7 +127,7 @@ img + em {
   font-style: italic; }
 
 .text-content-container {
-  max-width: 600px;
+  max-width: 700px;
   margin-bottom: 150px; }
 
 /* Photography page */
