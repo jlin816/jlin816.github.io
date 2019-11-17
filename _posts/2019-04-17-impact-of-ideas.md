@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Impact of Ideas
+title: The impact of ideas
 subtitle: A case for caring more about the intangible value of changing how people think
 date: 2019-04-17
 ack: Thanks to Kshitij, Timmy, and Basil for feedback! :)
