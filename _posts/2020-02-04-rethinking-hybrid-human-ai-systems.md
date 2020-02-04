@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rethinking hybrid human-AI systems
-subtitle: From 
+subtitle: Beyond data labeling and error correction
 date: 2020-02-04
 ack: This was originally written and published as part of <a href="https://www.perell.com/write-of-passage-fellowship">David Perell's Write of Passage Fellowship</a>. Thank you to David, Packy, Adrienne, and Sahaj for comments on earlier versions of this draft!
 ---
