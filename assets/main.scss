@@ -165,6 +165,8 @@ img + em {
   font-size: 12px;
   color: $gray-text-color;
   font-style: italic;
+  display: block;
+  text-align: center;
 }
 
 .text-content-container {
@@ -270,6 +272,12 @@ img + em {
     width: 150%;
     margin-top: 20px;
     transform: translateX(-15%);
+  }
+
+  .text-content-container img.fit-width {
+    width: 100%;
+    margin-top: 20px;
+    transform: translateX(0%)
   }
 
 	.wrapper {

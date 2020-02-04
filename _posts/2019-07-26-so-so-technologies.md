@@ -61,7 +61,7 @@ Every startup wants to be the first to market with new research. It might be eas
 
 Even if none of these pseudo-AIs ever make it to massive success, each one fuels a competitive landscape where tech and non-tech companies alike are racing to ship AI products, regardless of whether it’s needed or beneficial. It’s a race with a blind faith in future productivity gains, but we may just be substituting machines for humans everywhere.
 
-～
+<hr>
 
 These concerns might dissipate as so-so technologies improve, but potentially at a great social cost that we can prevent now. While a so-so period is inevitable in the development of any new technology, we do have a choice in when to pull research results into industry. Ideally we might have [stronger community norms](https://openai.com/blog/cooperation-on-safety/) around using AI in practice to offset competitive pressures. We also need to educate people outside of the technical community on the benefits and risks, so they can evaluate the tradeoffs independently.
 
