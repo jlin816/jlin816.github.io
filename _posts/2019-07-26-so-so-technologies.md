@@ -6,6 +6,9 @@ date: 2019-07-26
 ack: Thanks to Sahaj, Max, and Nikhil for feedback! :) This is one of my first deep dives into econ, so I'd especially love to learn more from others on this topic.
 ---
 
+<span style="color: #adadad">_**2/4/20: An updated version of this post is up on [Skynet Today](https://www.skynettoday.com/editorials/so-so-ai)!**_</span>
+
+
 A lot of the conversation about the future of AI and automation focuses on the utopian/dystopian endgame (“will humans still work when artificial general intelligence can do everything?”), but it seems like there’s a lot more interesting, tractable, and concrete questions to answer about the effects of “narrow,” task-specific AI that looks more or less like what it does today. Industrial robotics, autonomous cars, customer service chatbots, facial recognition, and other applications are beginning to displace humans on small subsets of tasks. Should we be optimistic about labor in the next 10-50 years, when parts of industries will be automated by narrow AI? What early signs of those trends should we be concerned about now?
 
 There’s no controversy that AI adoption will cause short-term job losses. The question is whether automation will have a _lasting_ negative impact on labor. The commonly held view is no: as we reap the benefits of tech-enabled productivity gains, new sectors and jobs will recoup the losses. Just imagine a more efficient future of autonomous vehicles, with new jobs around redesigning cities / infrastructure and more time for otherwise frustrated commuters to work and play. In Mary Meeker's “[2018 Internet Trends Report](https://www.kleinerperkins.com/perspectives/internet-trends-report-2018/)," (a staple of the startup media diet), she echoes this thought:
