@@ -30,7 +30,7 @@ main {
 .note {
   font-size: .5em; }
 
-ul {
+ul.minimal {
   list-style-type: none;
   padding: 0;
   margin: 0; }
@@ -52,6 +52,11 @@ i:hover {
 
 h2 {
   margin: 30px 0px 5px 0px; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)); }
 
 .sidebar-nav {
   margin: auto;
@@ -124,7 +129,9 @@ a#name-link {
 img + em {
   font-size: 12px;
   color: #adadad;
-  font-style: italic; }
+  font-style: italic;
+  display: block;
+  text-align: center; }
 
 .text-content-container {
   max-width: 700px;
@@ -211,6 +218,11 @@ img + em {
     width: 150%;
     margin-top: 20px;
     transform: translateX(-15%); }
+
+  .text-content-container img.fit-width {
+    width: 100%;
+    margin-top: 20px;
+    transform: translateX(0%); }
 
   .wrapper {
     flex-direction: row;
