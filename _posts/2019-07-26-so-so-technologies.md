@@ -6,6 +6,9 @@ date: 2019-07-26
 ack: Thanks to Sahaj, Max, and Nikhil for feedback! :) This is one of my first deep dives into econ, so I'd especially love to learn more from others on this topic.
 ---
 
+<span style="color: #adadad">_**2/4/20: An updated version of this post is up on [Skynet Today](https://www.skynettoday.com/editorials/so-so-ai)!**_</span>
+
+
 A lot of the conversation about the future of AI and automation focuses on the utopian/dystopian endgame (“will humans still work when artificial general intelligence can do everything?”), but it seems like there’s a lot more interesting, tractable, and concrete questions to answer about the effects of “narrow,” task-specific AI that looks more or less like what it does today. Industrial robotics, autonomous cars, customer service chatbots, facial recognition, and other applications are beginning to displace humans on small subsets of tasks. Should we be optimistic about labor in the next 10-50 years, when parts of industries will be automated by narrow AI? What early signs of those trends should we be concerned about now?
 
 There’s no controversy that AI adoption will cause short-term job losses. The question is whether automation will have a _lasting_ negative impact on labor. The commonly held view is no: as we reap the benefits of tech-enabled productivity gains, new sectors and jobs will recoup the losses. Just imagine a more efficient future of autonomous vehicles, with new jobs around redesigning cities / infrastructure and more time for otherwise frustrated commuters to work and play. In Mary Meeker's “[2018 Internet Trends Report](https://www.kleinerperkins.com/perspectives/internet-trends-report-2018/)," (a staple of the startup media diet), she echoes this thought:
@@ -58,10 +61,10 @@ Every startup wants to be the first to market with new research. It might be eas
 
 Even if none of these pseudo-AIs ever make it to massive success, each one fuels a competitive landscape where tech and non-tech companies alike are racing to ship AI products, regardless of whether it’s needed or beneficial. It’s a race with a blind faith in future productivity gains, but we may just be substituting machines for humans everywhere.
 
-～
+<hr>
 
 These concerns might dissipate as so-so technologies improve, but potentially at a great social cost that we can prevent now. While a so-so period is inevitable in the development of any new technology, we do have a choice in when to pull research results into industry. Ideally we might have [stronger community norms](https://openai.com/blog/cooperation-on-safety/) around using AI in practice to offset competitive pressures. We also need to educate people outside of the technical community on the benefits and risks, so they can evaluate the tradeoffs independently.
 
-There’s been more of a push in the academic community towards [human](https://hai.stanford.edu/)-[centered](https://humancompatible.ai/) AI. So-so applications would be ideally be candidates for hybrid human-AI work (and I’d hope in ways more substantial than humans labeling data for AI!). Innovations that make way for humans might drive the introduction of new tasks following automation (as Acemoglu & Restrepo explore in a companion paper, "[The Wrong Kind of AI](https://economics.mit.edu/files/16819)", and we could probably do with more of this work in both academia and industry.
+There’s been more of a push in the academic community towards [human](https://hai.stanford.edu/)-[centered](https://humancompatible.ai/) AI. So-so applications would be ideally be candidates for hybrid human-AI work (and I’d hope in ways more substantial than humans labeling data for AI!). Innovations that make way for humans might drive the introduction of new tasks following automation (as Acemoglu & Restrepo explore in a companion paper, "[The Wrong Kind of AI](https://economics.mit.edu/files/16819)"), and we could probably do with more of this work in both academia and industry.
 
 There's definitely a lot more work in this area that I've barely touched, but I left this paper with an interesting alternative story for the dynamics at play to complement my understanding of the popular discourse. New jobs don’t just materialize as technology reshapes our infrastructure. They require conscious design, reorganization, and further innovation in both tech and society.

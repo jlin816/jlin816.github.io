@@ -1,9 +1,9 @@
 body {
-  font-family: "system-ui", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   font-size: .9em;
   color: #46433A;
-  background-color: #f8f8f8;
-  line-height: 1.6; }
+  background-color: #fdfdfd;
+  line-height: 1.7; }
 
 h1 {
   font-size: 2em; }
@@ -30,7 +30,7 @@ main {
 .note {
   font-size: .5em; }
 
-ul {
+ul.minimal {
   list-style-type: none;
   padding: 0;
   margin: 0; }
@@ -52,6 +52,11 @@ i:hover {
 
 h2 {
   margin: 30px 0px 5px 0px; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)); }
 
 .sidebar-nav {
   margin: auto;
@@ -124,10 +129,12 @@ a#name-link {
 img + em {
   font-size: 12px;
   color: #adadad;
-  font-style: italic; }
+  font-style: italic;
+  display: block;
+  text-align: center; }
 
 .text-content-container {
-  max-width: 600px;
+  max-width: 700px;
   margin-bottom: 150px; }
 
 /* Photography page */
@@ -198,12 +205,7 @@ img + em {
 
   ul.social {
     width: 50%;
-    text-align: center; }
-
-  #gallery {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1; } }
+    text-align: center; } }
 /* All other devices (768px and up) */
 @media (min-width: 900px) {
   /* past 768px the layout is changed and the wrapper has a fixed width of 680px to accomodate both the header column and the content column */
@@ -211,6 +213,11 @@ img + em {
     width: 150%;
     margin-top: 20px;
     transform: translateX(-15%); }
+
+  .text-content-container img.fit-width {
+    width: 100%;
+    margin-top: 20px;
+    transform: translateX(0%); }
 
   .wrapper {
     flex-direction: row;
@@ -233,3 +240,8 @@ img + em {
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2; } }
+@media (max-width: 1200px) {
+  #gallery {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1; } }
