@@ -22,3 +22,7 @@ for filename in os.listdir("original"):
         print("Downsizing to ({},{})".format(downsize * im.size[0], downsize * im.size[1]))
         im = im.resize((math.ceil(downsize * im.size[0]), math.ceil(downsize * im.size[1])), Image.LANCZOS)
         im.save("thumbnails/" + new_filename, optimize=True, quality=85)
+
+        # Compressed versions for placeholders
+        im.thumbnail((42, 42))
+        im.save("compressed/" + filename, resample=Image.ANTIALIAS)

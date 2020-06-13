@@ -264,12 +264,6 @@ img + em {
         width: 50%;
         text-align: center;
     }
-
-    #gallery {
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        column-count: 1;
-    }
 }
 
 /* All other devices (768px and up) */
@@ -312,6 +306,14 @@ img + em {
       -moz-column-count: 2;
       -webkit-column-count: 2;
       column-count: 2;
+    }
+}
+
+@media (max-width: 1200px) {
+    #gallery {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
     }
 }
 
