@@ -3,7 +3,7 @@ layout: post
 title: Rethinking human-AI interaction
 subtitle: New directions for human-in-the-loop machine learning
 date: 2020-06-08
-ack: Thanks to Jeremy Blachman, my editor, as well as Sahaj Garg, Max Langenkamp, and Tim Huang for sharing their thoughts on countless drafts of this essay; David Perell and Suthen Siva for organizing the Write of Passage Fellowship, as well as my fellow writers who offered moral support and thoughtful critique every week — Oshan Jarow, Rhys Lindmark, Packy McCormick, Suthen Siva, Adrienne Tran, and Joe Wells.
+ack: Thanks to Jeremy Blachman, my editor, as well as Sahaj Garg, Max Langenkamp, and Tim Huang for sharing their thoughts on countless drafts of this essay; Tim Shi for chatting with me about Cresta; David Perell and Suthen Siva for organizing the Write of Passage Fellowship, as well as my fellow writers who offered moral support and thoughtful critique every week — Oshan Jarow, Rhys Lindmark, Packy McCormick, Suthen Siva, Adrienne Tran, and Joe Wells.
 
 ---
 
