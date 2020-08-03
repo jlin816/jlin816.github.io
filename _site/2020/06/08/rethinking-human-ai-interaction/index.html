@@ -417,34 +417,34 @@
 <p>Humans-as-backup is essentially a system on its way to full automation. Through that lens, humans-as-backup systems are useful when:</p>
 
 <ol>
-  <li><strong>We’re close to the performance and reliability we need</strong></li>
+  <li>
+    <p><strong>We’re close to the performance and reliability we need</strong></p>
+
+    <p>Systems that start as humans-as-backup expecting just “a little more” data collection to reach success are taking a huge risk. We just don’t know, for a specific machine learning application, exactly how much data is needed to reach a certain level of accuracy and reliability. We might have a Moore’s Law-like explosion of capability, or we’ll be left labeling examples until the money runs out.</p>
+
+    <p>Self-driving cars have been projected to be “on the horizon” for decades. Today, still, despite all the resources being thrown at the problem, we’re still far from seeing reliable performance. Those in the industry have shifted their consensus opinion to “at least 10 years away,” and as Starsky Robotics founder soberly reflected, “there aren’t many startups that can survive 10 years without shipping.” This theme emerges in many AI applications, as <a href="https://a16z.com/2020/02/16/the-new-business-of-ai-and-how-its-different-from-traditional-software/">a16z</a> describes.</p>
+
+    <p>A few elements might give us confidence that we could be looking at an exception to this kind of ever-growing delay: the problem is a standard ML task (e.g. labeling images), we have a good grasp of the scope and edge cases of the problem, or we simply don’t need the highest quality or reliability (e.g. Google Translate). In these cases, humans-as-backup can work as a temporary milestone on the way to full automation. For other situations, building systems that include humans by design may be more effective.</p>
+  </li>
+  <li>
+    <p><strong>The objective is really all there is to the problem</strong></p>
+
+    <p>As we’ve seen with recommendation algorithms, translation, and other examples, usually the outcome we want requires us to build on top of the machine’s task in isolation. Youtube users want to be recommended videos they like, but also have a chance to explore new interests, not watch too many distracting videos, and may have a whole host of other desires that aren’t captured by a single metric of the system.</p>
+
+    <p>Often, there is more to the task than what the machine is doing: adapting the larger needs of the system into machine-readable inputs, translating the machine output into practical insight, or handling the inevitable exceptions and side effects that come from misalignment between human and machine objectives. By design, interaction accounts for how humans will need to interface with the machine in these cases. Otherwise, humans-as-backup is well-suited for mundane tasks or pure optimization with clear objectives.</p>
+  </li>
+  <li>
+    <p><strong>Machines <em>should</em> be responsible for this task</strong></p>
+
+    <p>While the popular question has so far been “what are humans uniquely good at?,” perhaps the more appropriate one is rather “what should humans be responsible for?” In other words, just because a machine can do a task doesn’t mean it should; in many cases, humans should preserve the ability to make decisions, set goals, or otherwise exercise agency over how things go.</p>
+
+    <p>This is most apparent in AI fairness problems. Using machines to predict who should <a href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G">get hired</a> or who should <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">go to jail</a> poses obvious concerns about reinforcing historical bias. But problems of agency appear in more subtle places, too, like recommendation algorithms that determine the information that people consume. Interaction provides a way for people to understand and intervene in systems that affect them.</p>
+
+    <p>Most applications don’t have the good fortune of landing at the intersection of these three conditions. For conversational bots, virtual assistants, high-stakes medical applications, legal document analysis, and more — humans might be in it for the foreseeable future.</p>
+
+    <p>Figuring out what kind of interaction works best for each of these applications is still a bespoke process, dependent on the details of the tool and users. We don’t have a unifying framework like we do for systems design or user interface design. In the future, we might have design patterns for systems of humans and machines like we have dataflow programming, microservices, and other patterns for systems of computers. This is not to say that humans should be seen as machines, but that we’ll have an understanding of what humans need in their own right, and a more complete picture of the design possibilities — the loops, inputs, and outputs — to accommodate them.</p>
+  </li>
 </ol>
-
-<p>Systems that start as humans-as-backup expecting just “a little more” data collection to reach success are taking a huge risk. We just don’t know, for a specific machine learning application, exactly how much data is needed to reach a certain level of accuracy and reliability. We might have a Moore’s Law-like explosion of capability, or we’ll be left labeling examples until the money runs out.</p>
-
-<p>Self-driving cars have been projected to be “on the horizon” for decades. Today, still, despite all the resources being thrown at the problem, we’re still far from seeing reliable performance. Those in the industry have shifted their consensus opinion to “at least 10 years away,” and as Starsky Robotics founder soberly reflected, “there aren’t many startups that can survive 10 years without shipping.” This theme emerges in many AI applications, as <a href="https://a16z.com/2020/02/16/the-new-business-of-ai-and-how-its-different-from-traditional-software/">a16z</a> describes.</p>
-
-<p>A few elements might give us confidence that we could be looking at an exception to this kind of ever-growing delay: the problem is a standard ML task (e.g. labeling images), we have a good grasp of the scope and edge cases of the problem, or we simply don’t need the highest quality or reliability (e.g. Google Translate). In these cases, humans-as-backup can work as a temporary milestone on the way to full automation. For other situations, building systems that include humans by design may be more effective.</p>
-
-<ol>
-  <li><strong>The objective is really all there is to the problem</strong></li>
-</ol>
-
-<p>As we’ve seen with recommendation algorithms, translation, and other examples, usually the outcome we want requires us to build on top of the machine’s task in isolation. Youtube users want to be recommended videos they like, but also have a chance to explore new interests, not watch too many distracting videos, and may have a whole host of other desires that aren’t captured by a single metric of the system.</p>
-
-<p>Often, there is more to the task than what the machine is doing: adapting the larger needs of the system into machine-readable inputs, translating the machine output into practical insight, or handling the inevitable exceptions and side effects that come from misalignment between human and machine objectives. By design, interaction accounts for how humans will need to interface with the machine in these cases. Otherwise, humans-as-backup is well-suited for mundane tasks or pure optimization with clear objectives.</p>
-
-<ol>
-  <li><strong>Machines <em>should</em> be responsible for this task</strong></li>
-</ol>
-
-<p>While the popular question has so far been “what are humans uniquely good at?,” perhaps the more appropriate one is rather “what should humans be responsible for?” In other words, just because a machine can do a task doesn’t mean it should; in many cases, humans should preserve the ability to make decisions, set goals, or otherwise exercise agency over how things go.</p>
-
-<p>This is most apparent in AI fairness problems. Using machines to predict who should <a href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G">get hired</a> or who should <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">go to jail</a> poses obvious concerns about reinforcing historical bias. But problems of agency appear in more subtle places, too, like recommendation algorithms that determine the information that people consume. Interaction provides a way for people to understand and intervene in systems that affect them.</p>
-
-<p>Most applications don’t have the good fortune of landing at the intersection of these three conditions. For conversational bots, virtual assistants, high-stakes medical applications, legal document analysis, and more — humans might be in it for the foreseeable future.</p>
-
-<p>Figuring out what kind of interaction works best each of these applications is still a bespoke process, dependent on the details of the tool and users. We don’t have a unifying framework like we do for systems design or user interface design. In the future, we might have design patterns for systems of humans and machines like we have dataflow programming, microservices, and other patterns for systems of computers. This is not to say that humans should be seen as machines, but that we’ll have an understanding of what humans need in their own right, and a more complete picture of the design possibilities — the loops, inputs, and outputs — to accommodate them.</p>
 
 <p>The design space will expand as research progresses. There are a lot of relevant, exciting research areas neglected in the examples: much of reinforcement learning, including new methods allowing machines to learn from human demonstrations or corrections, for example; imitation learning; natural language-guided learning; interpretability and explainability; as well as all the work that has been done on expanding the range of tasks and reasoning that machines can carry out. But the idea of the new directions outlined here is to decouple interactivity from “intelligence.” We might think interactive ML will come naturally with more advanced machine intelligence — perhaps, imagining that smarter machines will truly be able to converse with people like the HAL-9000’s and Samanthas of science fiction films. In fact, the most impactful advancements in human-computer interaction have looked nothing like intelligent, conversational, human-like machines. They have been devices and software designed with simple ideas, like the mouse and keyboard, GUIs, hyperlinks, spreadsheets and word processors.</p>
 
@@ -453,7 +453,7 @@
 <p>With feedback and open-ended interaction, they’ll demonstrate a richer range of behaviors than machines designed simply to complete the task. They’ll be closer to the vision of “man-machine symbiosis” first articulated by the computer pioneers than we have ever been before.</p>
 
 
-  <p class="post-footnote">Thanks to Jeremy Blachman, my editor, as well as Sahaj Garg, Max Langenkamp, and Tim Huang for sharing their thoughts on countless drafts of this essay; David Perell and Suthen Siva for organizing the Write of Passage Fellowship, as well as my fellow writers who offered moral support and thoughtful critique every week — Oshan Jarow, Rhys Lindmark, Packy McCormick, Suthen Siva, Adrienne Tran, and Joe Wells. <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts/comments.</a></p>
+  <p class="post-footnote">Thanks to Jeremy Blachman, my editor, as well as Sahaj Garg, Max Langenkamp, and Tim Huang for sharing their thoughts on countless drafts of this essay; Tim Shi for chatting with me about Cresta; David Perell and Suthen Siva for organizing the Write of Passage Fellowship, as well as my fellow writers who offered moral support and thoughtful critique every week — Oshan Jarow, Rhys Lindmark, Packy McCormick, Suthen Siva, Adrienne Tran, and Joe Wells. <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts/comments.</a></p>
 
   <br/>
   <hr/>
