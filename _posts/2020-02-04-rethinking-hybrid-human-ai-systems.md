@@ -6,7 +6,7 @@ date: 2020-02-04
 ack: This was originally written and published as part of <a href="https://www.perell.com/write-of-passage-fellowship">David Perell's Write of Passage Fellowship</a>. Thank you to David, Packy, Adrienne, and Sahaj for comments on earlier versions of this draft!
 ---
 
-_This is a condensed draft of [Rethinking human-AI interaction](http://localhost:4000/2020/06/08/rethinking-human-ai-interaction/)._
+_This is a condensed draft of [Rethinking human-AI interaction](/2020/06/08/rethinking-human-ai-interaction/). Go read the full post!_
 
 <img class="fit-width" src="/assets/posts/whirlwind-computer.jpg"/>
 
