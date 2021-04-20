@@ -1,5 +1,6 @@
 ---
 layout: base
+show_pic: true
 ---
 # Hi!
 
