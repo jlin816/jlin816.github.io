@@ -4,7 +4,7 @@ show_pic: true
 ---
 # Hi!
 
-I’m currently a first-year PhD student at [Berkeley AI Research](https://bair.berkeley.edu/), advised by [Anca Dragan](http://people.eecs.berkeley.edu/~anca/) and [Dan Klein](https://people.eecs.berkeley.edu/~klein/).
+I’m currently a second-year PhD student at [Berkeley AI Research](https://bair.berkeley.edu/), advised by [Anca Dragan](http://people.eecs.berkeley.edu/~anca/) and [Dan Klein](https://people.eecs.berkeley.edu/~klein/).
 
 I'm interested in **building agents that can collaborate and interact with humans, and use language as a medium to do so.** I spend part of my week at [Lilt](https://lilt.com/research), exploring these questions in the context of human-in-the-loop machine translation (based on my experiences there, I recently wrote [an essay](/2020/06/08/rethinking-human-ai-interaction/) about interesting directions for human-in-the-loop ML in industry!)
 
