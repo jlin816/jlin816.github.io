@@ -1,0 +1,45 @@
+- title: "InCoder: A Generative Model for Code Infilling and Synthesis"
+  authors: Daniel Fried\*, Armen Aghajanyan\*, **Jessy Lin**, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong, Wen-tau Yih, Luke Zettlemoyer, Mike Lewis
+  conference: Preprint, 2022.
+  description: "We open-source a new large language model for code that can both generate and fill-in-the-blank to do tasks like docstring generation, code rewriting, type hint inference, and more."
+  links:
+    Paper: https://arxiv.org/abs/2204.05999
+    Twitter: https://twitter.com/dan_fried/status/1514265047761043456
+    Demo: https://huggingface.co/spaces/facebook/incoder-demo 
+    Site: https://sites.google.com/view/incoder-code-models
+    Code: https://github.com/dpfried/incoder
+
+- title: "Automatic Correction of Human Translations"
+  authors: "**Jessy Lin**, Geza Kovacs, Aditya Shastry, Joern Wuebker, John DeNero"
+  conference: NAACL 2022. **Best Task Paper, Best Resource Paper, Best Theme Paper Honorable Mention**.
+  description: "We introduce the task of translation error correction and show how models can augment professional translators to produce higher quality translations."
+  links:
+    Paper: https://arxiv.org/abs/2206.08593
+    Twitter: https://twitter.com/realJessyLin/status/1545057240150773770
+    Data: https://github.com/lilt/tec
+
+- title: "Towards Flexible Inference in Sequential Decision Problems via Bidirectional Transformers"
+  authors: Micah Carroll, **Jessy Lin**, Orr Paradise, Raluca Georgescu, Mingfei Sun, David Bignell, Stephanie Milani, Katja Hofmann, Matthew Hausknecht, Anca Dragan, Sam Devlin
+  conference: Generalizable Policy Learning in the Physical World, ICLR 2022.
+  description: "We show how a single model trained with a BERT-like masked prediction objective can unify inference in sequential decisionmaking settings (e.g. for RL): behavior cloning, future prediction, and more."
+  links:
+    Paper: https://arxiv.org/abs/2204.13326
+    Twitter: https://twitter.com/MicahCarroll/status/1520149559699116032
+
+- title: "Inferring Rewards from Language in Context"
+  authors: "**Jessy Lin**, Daniel Fried, Dan Klein, Anca Dragan"
+  conference: ACL 2022.
+  description: "We infer human preferences (reward functions) from language."
+  links: 
+    Paper: https://arxiv.org/abs/2204.02515
+    Twitter: https://twitter.com/realJessyLin/status/1516091529193934848 
+    Code: https://github.com/jlin816/rewards-from-language 
+
+- title: "Black-box Adversarial Attacks with Limited Queries and Information"
+  authors: Andrew Ilyas\*, Logan Engstrom\*, Anish Athalye\*, **Jessy Lin\***
+  conference: ICML 2018.
+  description: "We generate adversarial examples for real-world ML systems like the Google Cloud Vision API using only access to predicted labels."
+  links:
+    Paper: https://arxiv.org/abs/1804.08598
+    Blog: https://www.labsix.org/limited-information-adversarial-examples/
+    Code: https://github.com/labsix/limited-blackbox-attacks

@@ -93,6 +93,16 @@ a#name-link {
   margin-top: 0;
   margin-bottom: 0; }
 
+/* Main page */
+.pub {
+  margin: 15px 0px; }
+
+.pub p {
+  margin: 0; }
+
+.pub-description {
+  font-size: .85em; }
+
 /* Project page */
 .project {
   margin-top: 15px; }
