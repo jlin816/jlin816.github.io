@@ -18,9 +18,9 @@
     Twitter: https://twitter.com/realJessyLin/status/1545057240150773770
     Data: https://github.com/lilt/tec
 
-- title: "Towards Flexible Inference in Sequential Decision Problems via Bidirectional Transformers"
-  authors: Micah Carroll, **Jessy Lin**, Orr Paradise, Raluca Georgescu, Mingfei Sun, David Bignell, Stephanie Milani, Katja Hofmann, Matthew Hausknecht, Anca Dragan, Sam Devlin
-  conference: Generalizable Policy Learning in the Physical World, ICLR 2022.
+- title: "Uni[MASK]: Unified Inference in Sequential Decision Problems"
+  authors: Micah Carroll, Orr Paradise, **Jessy Lin**, Raluca Georgescu, Mingfei Sun, David Bignell, Stephanie Milani, Katja Hofmann, Matthew Hausknecht, Anca Dragan, Sam Devlin
+  conference: NeurIPS 2022, Generalizable Policy Learning in the Physical World, ICLR 2022.
   description: "We show how a single model trained with a BERT-like masked prediction objective can unify inference in sequential decisionmaking settings (e.g. for RL): behavior cloning, future prediction, and more."
   links:
     Paper: https://arxiv.org/abs/2204.13326
