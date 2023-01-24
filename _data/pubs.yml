@@ -1,6 +1,6 @@
 - title: "InCoder: A Generative Model for Code Infilling and Synthesis"
   authors: Daniel Fried\*, Armen Aghajanyan\*, **Jessy Lin**, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong, Wen-tau Yih, Luke Zettlemoyer, Mike Lewis
-  conference: Preprint, 2022.
+  conference: ICLR 2023.
   description: "We open-source a new large language model for code that can both generate and fill-in-the-blank to do tasks like docstring generation, code rewriting, type hint inference, and more."
   links:
     Paper: https://arxiv.org/abs/2204.05999
