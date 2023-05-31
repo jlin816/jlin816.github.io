@@ -1,3 +1,11 @@
+- title: "Decision-Oriented Dialogue for Human-AI Collaboration"
+  authors: "**Jessy Lin\\***, Nicholas Tomlin\\*, Jacob Andreas, Jason Eisner"
+  description: "We introduce a new task and suite of environments to evaluate how agents like LLMs can assist humans with everyday decision-making."
+  conference: Preprint.
+  links:
+    Site: https://collaborative-dialogue.github.io/
+    Code: https://github.com/jlin816/dialop
+
 - title: "InCoder: A Generative Model for Code Infilling and Synthesis"
   authors: Daniel Fried\*, Armen Aghajanyan\*, **Jessy Lin**, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong, Wen-tau Yih, Luke Zettlemoyer, Mike Lewis
   conference: ICLR 2023 **(oral)**.
@@ -12,7 +20,7 @@
 - title: "Automatic Correction of Human Translations"
   authors: "**Jessy Lin**, Geza Kovacs, Aditya Shastry, Joern Wuebker, John DeNero"
   conference: NAACL 2022. **Best Task Paper, Best Resource Paper, Best Theme Paper Honorable Mention**.
-  description: "We introduce the task of translation error correction and show how models can augment professional translators to produce higher quality translations."
+  description: "We introduce the task of translation error correction and show how models can augment professional translators in-the-loop."
   links:
     Paper: https://arxiv.org/abs/2206.08593
     Twitter: https://twitter.com/realJessyLin/status/1545057240150773770
