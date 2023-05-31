@@ -1,13 +1,13 @@
-- title: sajal 
+- title: sajal
   description: A lightweight mobile electronic record for refugees. Worked with the Red Cross and humanitarian NGO Emergency to bring to refugee reception centers in Italy.
 
 - title: onatrip!
-  link: https://www.youtube.com/watch?v=gP2WblugDQM 
+  link: https://www.youtube.com/watch?v=gP2WblugDQM
   description: Optimal trip planning / arbitrary queries on maps ("I want to go to a movie theater and then get Italian food and dessert nearby.").
 
-- title: fRender 
+- title: fRender
   link: https://github.com/jlin816/fRender
-  description: Robust, fault-tolerant distributed rendering system for Blender (final project for 6.824 Distributed Systems). 
+  description: Robust, fault-tolerant distributed rendering system for Blender (final project for 6.824 Distributed Systems).
 
 - title: paint floyd
   link: https://devpost.com/software/paint-with-all-the-colors-of-the-rainbow
@@ -26,4 +26,4 @@
   description: A three-story fort in my dorm's courtyard.
 
 - title: geodesic dome
-  description: A six-foot-tall dome structure in my dorm's courtyard. 
+  description: A six-foot-tall dome structure in my dorm's courtyard.

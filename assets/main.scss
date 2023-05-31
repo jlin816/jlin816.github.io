@@ -12,10 +12,11 @@ $gray-text-color: #adadad;
 
 body {
 	font-family: "Libre Franklin", sans-serif;
-  font-size: .9em;
+  font-size: .8rem;
 	color: $text-color;
 	background-color: $background-color;
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -38,12 +39,15 @@ h1, h2, h3, h4, h5 {
 header {
     min-width: 250px;
     flex: 0 0 auto;
-    padding: 15% 20px 50px 20px;
+    padding: 0px 20px 50px 20px;
 }
 
 main {
   flex: 1 1 auto;
   margin: 0 10%;
+}
+main > h1 {
+  margin-top: 0;
 }
 
 .note {
@@ -57,6 +61,7 @@ ul.minimal {
 }
 
 ul.social {
+    padding: 0px;
     margin: 5px auto;
     display: block;
     text-align: right;
@@ -99,8 +104,11 @@ hr {
 /*** wrapper div for both header and main ***/
 .wrapper {
     display: flex;
-    height: 100vh;
-    padding: 0px 10px;
+//    height: 100vh;
+    max-width: 65rem;
+    padding: 5rem 1rem 5rem 1rem;
+    margin: auto;
+    justify-content: center;
 }
 
 /*** anchor tags ***/
@@ -129,15 +137,15 @@ a#name-link {
 
 /* Main page */
 .pub {
-  margin: 15px 0px; 
+  margin: 15px 0px;
 }
 
 .pub p {
   margin: 0;
 }
 
-.pub-description {
-  font-size: .85em;
+.pub-description, .pub > a {
+  font-size: .7rem;
 }
 
 /* Project page */
@@ -167,7 +175,7 @@ a#name-link {
 
 .post-date {
   font-size: 10px;
-  color: $gray-text-color; 
+  color: $gray-text-color;
   padding: 4px;
 }
 
@@ -194,7 +202,7 @@ img + em {
     margin-bottom: 150px;
 }
 
-/* Photography page */ 
+/* Photography page */
 #gallery {
     column-gap: 10px;
     line-height: 2;
@@ -248,17 +256,12 @@ img + em {
       margin-top: 20px;
     }
 
-    body {
-        overflow: scroll;
-        width: 95%;
-    }
-
 	  .wrapper {
-        margin: auto;
         flex-direction: column;
 		    width: 100%;
-	  }
-   
+        justify-content: flex-start;
+    }
+
     .sidebar-nav {
         flex-direction: row;
     }
@@ -312,7 +315,7 @@ img + em {
 
     main {
       margin: 0 5%;
-      padding: 10% 0;
+//      padding: 10% 0;
     }
 
     #gallery {
@@ -322,13 +325,13 @@ img + em {
     }
 }
 
-@media (max-width: 1200px) {
-    #gallery {
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        column-count: 1;
-    }
-}
+ @media (max-width: 1200px) {
+     #gallery {
+         -moz-column-count: 1;
+         -webkit-column-count: 1;
+         column-count: 1;
+     }
+ }
 
 //::-webkit-scrollbar {
 //display: none;

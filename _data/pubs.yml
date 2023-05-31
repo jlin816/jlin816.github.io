@@ -1,11 +1,11 @@
 - title: "InCoder: A Generative Model for Code Infilling and Synthesis"
   authors: Daniel Fried\*, Armen Aghajanyan\*, **Jessy Lin**, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong, Wen-tau Yih, Luke Zettlemoyer, Mike Lewis
-  conference: ICLR 2023.
+  conference: ICLR 2023 **(oral)**.
   description: "We open-source a new large language model for code that can both generate and fill-in-the-blank to do tasks like docstring generation, code rewriting, type hint inference, and more."
   links:
     Paper: https://arxiv.org/abs/2204.05999
     Twitter: https://twitter.com/dan_fried/status/1514265047761043456
-    Demo: https://huggingface.co/spaces/facebook/incoder-demo 
+    Demo: https://huggingface.co/spaces/facebook/incoder-demo
     Site: https://sites.google.com/view/incoder-code-models
     Code: https://github.com/dpfried/incoder
 
@@ -20,7 +20,7 @@
 
 - title: "Uni[MASK]: Unified Inference in Sequential Decision Problems"
   authors: Micah Carroll, Orr Paradise, **Jessy Lin**, Raluca Georgescu, Mingfei Sun, David Bignell, Stephanie Milani, Katja Hofmann, Matthew Hausknecht, Anca Dragan, Sam Devlin
-  conference: NeurIPS 2022, Generalizable Policy Learning in the Physical World, ICLR 2022.
+  conference: NeurIPS 2022 **(oral)**.
   description: "We show how a single model trained with a BERT-like masked prediction objective can unify inference in sequential decisionmaking settings (e.g. for RL): behavior cloning, future prediction, and more."
   links:
     Paper: https://arxiv.org/abs/2204.13326
@@ -30,10 +30,10 @@
   authors: "**Jessy Lin**, Daniel Fried, Dan Klein, Anca Dragan"
   conference: ACL 2022.
   description: "We infer human preferences (reward functions) from language."
-  links: 
+  links:
     Paper: https://arxiv.org/abs/2204.02515
-    Twitter: https://twitter.com/realJessyLin/status/1516091529193934848 
-    Code: https://github.com/jlin816/rewards-from-language 
+    Twitter: https://twitter.com/realJessyLin/status/1516091529193934848
+    Code: https://github.com/jlin816/rewards-from-language
 
 - title: "Black-box Adversarial Attacks with Limited Queries and Information"
   authors: Andrew Ilyas\*, Logan Engstrom\*, Anish Athalye\*, **Jessy Lin\***

@@ -1,9 +1,10 @@
 body {
   font-family: "Libre Franklin", sans-serif;
-  font-size: .9em;
+  font-size: .8rem;
   color: #46433A;
   background-color: #fdfdfd;
-  line-height: 1.7; }
+  line-height: 1.7;
+  overflow-x: hidden; }
 
 h1 {
   font-size: 2em; }
@@ -21,11 +22,14 @@ h1, h2, h3, h4, h5 {
 header {
   min-width: 250px;
   flex: 0 0 auto;
-  padding: 15% 20px 50px 20px; }
+  padding: 0px 20px 50px 20px; }
 
 main {
   flex: 1 1 auto;
   margin: 0 10%; }
+
+main > h1 {
+  margin-top: 0; }
 
 .note {
   font-size: .5em; }
@@ -36,6 +40,7 @@ ul.minimal {
   margin: 0; }
 
 ul.social {
+  padding: 0px;
   margin: 5px auto;
   display: block;
   text-align: right; }
@@ -70,8 +75,10 @@ hr {
 /*** wrapper div for both header and main ***/
 .wrapper {
   display: flex;
-  height: 100vh;
-  padding: 0px 10px; }
+  max-width: 65rem;
+  padding: 5rem 1rem 5rem 1rem;
+  margin: auto;
+  justify-content: center; }
 
 /*** anchor tags ***/
 a:link,
@@ -100,8 +107,8 @@ a#name-link {
 .pub p {
   margin: 0; }
 
-.pub-description {
-  font-size: .85em; }
+.pub-description, .pub > a {
+  font-size: .7rem; }
 
 /* Project page */
 .project {
@@ -193,14 +200,10 @@ img + em {
     width: 100%;
     margin-top: 20px; }
 
-  body {
-    overflow: scroll;
-    width: 95%; }
-
   .wrapper {
-    margin: auto;
     flex-direction: column;
-    width: 100%; }
+    width: 100%;
+    justify-content: flex-start; }
 
   .sidebar-nav {
     flex-direction: row; }
@@ -243,8 +246,7 @@ img + em {
     text-align: right; }
 
   main {
-    margin: 0 5%;
-    padding: 10% 0; }
+    margin: 0 5%; }
 
   #gallery {
     -moz-column-count: 2;
