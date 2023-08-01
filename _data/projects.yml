@@ -7,7 +7,7 @@
 
 - title: fRender
   link: https://github.com/jlin816/fRender
-  description: Robust, fault-tolerant distributed rendering system for Blender (final project for 6.824 Distributed Systems).
+  description: Robust, fault-tolerant distributed rendering prototype for Blender.
 
 - title: paint floyd
   link: https://devpost.com/software/paint-with-all-the-colors-of-the-rainbow
@@ -19,7 +19,7 @@
 
 - title: fpga 3d scanner
   link: https://www.dropbox.com/s/4g4yx86q6ocib5d/6.111FinalReport.pdf?dl=0o
-  description: Fast, FPGA implementation of a 3D laser scanner. Reconstructs a point cloud of a physical object in real-time (final project for 6.111 Digital Systems).
+  description: Fast, FPGA prototype of a 3D laser scanner. Reconstructs a point cloud of a physical object in real-time.
 
 - title: fort
   link: https://youtu.be/yb83rzasszU
