@@ -3,6 +3,7 @@
   description: "We introduce Dynalang, an agent that leverages diverse types of language to solve tasks by using language to predict the future in a multimodal world model."
   conference: Preprint.
   links:
+    Paper: https://arxiv.org/abs/2308.01399
     Site: https://dynalang.github.io/
     Code: https://github.com/jlin816/dynalang
 
