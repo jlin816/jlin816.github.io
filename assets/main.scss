@@ -3,16 +3,17 @@
 
 $text-color: #46433A;
 $anchor-text-color: #CE534D;
-$background-color: #fdfdfd;
-$gray-text-color: #adadad;
+$background-color: #ffffff; // #fdfdfd;
+$gray-text-color: #9d9d9d;
 
 // Other body fonts:
 // - Neuton
 // - Libre Franklin
 
 body {
-	font-family: "Libre Franklin", sans-serif;
-  font-size: .8rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+//	font-family: "Libre Franklin", sans-serif;
+  font-size: 14px;
 	color: $text-color;
 	background-color: $background-color;
   line-height: 1.7;
@@ -144,8 +145,21 @@ a#name-link {
   margin: 0;
 }
 
-.pub-description, .pub > a {
-  font-size: .7rem;
+.pub-title {
+  font-size: 18px;
+}
+
+.pub-info, .pub-description {
+  color: $gray-text-color;
+}
+
+div.pub-info {
+  margin-top: .2rem;
+}
+
+.pub-special {
+  color: $anchor-text-color;
+  font-weight: bold;
 }
 
 /* Project page */
