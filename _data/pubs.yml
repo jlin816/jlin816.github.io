@@ -1,7 +1,7 @@
 - title: "Learning to Model the World with Language"
-  authors: "**Jessy Lin**, Yuqing Du, Olivia Watkins, Danijar Hafner, Pieter Abbeel, Dan Klein, Anca Dragan"
+  authors: "Jessy Lin, Yuqing Du, Olivia Watkins, Danijar Hafner, Pieter Abbeel, Dan Klein, Anca Dragan"
   description: "We introduce Dynalang, an agent that leverages diverse types of language to solve tasks by using language to predict the future in a multimodal world model."
-  conference: ICML 2024.
+  conference: ICML 2024
   special: (oral, top 1.5%)
   links:
     Paper: https://arxiv.org/abs/2308.01399
@@ -10,9 +10,9 @@
     Code: https://github.com/jlin816/dynalang
 
 - title: "Decision-Oriented Dialogue for Human-AI Collaboration"
-  authors: "**Jessy Lin\\***, Nicholas Tomlin\\*, Jacob Andreas, Jason Eisner"
+  authors: "Jessy Lin*, Nicholas Tomlin*, Jacob Andreas, Jason Eisner"
   description: "We introduce a new task and suite of environments to evaluate how agents like LLMs can assist humans with everyday decision-making."
-  conference: TACL/ACL 2024, LLM Agents @ ICLR 2024.
+  conference: TACL/ACL 2024, LLM Agents @ ICLR 2024
   links:
     Paper: https://arxiv.org/abs/2305.20076
     Site: https://collaborative-dialogue.github.io/
@@ -20,8 +20,8 @@
     Code: https://github.com/jlin816/dialop
 
 - title: "InCoder: A Generative Model for Code Infilling and Synthesis"
-  authors: Daniel Fried\*, Armen Aghajanyan\*, **Jessy Lin**, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong, Wen-tau Yih, Luke Zettlemoyer, Mike Lewis
-  conference: ICLR 2023.
+  authors: Daniel Fried*, Armen Aghajanyan*, Jessy Lin, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong, Wen-tau Yih, Luke Zettlemoyer, Mike Lewis
+  conference: ICLR 2023
   special: (spotlight, top 6%)
   description: "We open-source a new large language model for code that can both generate and fill-in-the-blank to do tasks like docstring generation, code rewriting, type hint inference, and more."
   links:
@@ -32,8 +32,8 @@
     Code: https://github.com/dpfried/incoder
 
 - title: "Automatic Correction of Human Translations"
-  authors: "**Jessy Lin**, Geza Kovacs, Aditya Shastry, Joern Wuebker, John DeNero"
-  conference: NAACL 2022.
+  authors: "Jessy Lin, Geza Kovacs, Aditya Shastry, Joern Wuebker, John DeNero"
+  conference: NAACL 2022
   special: Best Task Paper, Best Resource Paper, Best Theme Paper Honorable Mention.
   description: "We introduce the task of translation error correction and show how models can augment professional translators in-the-loop."
   links:
@@ -42,8 +42,8 @@
     Data: https://github.com/lilt/tec
 
 - title: "Uni[MASK]: Unified Inference in Sequential Decision Problems"
-  authors: Micah Carroll, Orr Paradise, **Jessy Lin**, Raluca Georgescu, Mingfei Sun, David Bignell, Stephanie Milani, Katja Hofmann, Matthew Hausknecht, Anca Dragan, Sam Devlin
-  conference: NeurIPS 2022.
+  authors: Micah Carroll, Orr Paradise, Jessy Lin, Raluca Georgescu, Mingfei Sun, David Bignell, Stephanie Milani, Katja Hofmann, Matthew Hausknecht, Anca Dragan, Sam Devlin
+  conference: NeurIPS 2022
   special: (oral, top 1.8%)
   description: "We show how a single model trained with a BERT-like masked prediction objective can unify inference in sequential decisionmaking settings (e.g. for RL): behavior cloning, future prediction, and more."
   links:
@@ -51,8 +51,8 @@
     Twitter: https://twitter.com/MicahCarroll/status/1520149559699116032
 
 - title: "Inferring Rewards from Language in Context"
-  authors: "**Jessy Lin**, Daniel Fried, Dan Klein, Anca Dragan"
-  conference: ACL 2022.
+  authors: "Jessy Lin, Daniel Fried, Dan Klein, Anca Dragan"
+  conference: ACL 2022
   description: "We infer human preferences (reward functions) from language."
   links:
     Paper: https://arxiv.org/abs/2204.02515
@@ -60,8 +60,8 @@
     Code: https://github.com/jlin816/rewards-from-language
 
 - title: "Black-box Adversarial Attacks with Limited Queries and Information"
-  authors: Andrew Ilyas\*, Logan Engstrom\*, Anish Athalye\*, **Jessy Lin\***
-  conference: ICML 2018.
+  authors: Andrew Ilyas*, Logan Engstrom*, Anish Athalye*, Jessy Lin*
+  conference: ICML 2018
   description: "We generate adversarial examples for real-world ML systems like the Google Cloud Vision API using only access to predicted labels."
   links:
     Paper: https://arxiv.org/abs/1804.08598

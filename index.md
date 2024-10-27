@@ -1,7 +1,8 @@
 ---
-layout: base
+layout: default
 show_pic: true
 ---
+
 # Hi!
 
 I’m a fourth-year PhD student at [Berkeley AI Research](https://bair.berkeley.edu/), advised by [Anca Dragan](http://people.eecs.berkeley.edu/~anca/) and [Dan Klein](https://people.eecs.berkeley.edu/~klein/). My research is supported by the [Apple Scholars in AI Fellowship](https://machinelearning.apple.com/updates/apple-scholars-aiml-2023).
@@ -12,18 +13,18 @@ Previously, I worked on research and product at [Lilt](https://lilt.com/research
 
 ## Publications
 
-<div  markdown="0">
+<div markdown="0" class="pubs">
 {% for project in site.data.pubs %}
 <div class="pub">
-  <p class="pub-title"><b>{{ project.title }}</b></p>
-  <p class="pub-authors">{{ project.authors | markdownify }}</p>
-  <p class="pub-info">{{ project.conference }} <span class="pub-special">{{ project.special }}</span></p>
-  <p class="pub-description">{{ project.description }}</p>
-  <div class="pub-info">
+  <h3>{{ project.title }}</h3>
+  <p class="authors">{{ project.authors | markdownify }}</p>
+  <p class="info">{{ project.conference }} <span class="special">{{ project.special }}</span></p>
+  <p class="description">{{ project.description }}</p>
+  <div class="links">
   {% for link in project.links %}
-    [<a href="{{ link[1] }}">{{ link[0] }}</a>]
+    <a href="{{ link[1] }}">{{ link[0] }}</a>
   {% endfor %}
-  </div>
+</div>
 
 </div>
 {% endfor %}

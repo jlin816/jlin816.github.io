@@ -1,38 +1,18 @@
 ---
-layout: base
+title: Posts
+layout: default
 ---
+
 <h1>Posts</h1>
-<ul class="minimal">
+
+<ul class="posts">
   {% for post in site.posts %}
-    <li class="post">
-      <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
-      <span class="post-date">{{ post.date | date_to_string }}</span>
-      <p class="post-subtitle">{{ post.subtitle }}</p>
-    </li>
+  <li>
+    <a class="title" href="{{ post.url }}">{{ post.title }}</a>
+    <span class="date">{{ post.date | date_to_string }}</span>
+    <p class="subtitle">{{ post.subtitle }}</p>
+  </li>
   {% endfor %}
 </ul>
 
-<br/>
-<hr/>
-<br/>
-
-Subscribe to get updates when I write new posts.
-<!-- Begin Mailchimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-<form action="https://gmail.us3.list-manage.com/subscribe/post?u=be23d5873db42578ecc753d32&amp;id=0544272743" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-
-	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_be23d5873db42578ecc753d32_0544272743" tabindex="-1" value=""></div>
-    <div class="clear" style="color:red"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-    </div>
-</form>
-</div>
-<!--End mc_embed_signup-->
+{% include subscribe.html %}
