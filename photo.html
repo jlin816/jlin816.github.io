@@ -1,7 +1,9 @@
 ---
-layout: base
+title: Jessy Lin &#8226; Photography
+layout: default
+mainClass: wide
 ---
-<div id="gallery">
+<div class="gallery">
     {% for image in site.static_files %}
         {% if image.path contains 'images/photography/thumbnails' %}
         <div class="placeholder" data-large="{{ image.path }}">
@@ -19,7 +21,7 @@ layout: base
   window.onload = function () {
     var placeholders = document.getElementsByClassName('placeholder');
     placeholders = Array.prototype.slice.call(placeholders);
-    placeholders.forEach(function (placeholder) { 
+    placeholders.forEach(function (placeholder) {
       small = placeholder.querySelector('.img-small');
 
       var img = new Image();

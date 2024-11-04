@@ -218,8 +218,9 @@ img + em {
 
 /* Photography page */
 #gallery {
-    column-gap: 10px;
-    line-height: 2;
+  column-count: 2;
+  column-gap: 10px;
+  line-height: 2;
 }
 
 #gallery img {

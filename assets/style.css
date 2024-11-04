@@ -4,7 +4,7 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-  font-weight: normal;
+/*  font-weight: normal;*/
   margin: 0;
 }
 
@@ -17,16 +17,19 @@ label, input, button {
   line-height: 1;
 }
 
-body {
+html, body {
+  font-size: 15px;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 15px;
-  display: flex;
   --primary: #CE534D;
+}
+
+body {
+  display: flex;
 }
 
 /******************************************************************************
@@ -39,15 +42,44 @@ body {
 /* header { background: red; } */
 /* main { background: blue; } */
 
-main { width: 34rem; }
+main { width: 34rem; line-height: 1.4rem; }
+main.wide { width: 50rem; }
 
 .default { flex-direction: row; justify-content: center; }
-.default header { width: 11rem; margin: 5rem 3rem 0 0; }
-.default main { margin: 5rem 0 2rem 0; }
+.default header { width: 11rem; margin: 5rem 1rem 0 2rem; }
+.default main { margin: 5rem 2rem 2rem; }
+.default main > h1:first-child { margin-top: -.3rem; }  /* align with side bar */
 
 .post { flex-direction: column; align-items: center; }
-.post header { }
-.post main { }
+.post header {
+  width: 45rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0 0 0;
+}
+.post header h3 {
+  background-color: var(--primary);
+  border-radius: .2rem;
+  padding: 1px 8px;
+}
+.post header h3 a {
+  color: #fff;
+}
+.post header nav { width: 30%; gap: 1.5rem; margin-top: 0; }
+.post header nav a { margin-bottom: 0; font-weight: 500; }
+.post main { width: 45rem; line-height: 1.7; margin-bottom: 5rem; }
+.post article p { margin: 1.1rem 0; }
+
+.post .info { margin: 5rem 0 3rem 0; }
+.post .subtitle { color: #999; font-size: 1rem; font-weight: 500; }
+.post .date { color: #999; font-size: .9rem; font-weight: 500; }
+.post .footnote { color: #999; font-size: .9rem; font-weight: 400; }
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+}
 
 img, video { max-width: 100%; }
 
@@ -57,18 +89,20 @@ img, video { max-width: 100%; }
 
 main p { margin: .5rem 0; }
 
-h1, h2, h3 { font-weight: 600; margin: 1.3em 0 .5em; }
+h1, h2, h3 { font-family: "Libre Franklin"; font-weight: 700; margin: 1.3em 0 .5em; }
 h1:first-child, h2:first-child, h3:first-child { margin-top: 0; }
-h1 { font-size: 1.7rem; }
-h2 { font-size: 1.4rem; }
-h3 { font-size: 1.1rem; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
 
 a, a:active { color: var(--primary); text-decoration: none; }
-a:hover { opacity: 0.6; }
+a:hover { text-decoration: underline; }
+/* a:hover { opacity: 0.6; } */
 
 main figure { margin: 1rem 0; text-align: center; }
 main figure img { width: 100%; border-radius: .2rem; }
 main figure figcaption { color: #666; font-size: .9rem; }
+main figure.small img { width: 50%; }
 main figure.medium img { width: 75%; }
 
 /******************************************************************************
@@ -76,16 +110,19 @@ main figure.medium img { width: 75%; }
  *****************************************************************************/
 
 .face { border-radius: 0.2rem; }
+/* .face { box-shadow: 1rem 1rem 0 #ffe23b; margin-bottom: 1rem; } */
 
-header h1 { margin: 1rem 0; text-align: center; }
-header h1 a { color: #333; font-weight: 700}
-header nav { margin: 1.5rem 0 0; text-align: center; }
-header nav a { margin-bottom: .5rem; }
+header h1 { margin: .9rem 0 1.1rem; text-align: center; }
+header h1 a { color: #000; font-weight: 700 }
+header h1 a:hover, header h1 a:active, header h1 a:visited { color: #000; text-decoration: none; }
+header nav { margin: 1.5rem 1.1rem 0; text-align: left; }
+header nav a { margin-bottom: .8rem; font-weight: 500; }
 
 .socials {
-  gap: 0.5rem;
+  gap: .8rem;
   justify-content: center;
 }
+.mobile-socials { display: none; }
 
 /* .socials a { */
 /*   display: inline-block; */
@@ -108,14 +145,44 @@ header nav a { margin-bottom: .5rem; }
   height: 1rem;
 }
 
-.socials img svg { color: blue; }
-
 /******************************************************************************
  * Content
  *****************************************************************************/
 
-.pub { margin: 0 0 1rem; }
-.pub p { margin: .2rem 0; }
+/* Pubs */
+.pub > img {
+  width: 7rem; height: 7rem;
+  border-radius: .2rem; background: #eee;
+  border: 1px solid #ccc;
+  margin: .25rem 1rem 0 0;
+}
+
+.pub { margin: 1.3rem 0; }
+.pub h3 { margin: 0; }
+.pub p { margin: .3rem 0; }
+/* .pub .authors { color: #999; } */
+.pub .info { color: #777; }
+.pub .special { padding-left: .3rem; color: var(--primary); font-weight: bold; }
+.pub .description { display: none; }
+.pub .links { margin-top: .6rem; }
+.pub .links a, .pub .links a:visited {
+  display: inline-block;
+  margin: 0 .6rem .5rem 0;
+  padding: .25rem .5rem;
+  font-size: .85rem;
+  background: #eee;
+  color: #666;
+  font-weight: 500;
+  border-radius: .2rem;
+  transition: background .1s, color .1s;
+}
+.pub .links a:hover {
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Posts */
 
 .subscribe {
   margin: 2rem 0;
@@ -148,6 +215,154 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.posts { padding: 0; list-style: none; }
+.posts li { margin: 1rem 0; }
+.posts h3 { margin: .5rem 0 0; display: inline-block; margin-right: .8rem; }
+.posts .date { color: #999; font-size: .9rem; font-weight: 500; }
+
+article .summary-box {
+  margin: 2rem 0;
+  padding: 2rem 2rem 1rem 2rem;
+  border: 1px solid #ccc;
+  background: #eee;
+  border-radius: .2rem;
+}
+
+article .summary-heading {
+  font-weight: 700;
+}
+
+blockquote { 
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+  unicode-bidi: isolate;
+}
+
+blockquote br {
+
+}
+
+/* Photography */
+.gallery {
+  column-count: 2;
+  column-gap: 10px;
+  line-height: 2;
+}
+
+.gallery img { width: 100%; }
+
+.gallery .placeholder:hover {
+  opacity: .9;
+  transition: opacity .2s ease-out;
+  -moz-transition: opacity .2s ease-out;
+  -webkit-transition: opacity .2s ease-out;
+  -o-transition: opacity .2s ease-out;
+}
+
+.gallery .placeholder {
+  background-color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  break-inside: avoid-column;
+}
+
+.gallery .placeholder img {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s linear;
+}
+
+.gallery .placeholder img.loaded {
+  opacity: 1;
+}
+
+.gallery .img-small {
+  filter: blur(50px);
+  /* this is needed so Safari keeps sharp edges */
+  transform: scale(1);
+}
 
 
+/* Fun */
+.projects { padding: 0; list-style: none; }
+
+
+/******************************************************************************
+ * Mobile
+ *****************************************************************************/
+@media (max-width: 768px) {
+  /* Adjust font sizes for smaller screens */
+  html, body {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+  body {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  main {
+    margin: 1rem 0;
+    width: 100%;
+    line-height: 1.5rem;
+  }
+  /* Adjust figure image widths */
+  main figure img { width: 100%;   }
+
+  /* Default layout adjustments */
+  /* Horizontal navigation bar on smaller screens */
+  .face {
+    width: 20%;
+  }
+  .default {
+    flex-direction: column;
+    align-items: center;
+  }
+  .socials { display: none; }
+  .mobile-socials { display: flex; gap: 1rem; }
+  .default header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0 0 0;
+  }
+  .default header nav { width: 30%; justify-content: space-around; margin-top: 0; }  
+
+  /* Post layout adjustments */
+  .post {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+  .post header, .post main { width: 100%; }*/
+
+  /* Gallery adjustments for mobile */
+  main.wide { width: 100%; }
+  .gallery { column-count: 1; column-gap: 0; padding: 0; }
+
+  /* Post and project lists padding adjustments */
+  .posts, .projects {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Subscribe form adjustment */
+  .subscribe form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Adjust input fields and button for mobile */
+  input[type="text"], input[type="email"], input[type="submit"] {
+    width: 100%;
+  }
+}
 

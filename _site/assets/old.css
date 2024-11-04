@@ -166,6 +166,7 @@ img + em {
 
 /* Photography page */
 #gallery {
+  column-count: 2;
   column-gap: 10px;
   line-height: 2; }
 

@@ -8,10 +8,13 @@
 
 <link rel="stylesheet" href="/assets/style.css" />
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
-<!--<link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">-->
-<!--<link href="https://fonts.googleapis.com/css?family=Rubik:500|Lora|Average|Neuton" rel="stylesheet">-->
-<!--<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,700&display=swap" rel="stylesheet">-->
+<!-- <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css?family=Rubik:500|Lora|Average|Neuton" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:700&display=swap" rel="stylesheet">
 
 <!--<meta name="author" content="Jessy Lin" />-->
 <!--<meta name="description" content="" />-->
@@ -28,24 +31,17 @@
 <body class="default">
 
 <header>
-  
   <img src="/images/jessy.jpg" class="face" width="300" />
-  
   <h1><a href="/">Jessy Lin</a></h1>
   <p class="socials layoutRow">
-    <!-- <a class="email" href="mailto:jessy_lin@berkeley.edu" target="_blank">Email</a> -->
-    <!-- <a class="github" href="https://github.com/jlin816">Github</a> -->
-    <!-- <a class="x" href="https://x.com/realJessyLin">X</a> -->
-    <!-- <a class="linkedin" href="https://linkedin.com/in/jessylin">LinkedIn</a> -->
-    <!-- <a class="scholar" href="https://scholar.google.com/citations?user=jTMUPNkAAAAJ&#38;hl=en">Google Scholar</a> -->
     <a class="email" href="mailto:jessy_lin@berkeley.edu" target="_blank">
       <img src="/assets/icons/email.svg"/></a>
     <a class="github" href="https://github.com/jlin816">
       <img src="/assets/icons/github.svg"/></a>
     <a class="x" href="https://x.com/realJessyLin">
       <img src="/assets/icons/x.svg"/></a>
-    <a class="linkedin" href="https://linkedin.com/in/jessylin">
-      <img src="/assets/icons/linkedin.svg"/></a>
+    <!-- <a class="linkedin" href="https://linkedin.com/in/jessylin"> -->
+    <!--   <img src="/assets/icons/linkedin.svg"/></a> -->
     <a class="scholar" href="https://scholar.google.com/citations?user=jTMUPNkAAAAJ&hl=en">
       <img src="/assets/icons/scholar.svg"/></a>
   </p>
@@ -56,147 +52,370 @@
   </nav>
 </header>
 
-<main>
+<main class=>
 <h1 id="hi">Hi!</h1>
 
-<p>I’m a fourth-year PhD student at <a href="https://bair.berkeley.edu/">Berkeley AI Research</a>, advised by <a href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a> and <a href="https://people.eecs.berkeley.edu/~klein/">Dan Klein</a>. My research is supported by the <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2023">Apple Scholars in AI Fellowship</a>.</p>
+<p>I’m a fifth-year PhD student at <a href="https://bair.berkeley.edu/">Berkeley AI Research</a>, advised by <a href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a> and <a href="https://people.eecs.berkeley.edu/~klein/">Dan Klein</a>. My research is supported by the <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2023">Apple Scholars in AI Fellowship</a>. I’m also a visiting researcher at Meta AI.</p>
 
-<p>I’m interested in <strong>building agents that can collaborate and interact with humans, and use language as a medium to do so.</strong> Currently, I’m excited about dialogue and language + RL.</p>
+<p>I work on building AI agents that can collaborate with humans.</p>
 
 <p>Previously, I worked on research and product at <a href="https://lilt.com/research">Lilt</a>, working on human-in-the-loop machine translation / Copilot for expert translators. I graduated with a double-major in computer science and philosophy from MIT, where I did research on human-inspired AI with the <a href="http://cocosci.mit.edu/">Computational Cognitive Science Group</a>, advised by Kelsey Allen and Josh Tenenbaum, and machine learning security as a founding member of <a href="http://labsix.org/">labsix</a>. I also spent a great summer with the <a href="https://research.google/teams/language/">Natural Language Understanding</a> group at Google Research NY, advised by David Weiss.</p>
 
-<h2 id="publications">Publications</h2>
+<p class="mobile-socials layoutRow">
+  <a class="email" href="mailto:jessy_lin@berkeley.edu" target="_blank">
+    Email
+  </a>
+  / <a class="github" href="https://github.com/jlin816">
+    Github
+  </a>
+  / <a class="x" href="https://x.com/realJessyLin">
+    Twitter/X
+  </a>
+  / <a class="scholar" href="https://scholar.google.com/citations?user=jTMUPNkAAAAJ&amp;hl=en">
+    Scholar
+  </a>
+</p>
+
+<h2 id="research">Research</h2>
 
 <div class="pubs">
 
-<div class="pub">
-  <h3>Learning to Model the World with Language</h3>
-  <p class="authors"><p>Jessy Lin, Yuqing Du, Olivia Watkins, Danijar Hafner, Pieter Abbeel, Dan Klein, Anca Dragan</p>
+<div class="pub layoutRow">
+  <img src="/assets/pubs/dynalang.png" />
+  <div>
+      <h3>Learning to Model the World with Language</h3>
+      <p class="authors">
+
+  
+    <span style="font-weight: bold">Jessy Lin</span>, 
+  
+
+  
+    Yuqing Du, 
+  
+
+  
+    Olivia Watkins, 
+  
+
+  
+    Danijar Hafner, 
+  
+
+  
+    Pieter Abbeel, 
+  
+
+  
+    Dan Klein, 
+  
+
+  
+    Anca Dragan
+  
+
 </p>
-  <p class="info">ICML 2024 <span class="special">(oral, top 1.5%)</span></p>
-  <p class="description">We introduce Dynalang, an agent that leverages diverse types of language to solve tasks by using language to predict the future in a multimodal world model.</p>
-  <div class="links">
-  
-    <a href="https://arxiv.org/abs/2308.01399">Paper</a>
-  
-    <a href="https://dynalang.github.io/">Site</a>
-  
-    <a href="https://x.com/realJessyLin/status/1687515845281624064">Twitter</a>
-  
-    <a href="https://github.com/jlin816/dynalang">Code</a>
-  
+      <p class="info">ICML 2024 <span class="special">(oral, top 1.5%)</span></p>
+      <p class="description">We introduce Dynalang, an agent that leverages diverse types of language to solve tasks by using language to predict the future in a multimodal world model.</p>
+      <div class="links">
+      
+        <a href="https://arxiv.org/abs/2308.01399">Paper</a>
+      
+        <a href="https://dynalang.github.io/">Site</a>
+      
+        <a href="https://x.com/realJessyLin/status/1687515845281624064">Twitter</a>
+      
+        <a href="https://github.com/jlin816/dynalang">Code</a>
+      
+  </div>
 </div>
 
 </div>
 
-<div class="pub">
-  <h3>Decision-Oriented Dialogue for Human-AI Collaboration</h3>
-  <p class="authors"><p>Jessy Lin<em>, Nicholas Tomlin</em>, Jacob Andreas, Jason Eisner</p>
+<div class="pub layoutRow">
+  <img src="/assets/pubs/dialop.png" />
+  <div>
+      <h3>Decision-Oriented Dialogue for Human-AI Collaboration</h3>
+      <p class="authors">
+
+  
+    <span style="font-weight: bold">Jessy Lin*</span>, 
+  
+
+  
+    Nicholas Tomlin*, 
+  
+
+  
+    Jacob Andreas, 
+  
+
+  
+    Jason Eisner
+  
+
 </p>
-  <p class="info">TACL/ACL 2024, LLM Agents @ ICLR 2024 <span class="special"></span></p>
-  <p class="description">We introduce a new task and suite of environments to evaluate how agents like LLMs can assist humans with everyday decision-making.</p>
-  <div class="links">
-  
-    <a href="https://arxiv.org/abs/2305.20076">Paper</a>
-  
-    <a href="https://collaborative-dialogue.github.io/">Site</a>
-  
-    <a href="https://twitter.com/realJessyLin/status/1664410190719111168">Twitter</a>
-  
-    <a href="https://github.com/jlin816/dialop">Code</a>
-  
+      <p class="info">TACL/ACL 2024, LLM Agents @ ICLR 2024 <span class="special"></span></p>
+      <p class="description">We introduce a new task and suite of environments to evaluate how agents like LLMs can assist humans with everyday decision-making.</p>
+      <div class="links">
+      
+        <a href="https://arxiv.org/abs/2305.20076">Paper</a>
+      
+        <a href="https://collaborative-dialogue.github.io/">Site</a>
+      
+        <a href="https://twitter.com/realJessyLin/status/1664410190719111168">Twitter</a>
+      
+        <a href="https://github.com/jlin816/dialop">Code</a>
+      
+  </div>
 </div>
 
 </div>
 
-<div class="pub">
-  <h3>InCoder: A Generative Model for Code Infilling and Synthesis</h3>
-  <p class="authors"><p>Daniel Fried<em>, Armen Aghajanyan</em>, Jessy Lin, Sida Wang, Eric Wallace, Freda Shi, Ruiqi Zhong, Wen-tau Yih, Luke Zettlemoyer, Mike Lewis</p>
+<div class="pub layoutRow">
+  <img src="/assets/pubs/incoder.png" />
+  <div>
+      <h3>InCoder: A Generative Model for Code Infilling and Synthesis</h3>
+      <p class="authors">
+
+  
+    Daniel Fried*, 
+  
+
+  
+    Armen Aghajanyan*, 
+  
+
+  
+    <span style="font-weight: bold">Jessy Lin</span>, 
+  
+
+  
+    Sida Wang, 
+  
+
+  
+    Eric Wallace, 
+  
+
+  
+    Freda Shi, 
+  
+
+  
+    Ruiqi Zhong, 
+  
+
+  
+    Wen-tau Yih, 
+  
+
+  
+    Luke Zettlemoyer, 
+  
+
+  
+    Mike Lewis
+  
+
 </p>
-  <p class="info">ICLR 2023 <span class="special">(spotlight, top 6%)</span></p>
-  <p class="description">We open-source a new large language model for code that can both generate and fill-in-the-blank to do tasks like docstring generation, code rewriting, type hint inference, and more.</p>
-  <div class="links">
-  
-    <a href="https://arxiv.org/abs/2204.05999">Paper</a>
-  
-    <a href="https://twitter.com/dan_fried/status/1514265047761043456">Twitter</a>
-  
-    <a href="https://huggingface.co/spaces/facebook/incoder-demo">Demo</a>
-  
-    <a href="https://sites.google.com/view/incoder-code-models">Site</a>
-  
-    <a href="https://github.com/dpfried/incoder">Code</a>
-  
+      <p class="info">ICLR 2023 <span class="special">(spotlight, top 6%)</span></p>
+      <p class="description">We open-source a new large language model for code that can both generate and fill-in-the-blank to do tasks like docstring generation, code rewriting, type hint inference, and more.</p>
+      <div class="links">
+      
+        <a href="https://arxiv.org/abs/2204.05999">Paper</a>
+      
+        <a href="https://twitter.com/dan_fried/status/1514265047761043456">Twitter</a>
+      
+        <a href="https://huggingface.co/spaces/facebook/incoder-demo">Demo</a>
+      
+        <a href="https://sites.google.com/view/incoder-code-models">Site</a>
+      
+        <a href="https://github.com/dpfried/incoder">Code</a>
+      
+  </div>
 </div>
 
 </div>
 
-<div class="pub">
-  <h3>Automatic Correction of Human Translations</h3>
-  <p class="authors"><p>Jessy Lin, Geza Kovacs, Aditya Shastry, Joern Wuebker, John DeNero</p>
+<div class="pub layoutRow">
+  <img src="/assets/pubs/tec.png" />
+  <div>
+      <h3>Automatic Correction of Human Translations</h3>
+      <p class="authors">
+
+  
+    <span style="font-weight: bold">Jessy Lin</span>, 
+  
+
+  
+    Geza Kovacs, 
+  
+
+  
+    Aditya Shastry, 
+  
+
+  
+    Joern Wuebker, 
+  
+
+  
+    John DeNero
+  
+
 </p>
-  <p class="info">NAACL 2022 <span class="special">Best Task Paper, Best Resource Paper, Best Theme Paper Honorable Mention.</span></p>
-  <p class="description">We introduce the task of translation error correction and show how models can augment professional translators in-the-loop.</p>
-  <div class="links">
-  
-    <a href="https://arxiv.org/abs/2206.08593">Paper</a>
-  
-    <a href="https://twitter.com/realJessyLin/status/1545057240150773770">Twitter</a>
-  
-    <a href="https://github.com/lilt/tec">Data</a>
-  
+      <p class="info">NAACL 2022 <span class="special">Best Task Paper, Best Resource Paper, Best Theme Paper Honorable Mention.</span></p>
+      <p class="description">We introduce the task of translation error correction and show how models can augment professional translators in-the-loop.</p>
+      <div class="links">
+      
+        <a href="https://arxiv.org/abs/2206.08593">Paper</a>
+      
+        <a href="https://twitter.com/realJessyLin/status/1545057240150773770">Twitter</a>
+      
+        <a href="https://github.com/lilt/tec">Data</a>
+      
+  </div>
 </div>
 
 </div>
 
-<div class="pub">
-  <h3>Uni[MASK]: Unified Inference in Sequential Decision Problems</h3>
-  <p class="authors"><p>Micah Carroll, Orr Paradise, Jessy Lin, Raluca Georgescu, Mingfei Sun, David Bignell, Stephanie Milani, Katja Hofmann, Matthew Hausknecht, Anca Dragan, Sam Devlin</p>
+<div class="pub layoutRow">
+  <img src="/assets/pubs/unimask.png" />
+  <div>
+      <h3>UniMASK: Unified Inference in Sequential Decision Problems</h3>
+      <p class="authors">
+
+  
+    Micah Carroll, 
+  
+
+  
+    Orr Paradise, 
+  
+
+  
+    <span style="font-weight: bold">Jessy Lin</span>, 
+  
+
+  
+    Raluca Georgescu, 
+  
+
+  
+    Mingfei Sun, 
+  
+
+  
+    David Bignell, 
+  
+
+  
+    Stephanie Milani, 
+  
+
+  
+    Katja Hofmann, 
+  
+
+  
+    Matthew Hausknecht, 
+  
+
+  
+    Anca Dragan, 
+  
+
+  
+    Sam Devlin
+  
+
 </p>
-  <p class="info">NeurIPS 2022 <span class="special">(oral, top 1.8%)</span></p>
-  <p class="description">We show how a single model trained with a BERT-like masked prediction objective can unify inference in sequential decisionmaking settings (e.g. for RL): behavior cloning, future prediction, and more.</p>
-  <div class="links">
-  
-    <a href="https://arxiv.org/abs/2204.13326">Paper</a>
-  
-    <a href="https://twitter.com/MicahCarroll/status/1520149559699116032">Twitter</a>
-  
+      <p class="info">NeurIPS 2022 <span class="special">(oral, top 1.8%)</span></p>
+      <p class="description">We show how a single model trained with a BERT-like masked prediction objective can unify inference in sequential decisionmaking settings (e.g. for RL): behavior cloning, future prediction, and more.</p>
+      <div class="links">
+      
+        <a href="https://arxiv.org/abs/2204.13326">Paper</a>
+      
+        <a href="https://twitter.com/MicahCarroll/status/1520149559699116032">Twitter</a>
+      
+  </div>
 </div>
 
 </div>
 
-<div class="pub">
-  <h3>Inferring Rewards from Language in Context</h3>
-  <p class="authors"><p>Jessy Lin, Daniel Fried, Dan Klein, Anca Dragan</p>
+<div class="pub layoutRow">
+  <img src="/assets/pubs/inferring.png" />
+  <div>
+      <h3>Inferring Rewards from Language in Context</h3>
+      <p class="authors">
+
+  
+    <span style="font-weight: bold">Jessy Lin</span>, 
+  
+
+  
+    Daniel Fried, 
+  
+
+  
+    Dan Klein, 
+  
+
+  
+    Anca Dragan
+  
+
 </p>
-  <p class="info">ACL 2022 <span class="special"></span></p>
-  <p class="description">We infer human preferences (reward functions) from language.</p>
-  <div class="links">
-  
-    <a href="https://arxiv.org/abs/2204.02515">Paper</a>
-  
-    <a href="https://twitter.com/realJessyLin/status/1516091529193934848">Twitter</a>
-  
-    <a href="https://github.com/jlin816/rewards-from-language">Code</a>
-  
+      <p class="info">ACL 2022 <span class="special"></span></p>
+      <p class="description">We infer human preferences (reward functions) from language.</p>
+      <div class="links">
+      
+        <a href="https://arxiv.org/abs/2204.02515">Paper</a>
+      
+        <a href="https://twitter.com/realJessyLin/status/1516091529193934848">Twitter</a>
+      
+        <a href="https://github.com/jlin816/rewards-from-language">Code</a>
+      
+  </div>
 </div>
 
 </div>
 
-<div class="pub">
-  <h3>Black-box Adversarial Attacks with Limited Queries and Information</h3>
-  <p class="authors"><p>Andrew Ilyas<em>, Logan Engstrom</em>, Anish Athalye<em>, Jessy Lin</em></p>
+<div class="pub layoutRow">
+  <img src="/assets/pubs/blackbox.png" />
+  <div>
+      <h3>Black-box Adversarial Attacks with Limited Queries and Information</h3>
+      <p class="authors">
+
+  
+    Andrew Ilyas*, 
+  
+
+  
+    Logan Engstrom*, 
+  
+
+  
+    Anish Athalye*, 
+  
+
+  
+    <span style="font-weight: bold">Jessy Lin*</span>
+  
+
 </p>
-  <p class="info">ICML 2018 <span class="special"></span></p>
-  <p class="description">We generate adversarial examples for real-world ML systems like the Google Cloud Vision API using only access to predicted labels.</p>
-  <div class="links">
-  
-    <a href="https://arxiv.org/abs/1804.08598">Paper</a>
-  
-    <a href="https://www.labsix.org/limited-information-adversarial-examples/">Blog</a>
-  
-    <a href="https://github.com/labsix/limited-blackbox-attacks">Code</a>
-  
+      <p class="info">ICML 2018 <span class="special"></span></p>
+      <p class="description">We generate adversarial examples for real-world ML systems like the Google Cloud Vision API using only access to predicted labels.</p>
+      <div class="links">
+      
+        <a href="https://arxiv.org/abs/1804.08598">Paper</a>
+      
+        <a href="https://www.labsix.org/limited-information-adversarial-examples/">Blog</a>
+      
+        <a href="https://github.com/labsix/limited-blackbox-attacks">Code</a>
+      
+  </div>
 </div>
 
 </div>

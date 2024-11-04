@@ -1,0 +1,8 @@
+{% assign authors_list = include.authors | split: ", " %}
+{% for author in authors_list %}
+  {% if author contains "Jessy Lin" %}
+    <span style="font-weight: bold">{{ author }}</span>{% if forloop.last == false %}, {% endif %}
+  {% else %}
+    {{ author }}{% if forloop.last == false %}, {% endif %}
+  {% endif %}
+{% endfor %}

@@ -1,5 +1,5 @@
 ---
-title: Posts
+title: Jessy Lin &#8226; Blog
 layout: default
 ---
 
@@ -8,8 +8,8 @@ layout: default
 <ul class="posts">
   {% for post in site.posts %}
   <li>
-    <a class="title" href="{{ post.url }}">{{ post.title }}</a>
-    <span class="date">{{ post.date | date_to_string }}</span>
+    <h3><a class="title" href="{{ post.url }}">{{ post.title }}</a></h3>
+    <span class="date">{{ post.date | date_to_string | replace: " ", "&nbsp;" }}</span>
     <p class="subtitle">{{ post.subtitle }}</p>
   </li>
   {% endfor %}

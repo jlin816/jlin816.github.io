@@ -6,24 +6,17 @@
 <body class="default">
 
 <header>
-  {% if page.show_pic %}
   <img src="/images/jessy.jpg" class="face" width="300" />
-  {% endif %}
   <h1><a href="/">Jessy Lin</a></h1>
   <p class="socials layoutRow">
-    <!-- <a class="email" href="mailto:jessy_lin@berkeley.edu" target="_blank">Email</a> -->
-    <!-- <a class="github" href="https://github.com/jlin816">Github</a> -->
-    <!-- <a class="x" href="https://x.com/realJessyLin">X</a> -->
-    <!-- <a class="linkedin" href="https://linkedin.com/in/jessylin">LinkedIn</a> -->
-    <!-- <a class="scholar" href="https://scholar.google.com/citations?user=jTMUPNkAAAAJ&#38;hl=en">Google Scholar</a> -->
     <a class="email" href="mailto:jessy_lin@berkeley.edu" target="_blank">
       <img src="/assets/icons/email.svg"/></a>
     <a class="github" href="https://github.com/jlin816">
       <img src="/assets/icons/github.svg"/></a>
     <a class="x" href="https://x.com/realJessyLin">
       <img src="/assets/icons/x.svg"/></a>
-    <a class="linkedin" href="https://linkedin.com/in/jessylin">
-      <img src="/assets/icons/linkedin.svg"/></a>
+    <!-- <a class="linkedin" href="https://linkedin.com/in/jessylin"> -->
+    <!--   <img src="/assets/icons/linkedin.svg"/></a> -->
     <a class="scholar" href="https://scholar.google.com/citations?user=jTMUPNkAAAAJ&hl=en">
       <img src="/assets/icons/scholar.svg"/></a>
   </p>
@@ -34,7 +27,7 @@
   </nav>
 </header>
 
-<main>
+<main class={{ page.mainClass }}>
 {{ content }}
 </main>
 
