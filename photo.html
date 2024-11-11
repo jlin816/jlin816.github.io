@@ -1,41 +1,42 @@
 ---
 title: Jessy Lin &#8226; Photography
 layout: default
-mainClass: wide
+class: wide
 ---
+
 <div class="gallery">
-    {% for image in site.static_files %}
-        {% if image.path contains 'images/photography/thumbnails' %}
-        <div class="placeholder" data-large="{{ image.path }}">
-          {% assign img = image.name | split: "--" %}
-          {% assign img_name = img[0] %}
-          {% assign aspect_ratio = img[1] %}
-          <img src="/images/photography/compressed/{{ img_name }}.jpg" class="img-small" />
-          <div style="padding-bottom: calc({{ aspect_ratio }} * 100%);"></div>
-        </div>
-        {% endif %}
-    {% endfor %}
-</div>
+{% for image in site.static_files %}
+    {% if image.path contains 'images/photography/thumbnails' %}
+    <div class="placeholder" data-large="{{ image.path }}">
+      {% assign img = image.name | split: "--" %}
+      {% assign img_name = img[0] %}
+      {% assign aspect_ratio = img[1] %}
+      <img src="/images/photography/compressed/{{ img_name }}.jpg" class="img-small" />
+      <div style="padding-bottom: calc({{ aspect_ratio }} * 100%);"></div>
+    </div>
+    {% endif %}
+{% endfor %}
+<div>
 
 <script>
-  window.onload = function () {
-    var placeholders = document.getElementsByClassName('placeholder');
-    placeholders = Array.prototype.slice.call(placeholders);
-    placeholders.forEach(function (placeholder) {
-      small = placeholder.querySelector('.img-small');
+window.onload = function () {
+  var placeholders = document.getElementsByClassName('placeholder');
+  placeholders = Array.prototype.slice.call(placeholders);
+  placeholders.forEach(function (placeholder) {
+    small = placeholder.querySelector('.img-small');
 
-      var img = new Image();
-      img.src = small.src;
-      img.onload = function () {
-        small.classList.add('loaded');
-      };
+    var img = new Image();
+    img.src = small.src;
+    img.onload = function () {
+      small.classList.add('loaded');
+    };
 
-      var imgLarge = new Image();
-      imgLarge.src = placeholder.dataset.large;
-      imgLarge.onload = function () {
-        imgLarge.classList.add('loaded');
-      };
-      placeholder.appendChild(imgLarge);
-    });
-  }
+    var imgLarge = new Image();
+    imgLarge.src = placeholder.dataset.large;
+    imgLarge.onload = function () {
+      imgLarge.classList.add('loaded');
+    };
+    placeholder.appendChild(imgLarge);
+  });
+}
 </script>

@@ -28,27 +28,46 @@
 </script>
 
 </head>
-<body class="post">
+<body class=" wide">
 
-<header class="layoutRow">
-  <h3><a href="/">Jessy Lin</a></h1>
-  <nav class="layoutRow">
+<aside class="layoutCol">
+  <a href="/">
+    <img src="/images/jessy.jpg" class="face" width="300" />
+    <h1>Jessy Lin</h1>
+  </a>
+  <p class="socials layoutRow">
+    <a class="email" href="mailto:jessy_lin@berkeley.edu" target="_blank"><img src="/assets/icons/email.svg"/></a>
+    <a class="github" href="https://github.com/jlin816"><img src="/assets/icons/github.svg"/></a>
+    <a class="x" href="https://x.com/realJessyLin"><img src="/assets/icons/x.svg"/></a>
+    <!-- <a class="linkedin" href="https://linkedin.com/in/jessylin"> -->
+    <!--   <img src="/assets/icons/linkedin.svg"/></a> -->
+    <a class="scholar" href="https://scholar.google.com/citations?user=jTMUPNkAAAAJ&hl=en"><img src="/assets/icons/scholar.svg"/></a>
+  </p>
+  <nav class="layoutCol">
     <a href="/blog">Blog</a>
     <a href="/photo">Photography</a>
     <a href="/fun">Fun</a>
   </nav>
-</header>
+</aside>
 
-<main>
-<article>
+<div class="content">
 
-<div class="info">
-<h1>Rethinking Human-AI Interaction</h1>
-<div class="subtitle">New directions for human-in-the-loop machine learning</div>
-<span class="date">08 Jun 2020</span>
-</div>
+  <header>
+    <h1><a href="/">Jessy Lin</a></h1>
+    <div class="spacer"></div>
+    <nav class="layoutRow">
+      <a href="/blog">Blog</a>
+      <a href="/photo">Photography</a>
+      <a href="/fun">Fun</a>
+    </nav>
+  </header>
 
-<p>Imagine 1977, sitting at the helm of one of your very first personal computers. The Commodore “Personal Electronic Transactor,” endearingly nicknamed the PET, promised to be an all-in-one “bookkeeper, cook, language tutor, inventory clerk, and playmate.” For the first time, you could type up programs on the tiny “chiclet” keyboard — working out your math homework, saving snippets of recipes, designing simple graphics — and see the results spring up before your eyes. Unlike a washing machine or a calculator, here was a first encounter with a machine that was fundamentally open-ended, dynamic, and responsive in a tangible way.</p>
+  <main>
+  <article>
+  <h1>Rethinking Human-AI Interaction</h1>
+  <p class="subtitle">New directions for human-in-the-loop machine learning</p>
+  <p class="date">08 Jun 2020</p>
+  <p>Imagine 1977, sitting at the helm of one of your very first personal computers. The Commodore “Personal Electronic Transactor,” endearingly nicknamed the PET, promised to be an all-in-one “bookkeeper, cook, language tutor, inventory clerk, and playmate.” For the first time, you could type up programs on the tiny “chiclet” keyboard — working out your math homework, saving snippets of recipes, designing simple graphics — and see the results spring up before your eyes. Unlike a washing machine or a calculator, here was a first encounter with a machine that was fundamentally open-ended, dynamic, and responsive in a tangible way.</p>
 
 <figure class="">
   <img src="/assets/posts/wop-essay/commodore-pet.jpg" alt="Commodore PET" />
@@ -68,9 +87,9 @@
 
 <p>The first computers were powerful, but no more than efficient arithmetic calculators. Early visionaries like J.C.R. Licklider began to see past the short-sightedness of the punch card “batch processing” machine:</p>
 
-<blockquote>
+<div class="blockquote">
 	“...the problems of command and control were essentially problems of man-computer interaction. I thought it was just ridiculous having command-and-control systems based on batch processing. Who can direct a battle when he’s got to write a program in the middle of the battle? … [E]veryone at the Pentagon was still thinking of computers as giant calculators and data processors. For that matter, so was practically everyone at IBM and in the rest of the computer industry.”
-</blockquote>
+</div>
 
 <p>While everyone else was investing in ever-faster batch processing mainframes, Licklider recognized the potential for new paradigms of interaction to enable fundamentally different applications for computers, and fundamentally different roles for them in our lives. Envisioning the possibility of having “a graphics display that allowed you to see the model’s behavior—and then if you could somehow grab the model, move it, change it, and play with it interactively—” Licklider concluded, “then the experience of working with that model would be very exciting indeed.”</p>
 
@@ -142,9 +161,9 @@
 
 <p>ML companies face scaling challenges when they realize the edge cases are thornier than expected. Autonomous trucking company Starsky Robotics recently <a href="https://medium.com/starsky-robotics-blog/the-end-of-starsky-robotics-acb8a6a8a5f5">closed shop</a>, concluding that “supervised machine learning doesn’t live up to the hype”:</p>
 
-<blockquote>
+<div class="blockquote">
 	It’s widely understood that the hardest part of building AI is how it deals with situations that happen uncommonly, i.e. edge cases. In fact, the better your model, the harder it is to find robust data sets of novel edge cases. Additionally, the better your model, the more accurate the data you need to improve it. Rather than seeing exponential improvements in the quality of AI performance (a la Moore’s Law), we’re instead seeing exponential increases in the cost to improve AI systems — supervised ML seems to follow an S-Curve.
-</blockquote>
+</div>
 
 <figure class="medium">
   <img src="/assets/posts/wop-essay/starsky-graph.png" alt="" />
@@ -193,28 +212,28 @@
 
 <p>But as it turns out, using machine translation as your starting point produces markedly different kinds of results. Even if a human post-edits the result, the translations are noticeably more unnatural, more machine-like. Researcher Douglas Hofstadter compares Google Translate (as of 2018) to a fluent German speaker (himself) in “<a href="https://www.theatlantic.com/technology/archive/2018/01/the-shallowness-of-google-translate/551570/">The Shallowness of Google Translate</a>”:</p>
 
-<blockquote>
+<div class="blockquote">
 	Karl Sigmund (original text):
 	<i>Nach dem verlorenen Krieg sahen es viele deutschnationale Professoren, inzwischen die Mehrheit in der Fakultät, gewissermaßen als ihre Pflicht an, die Hochschulen vor den “Ungeraden” zu bewahren; am schutzlosesten waren junge Wissenschaftler vor ihrer Habilitation. Und Wissenschaftlerinnen kamen sowieso nicht in frage; über wenig war man sich einiger.</i>
-</blockquote>
+</div>
 
-<blockquote>
+<div class="blockquote">
 	Hofstadter’s translation:
 	<i>After the defeat, many professors with Pan-Germanistic leanings, who by that time constituted the majority of the faculty, considered it pretty much their duty to protect the institutions of higher learning from “undesirables.” The most likely to be dismissed were young scholars who had not yet earned the right to teach university classes. As for female scholars, well, they had no place in the system at all; nothing was clearer than that.</i>
-</blockquote>
+</div>
 
-<blockquote>
+<div class="blockquote">
 	Google Translate:
 	<i>After the lost war, many German-National professors, meanwhile the majority in the faculty, saw themselves as their duty to keep the universities from the “odd”; Young scientists were most vulnerable before their habilitation. And scientists did not question anyway; There were few of them.</i>
-</blockquote>
+</div>
 
 <p>Imagine yourself post-editing the Google Translate output. The beginning of the sentence starts out reasonably accurate, albeit awkward. The phrase “lost war” kind of works, but it takes some effort to search through the mental thesaurus for something better. But by the end of the passage it has totally missed the focus on the exclusion of female scientists (according to Hofstadter, due to its failure to understand “that the feminizing suffix “-in” was the central focus of attention in the final sentence. Because it didn’t realize that females were being singled out, the engine merely reused the word scientist…”). It needs a total rework, better done from scratch.</p>
 
 <p>Even worse, imagine the translations you wade through for the rest of the document, littered with “German-National” and awkward phrasing structures you fix over and over again. It’s no surprise that translators hate post-editing, a uniquely tedious and vaguely degrading process. As Brown University Professor Robert Beyer recounted of his experience translating scientific papers from Russian to English:</p>
 
-<blockquote>
+<div class="blockquote">
 	I must confess that the results were most unhappy. I found that I spent at least as much time in editing as if I had carried out the entire translation from the start. Even at that, I doubt if the edited translation reads as smoothly as one which I would have started from scratch. (Beyer, 1965)
-</blockquote>
+</div>
 
 <p>Although post-editing might be faster, and perhaps cheaper, the quality of the results still falls short of human translation.</p>
 
@@ -250,9 +269,9 @@
 
 <p>Interactive optimization addresses this very problem — even when the task at hand is a standard algorithmic problem (e.g. scheduling, vehicle routing, resource optimization), there are applications where users might want to steer the algorithm based on their preferences and knowledge of real-world constraints:</p>
 
-<blockquote>
-	Consider, for example, someone producing a monthly work schedule. She must understand the solution to convey it to the affected employees. Moreover, she must understand how to make modifications as new needs arise. Furthermore, she may have experience in evaluating candidate schedules that is difficult to convey to the computer. By participating in the construction of the work schedule, she can steer the computer towards an optimal schedule based on her real world knowledge. — [Klau et al. 2002](https://www.eecs.harvard.edu/~michaelm/postscripts/avi2002.pdf)
-</blockquote>
+<div class="blockquote">
+	Consider, for example, someone producing a monthly work schedule. She must understand the solution to convey it to the affected employees. Moreover, she must understand how to make modifications as new needs arise. Furthermore, she may have experience in evaluating candidate schedules that is difficult to convey to the computer. By participating in the construction of the work schedule, she can steer the computer towards an optimal schedule based on her real world knowledge. (<a href="https://www.eecs.harvard.edu/~michaelm/postscripts/avi2002.pdf">Klau et al. 2002</a>)
+</div>
 
 <p>Interactive optimization algorithms like <a href="https://dl.acm.org/doi/pdf/10.1145/1869086.1869098">human-guided search (HuGS)</a> provide mechanisms for people to provide these “soft” constraints and background knowledge by adding constraints as the search evolves or intervening by manually modifying computer-generated solutions. Not only do humans develop more trust in these systems, they can also produce objectively higher-performing solutions than the computer alone. As the researchers observe, “it took, on average, more than one hour for unguided search to match or beat the result of 10 minutes of guided search.”</p>
 
@@ -269,17 +288,17 @@
 
 <p>In 2005, a amateur team called ZachS, aided by several chess engines running on consumer hardware, defeated grandmaster Vladimir Dobrov using a computer of his own. They were a soccer coach and a database administrator from New Hampshire, with an underwhelming ELO of 1381 and 1685 each (Dobrov’s was 2600+). When asked how the two of them did it, they said:</p>
 
-<blockquote>
+<div class="blockquote">
 	“We knew that this AI system performed better in this environment. We knew that this one was better over here. When the system and the game moved itself into those places, we'd switch between our machines. Sometimes we'd ignore them all, and sometimes we'd play what we thought was best.”
-</blockquote>
+</div>
 
 <p>A superior understanding of when and how to use machine assistance led them to the victory. And again, it wasn’t with a humans-as-backup loop, but with a process constructed to prioritize human judgment in directing the machine.</p>
 
 <p>On reviewing some of the modern failures of AI — systems learning, incorrectly, to use <a href="https://www.nature.com/articles/d41586-019-03847-z">confounding factors in medical diagnosis</a>, for example — we might be reminded of ZachS:</p>
 
-<blockquote>
+<div class="blockquote">
 	[A machine learning algorithm] performed with greater than 90 percent accuracy on x-rays produced at Mount Sinai but was far less accurate with scans from other institutions. [Researchers] eventually figured out that instead of just analyzing the images, the algorithm was also factoring in the odds of a positive finding based on how common pneumonia was at each institution—not something they expected or wanted the program to do.
-</blockquote>
+</div>
 
 <p>ML is just a tool, one whose strengths and weaknesses need to be properly understood by the user. As designers of those systems, we would do best to define usage patterns where humans iteratively refine an output instead of assuming machines will provide “the answer,” and preserve maximum flexibility to direct tools to where they are most helpful.</p>
 
@@ -294,15 +313,15 @@
 
 <p>Physicist and author Ursula Franklin first introduced the idea of “technology as practice” in 1989, pointing out that technology is not a set of gadgets or artifacts, but a system that dictates a particular mindset, organization, and set of procedures. As she notes in <em>The Real World of Technology</em>:</p>
 
-<blockquote>
+<div class="blockquote">
 	One has to keep in mind how much the technology of doing something defines the activity itself, and, by doing so, precludes the emergence of other ways of doing “it,” whatever “it” might be.
-</blockquote>
+</div>
 
 <p>We’ve seen already how modern machine learning has dictated a particular sort of loop. It also encodes a particular formulation of the problem that might not always align with the mental models that humans already have. Says Google research scientist Been Kim:</p>
 
-<blockquote>
+<div class="blockquote">
 	A lot of times in high-stakes applications, domain experts already have a list of concepts that they care about. We see this repeat over and over again in our medical applications at Google Brain. They don’t want to be given a set of concepts — they want to tell the model the concepts that they are interested in.
-</blockquote>
+</div>
 
 <p>Tools that integrate into human workflows need to allow ways for people to specify what they want in more flexible ways. In clinical cases, doctors who use software tools to perform diagnosis may care about different features of a medical image at different points in time, based on their prior knowledge of an individual patient. Content-based image retrieval (CBIR) software that doctors use to look up similar cases from medical databases can get very good at returning “similar” results, especially when powered by ML. But a doctor often already has specific hypotheses they want to explore, as a <a href="https://arxiv.org/pdf/1902.02960.pdf">user study</a> on doctors’ use of CBIR systems discovered: “Maybe you might be interested in the inflammation at one point, but not right now. I would say. no I don’t want you to look at the inflammation, I want you. to look at everything around it.” Just like I might prefer Google results from small blogs one day and large, reputable journals the next, it’s nearly impossible for a global similarity ranking to capture the varied, case-by-case needs of each query.</p>
 
@@ -336,19 +355,20 @@
 
 <p>Instead of having humans mentally translate heuristic judgments into data labels, we can build tools like <a href="http://snorkel.org">Snorkel</a> to do so with methods for <strong>weak supervision</strong>. In this setting, instead of assuming we have a labeled dataset, we start from an unlabeled dataset and combine it with noisier sources of information like heuristic rules. By peering at some unlabeled examples, we can train a classifier for whether a given Youtube comment is spam or “ham” (relevant), using simple insights from looking at a couple of examples:</p>
 
-<p><strong>SPAM</strong>:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Subscribe to me for free Android games, apps.."
-"Please check out my vidios"
-"Subscribe to me and I'll subscribe back!!!"
-</code></pre></div></div>
-
-<p><strong>HAM</strong>:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"3:46 so cute!"
-"This looks so fun and it's a good song"
-"This is a weird video."
-</code></pre></div></div>
+<div class="code">
+<pre><code># Spam
+[
+    "Subscribe to me for free Android games, apps..",
+    "Please check out my vidios",
+    "Subscribe to me and I'll subscribe back!!!",
+]
+# Ham
+[
+    "3:46 so cute!",
+    "This looks so fun and it's a good song",
+    "This is a weird video.",
+]</code></pre>
+</div>
 
 <p>Spam comments tend to advertise for other content, and they tend to say “my channel” or “my video.” From there, the rule-writing is easy: just look for certain keywords. Beyond keywords, perhaps spam comments tend to contain more misspellings, in which case we can program a rule that runs each message through a spell-checker.</p>
 
@@ -366,12 +386,12 @@
 
 <p>Because humans think in terms of heuristic rules, many of the resources and systems that exist today have rules embedded into them. Since 2013, Gmail has used hand-crafted rules to automatically extract structured information, like flight details, from emails. There are several different verticals of interest — bill reminders, shipping confirmations for online purchases, hotel reservations — and each of them requires different fields to be extracted. The email templates are similar within each domain, but not identical enough for there to be a catch-all solution. From <a href="http://cidrdb.org/cidr2020/papers/p31-sheng-cidr20.pdf">a paper</a> describing their legacy system:</p>
 
-<blockquote>
+<div class="blockquote">
 	Several rules were developed by engineers over many years for each field in each vertical using emails donated by internal users for this purpose.
-</blockquote>
-<blockquote>
+</div>
+<div class="blockquote">
 	The rules were scoped to trigger on specific subsets of emails and within certain contexts in an email using regular expressions. For example, consider extracting the order number field from a purchase confirmation. Extraction rules were written using regular expressions to identify key context phrases (such as “order”, “number”, “order no.”, etc.) that need to be present, and regular expressions to match the actual order number.
-</blockquote>
+</div>
 
 <p>In the same paper, the Google team describes how they used Snorkel to migrate this rule-based architecture to a more powerful ML system. Instead of throwing away their existing system and manually labeling a set of examples from scratch, they can use the rules to bootstrap a high-quality, ground-truth training dataset.</p>
 
@@ -507,15 +527,11 @@
 <p>With feedback and open-ended interaction, they’ll demonstrate a richer range of behaviors than machines designed simply to complete the task. They’ll be closer to the vision of “man-machine symbiosis” first articulated by the computer pioneers than we have ever been before.</p>
 
 
-
-<br>
-<hr>
-<br>
-
-<p class="footnote">
-  Thanks to Jeremy Blachman, my editor, as well as Sahaj Garg, Max Langenkamp, and Tim Huang for sharing their thoughts on countless drafts of this essay; Tim Shi for chatting with me about Cresta; David Perell and Suthen Siva for organizing the Write of Passage Fellowship, as well as my fellow writers who offered moral support and thoughtful critique every week — Oshan Jarow, Rhys Lindmark, Packy McCormick, Suthen Siva, Adrienne Tran, and Joe Wells.
-  <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts or comments.
-</p>
+  <hr>
+  <p class="footnote">
+    Thanks to Jeremy Blachman, my editor, as well as Sahaj Garg, Max Langenkamp, and Tim Huang for sharing their thoughts on countless drafts of this essay; Tim Shi for chatting with me about Cresta; David Perell and Suthen Siva for organizing the Write of Passage Fellowship, as well as my fellow writers who offered moral support and thoughtful critique every week — Oshan Jarow, Rhys Lindmark, Packy McCormick, Suthen Siva, Adrienne Tran, and Joe Wells.
+    <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts or comments.
+  </p>
 </article>
 <div class="subscribe">
   <p>Subscribe to get updates when I write new posts:</p>
@@ -531,7 +547,10 @@
   </form>
 </div>
 
-</main>
+
+  </main>
+
+</div>
 
 </body>
 </html>

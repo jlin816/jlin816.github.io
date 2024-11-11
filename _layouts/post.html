@@ -1,41 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-{% include head.html %}
-</head>
-<body class="post">
+---
+layout: default
+class: wide
+---
 
-<header class="layoutRow">
-  <h3><a href="/">Jessy Lin</a></h1>
-  <nav class="layoutRow">
-    <a href="/blog">Blog</a>
-    <a href="/photo">Photography</a>
-    <a href="/fun">Fun</a>
-  </nav>
-</header>
-
-<main>
 <article>
-
-<div class="info">
-<h1>{{ page.title }}</h1>
-<div class="subtitle">{{ page.subtitle }}</div>
-<span class="date">{{ page.date | date_to_string }}</span>
-</div>
-
-{{ content }}
-
-<br>
-<hr>
-<br>
-
-<p class="footnote">
-  {{ page.ack }}
-  <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts or comments.
-</p>
+  <h1>{{ page.title }}</h1>
+  <p class="subtitle">{{ page.subtitle }}</p>
+  <p class="date">{{ page.date | date_to_string }}</p>
+  {{ content }}
+  <hr>
+  <p class="footnote">
+    {{ page.ack }}
+    <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts or comments.
+  </p>
 </article>
 {% include subscribe.html %}
-</main>
-
-</body>
-</html>

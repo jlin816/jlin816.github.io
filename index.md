@@ -1,10 +1,8 @@
 ---
 title: Jessy Lin
 layout: default
-show_pic: true
+class: sidebar
 ---
-
-# Hi!
 
 I’m a fifth-year PhD student at [Berkeley AI Research](https://bair.berkeley.edu/), advised by [Anca Dragan](http://people.eecs.berkeley.edu/~anca/) and [Dan Klein](https://people.eecs.berkeley.edu/~klein/). My research is supported by the [Apple Scholars in AI Fellowship](https://machinelearning.apple.com/updates/apple-scholars-aiml-2023). I'm also a visiting researcher at Meta AI.
 

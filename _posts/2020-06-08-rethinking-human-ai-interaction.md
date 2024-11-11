@@ -25,9 +25,9 @@ caption="ENIAC, the very first computer, required operators to manually program 
 
 The first computers were powerful, but no more than efficient arithmetic calculators. Early visionaries like J.C.R. Licklider began to see past the short-sightedness of the punch card “batch processing” machine:
 
-<blockquote>
+<div class="blockquote">
 	“...the problems of command and control were essentially problems of man-computer interaction. I thought it was just ridiculous having command-and-control systems based on batch processing. Who can direct a battle when he’s got to write a program in the middle of the battle? … [E]veryone at the Pentagon was still thinking of computers as giant calculators and data processors. For that matter, so was practically everyone at IBM and in the rest of the computer industry.”
-</blockquote>
+</div>
 
 While everyone else was investing in ever-faster batch processing mainframes, Licklider recognized the potential for new paradigms of interaction to enable fundamentally different applications for computers, and fundamentally different roles for them in our lives. Envisioning the possibility of having “a graphics display that allowed you to see the model’s behavior—and then if you could somehow grab the model, move it, change it, and play with it interactively—” Licklider concluded, “then the experience of working with that model would be very exciting indeed.”
 
@@ -78,9 +78,9 @@ But it doesn’t work quite as efficiently in practice.
 
 ML companies face scaling challenges when they realize the edge cases are thornier than expected. Autonomous trucking company Starsky Robotics recently [closed shop](https://medium.com/starsky-robotics-blog/the-end-of-starsky-robotics-acb8a6a8a5f5), concluding that “supervised machine learning doesn’t live up to the hype”:
 
-<blockquote>
+<div class="blockquote">
 	It’s widely understood that the hardest part of building AI is how it deals with situations that happen uncommonly, i.e. edge cases. In fact, the better your model, the harder it is to find robust data sets of novel edge cases. Additionally, the better your model, the more accurate the data you need to improve it. Rather than seeing exponential improvements in the quality of AI performance (a la Moore’s Law), we’re instead seeing exponential increases in the cost to improve AI systems — supervised ML seems to follow an S-Curve.
-</blockquote>
+</div>
 
 {% include figure.html class="medium"
 url="/assets/posts/wop-essay/starsky-graph.png" %}
@@ -121,28 +121,28 @@ There’s an obvious way to integrate human oversight into MT systems—namely, 
 
 But as it turns out, using machine translation as your starting point produces markedly different kinds of results. Even if a human post-edits the result, the translations are noticeably more unnatural, more machine-like. Researcher Douglas Hofstadter compares Google Translate (as of 2018) to a fluent German speaker (himself) in “[The Shallowness of Google Translate](https://www.theatlantic.com/technology/archive/2018/01/the-shallowness-of-google-translate/551570/)”:
 
-<blockquote>
+<div class="blockquote">
 	Karl Sigmund (original text):
 	<i>Nach dem verlorenen Krieg sahen es viele deutschnationale Professoren, inzwischen die Mehrheit in der Fakultät, gewissermaßen als ihre Pflicht an, die Hochschulen vor den “Ungeraden” zu bewahren; am schutzlosesten waren junge Wissenschaftler vor ihrer Habilitation. Und Wissenschaftlerinnen kamen sowieso nicht in frage; über wenig war man sich einiger.</i>
-</blockquote>
+</div>
 
-<blockquote>
+<div class="blockquote">
 	Hofstadter’s translation:
 	<i>After the defeat, many professors with Pan-Germanistic leanings, who by that time constituted the majority of the faculty, considered it pretty much their duty to protect the institutions of higher learning from “undesirables.” The most likely to be dismissed were young scholars who had not yet earned the right to teach university classes. As for female scholars, well, they had no place in the system at all; nothing was clearer than that.</i>
-</blockquote>
+</div>
 
-<blockquote>
+<div class="blockquote">
 	Google Translate:
 	<i>After the lost war, many German-National professors, meanwhile the majority in the faculty, saw themselves as their duty to keep the universities from the “odd”; Young scientists were most vulnerable before their habilitation. And scientists did not question anyway; There were few of them.</i>
-</blockquote>
+</div>
 
 Imagine yourself post-editing the Google Translate output. The beginning of the sentence starts out reasonably accurate, albeit awkward. The phrase “lost war” kind of works, but it takes some effort to search through the mental thesaurus for something better. But by the end of the passage it has totally missed the focus on the exclusion of female scientists (according to Hofstadter, due to its failure to understand "that the feminizing suffix “-in” was the central focus of attention in the final sentence. Because it didn’t realize that females were being singled out, the engine merely reused the word scientist…”). It needs a total rework, better done from scratch.
 
 Even worse, imagine the translations you wade through for the rest of the document, littered with “German-National” and awkward phrasing structures you fix over and over again. It’s no surprise that translators hate post-editing, a uniquely tedious and vaguely degrading process. As Brown University Professor Robert Beyer recounted of his experience translating scientific papers from Russian to English:
 
-<blockquote>
+<div class="blockquote">
 	I must confess that the results were most unhappy. I found that I spent at least as much time in editing as if I had carried out the entire translation from the start. Even at that, I doubt if the edited translation reads as smoothly as one which I would have started from scratch. (Beyer, 1965)
-</blockquote>
+</div>
 
 
 Although post-editing might be faster, and perhaps cheaper, the quality of the results still falls short of human translation.
@@ -174,9 +174,9 @@ But even as machine learning achieves “superhuman accuracy” on task after ta
 
 Interactive optimization addresses this very problem — even when the task at hand is a standard algorithmic problem (e.g. scheduling, vehicle routing, resource optimization), there are applications where users might want to steer the algorithm based on their preferences and knowledge of real-world constraints:
 
-<blockquote>
-	Consider, for example, someone producing a monthly work schedule. She must understand the solution to convey it to the affected employees. Moreover, she must understand how to make modifications as new needs arise. Furthermore, she may have experience in evaluating candidate schedules that is difficult to convey to the computer. By participating in the construction of the work schedule, she can steer the computer towards an optimal schedule based on her real world knowledge. — [Klau et al. 2002](https://www.eecs.harvard.edu/~michaelm/postscripts/avi2002.pdf)
-</blockquote>
+<div class="blockquote">
+	Consider, for example, someone producing a monthly work schedule. She must understand the solution to convey it to the affected employees. Moreover, she must understand how to make modifications as new needs arise. Furthermore, she may have experience in evaluating candidate schedules that is difficult to convey to the computer. By participating in the construction of the work schedule, she can steer the computer towards an optimal schedule based on her real world knowledge. (<a href="https://www.eecs.harvard.edu/~michaelm/postscripts/avi2002.pdf">Klau et al. 2002</a>)
+</div>
 
 Interactive optimization algorithms like [human-guided search (HuGS)](https://dl.acm.org/doi/pdf/10.1145/1869086.1869098) provide mechanisms for people to provide these “soft” constraints and background knowledge by adding constraints as the search evolves or intervening by manually modifying computer-generated solutions. Not only do humans develop more trust in these systems, they can also produce objectively higher-performing solutions than the computer alone. As the researchers observe, “it took, on average, more than one hour for unguided search to match or beat the result of 10 minutes of guided search.”
 
@@ -190,17 +190,17 @@ caption="Chess pros Vladimir Kramnik and Vishy Anand face off with the help of c
 
 In 2005, a amateur team called ZachS, aided by several chess engines running on consumer hardware, defeated grandmaster Vladimir Dobrov using a computer of his own. They were a soccer coach and a database administrator from New Hampshire, with an underwhelming ELO of 1381 and 1685 each (Dobrov’s was 2600+). When asked how the two of them did it, they said:
 
-<blockquote>
+<div class="blockquote">
 	“We knew that this AI system performed better in this environment. We knew that this one was better over here. When the system and the game moved itself into those places, we'd switch between our machines. Sometimes we'd ignore them all, and sometimes we'd play what we thought was best.”
-</blockquote>
+</div>
 
 A superior understanding of when and how to use machine assistance led them to the victory. And again, it wasn’t with a humans-as-backup loop, but with a process constructed to prioritize human judgment in directing the machine.
 
 On reviewing some of the modern failures of AI — systems learning, incorrectly, to use [confounding factors in medical diagnosis](https://www.nature.com/articles/d41586-019-03847-z), for example — we might be reminded of ZachS:
 
-<blockquote>
+<div class="blockquote">
 	[A machine learning algorithm] performed with greater than 90 percent accuracy on x-rays produced at Mount Sinai but was far less accurate with scans from other institutions. [Researchers] eventually figured out that instead of just analyzing the images, the algorithm was also factoring in the odds of a positive finding based on how common pneumonia was at each institution—not something they expected or wanted the program to do.
-</blockquote>
+</div>
 
 ML is just a tool, one whose strengths and weaknesses need to be properly understood by the user. As designers of those systems, we would do best to define usage patterns where humans iteratively refine an output instead of assuming machines will provide “the answer,” and preserve maximum flexibility to direct tools to where they are most helpful.
 
@@ -213,15 +213,15 @@ url="/assets/posts/wop-essay/change-the-inputs.png" %}
 
 Physicist and author Ursula Franklin first introduced the idea of “technology as practice” in 1989, pointing out that technology is not a set of gadgets or artifacts, but a system that dictates a particular mindset, organization, and set of procedures. As she notes in _The Real World of Technology_:
 
-<blockquote>
+<div class="blockquote">
 	One has to keep in mind how much the technology of doing something defines the activity itself, and, by doing so, precludes the emergence of other ways of doing “it,” whatever “it” might be.
-</blockquote>
+</div>
 
 We’ve seen already how modern machine learning has dictated a particular sort of loop. It also encodes a particular formulation of the problem that might not always align with the mental models that humans already have. Says Google research scientist Been Kim:
 
-<blockquote>
+<div class="blockquote">
 	A lot of times in high-stakes applications, domain experts already have a list of concepts that they care about. We see this repeat over and over again in our medical applications at Google Brain. They don’t want to be given a set of concepts — they want to tell the model the concepts that they are interested in.
-</blockquote>
+</div>
 
 Tools that integrate into human workflows need to allow ways for people to specify what they want in more flexible ways. In clinical cases, doctors who use software tools to perform diagnosis may care about different features of a medical image at different points in time, based on their prior knowledge of an individual patient. Content-based image retrieval (CBIR) software that doctors use to look up similar cases from medical databases can get very good at returning “similar” results, especially when powered by ML. But a doctor often already has specific hypotheses they want to explore, as a [user study](https://arxiv.org/pdf/1902.02960.pdf) on doctors’ use of CBIR systems discovered: “Maybe you might be interested in the inflammation at one point, but not right now. I would say. no I don't want you to look at the inflammation, I want you. to look at everything around it." Just like I might prefer Google results from small blogs one day and large, reputable journals the next, it’s nearly impossible for a global similarity ranking to capture the varied, case-by-case needs of each query.
 
@@ -251,17 +251,20 @@ A human mind labeling these chat messages chugs through an analysis pipeline of 
 
 Instead of having humans mentally translate heuristic judgments into data labels, we can build tools like [Snorkel](http://snorkel.org) to do so with methods for **weak supervision**. In this setting, instead of assuming we have a labeled dataset, we start from an unlabeled dataset and combine it with noisier sources of information like heuristic rules. By peering at some unlabeled examples, we can train a classifier for whether a given Youtube comment is spam or “ham” (relevant), using simple insights from looking at a couple of examples:
 
-**SPAM**:
-
-    "Subscribe to me for free Android games, apps.."
-    "Please check out my vidios"
-    "Subscribe to me and I'll subscribe back!!!"
-
-**HAM**:
-
-    "3:46 so cute!"
-    "This looks so fun and it's a good song"
-    "This is a weird video."
+<div class="code">
+<pre><code># Spam
+[
+    "Subscribe to me for free Android games, apps..",
+    "Please check out my vidios",
+    "Subscribe to me and I'll subscribe back!!!",
+]
+# Ham
+[
+    "3:46 so cute!",
+    "This looks so fun and it's a good song",
+    "This is a weird video.",
+]</code></pre>
+</div>
 
 Spam comments tend to advertise for other content, and they tend to say “my channel” or “my video.” From there, the rule-writing is easy: just look for certain keywords. Beyond keywords, perhaps spam comments tend to contain more misspellings, in which case we can program a rule that runs each message through a spell-checker.
 
@@ -275,12 +278,12 @@ url="/assets/posts/wop-essay/american-airlines.png" %}
 
 Because humans think in terms of heuristic rules, many of the resources and systems that exist today have rules embedded into them. Since 2013, Gmail has used hand-crafted rules to automatically extract structured information, like flight details, from emails. There are several different verticals of interest — bill reminders, shipping confirmations for online purchases, hotel reservations — and each of them requires different fields to be extracted. The email templates are similar within each domain, but not identical enough for there to be a catch-all solution. From [a paper](http://cidrdb.org/cidr2020/papers/p31-sheng-cidr20.pdf) describing their legacy system:
 
-<blockquote>
+<div class="blockquote">
 	Several rules were developed by engineers over many years for each field in each vertical using emails donated by internal users for this purpose.
-</blockquote>
-<blockquote>
+</div>
+<div class="blockquote">
 	The rules were scoped to trigger on specific subsets of emails and within certain contexts in an email using regular expressions. For example, consider extracting the order number field from a purchase confirmation. Extraction rules were written using regular expressions to identify key context phrases (such as “order”, “number”, “order no.”, etc.) that need to be present, and regular expressions to match the actual order number.
-</blockquote>
+</div>
 
 In the same paper, the Google team describes how they used Snorkel to migrate this rule-based architecture to a more powerful ML system. Instead of throwing away their existing system and manually labeling a set of examples from scratch, they can use the rules to bootstrap a high-quality, ground-truth training dataset.
 
@@ -338,7 +341,7 @@ RL can also be applied at the policymaker level, to learn the “optimal” tax 
 {% include figure.html class="medium"
 url="/assets/posts/wop-essay/ai-economist2.png" %}
 {% include figure.html class="medium"
-url="/assets/posts/wop-essay/ai-economist3.png" 
+url="/assets/posts/wop-essay/ai-economist3.png"
 caption="The “camelback” tax schedule learned by an AI-driven policy in simulation, compared to the US federal tax schedule and the tax framework proposed by Emmanuel Saez." %}
 
 To be sure, the tax schedule is not intended to “solve” the tax policy design problem. The simulation is still a relatively simple model of the economy, with many social, political, and economic factors that are not captured at all. But the idea of simulation is to allow policymakers to study the effects of policy and incentive design at a different level of complexity and realism that we do not see in traditional economic research.

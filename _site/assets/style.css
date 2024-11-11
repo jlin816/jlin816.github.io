@@ -30,7 +30,24 @@ html, body {
 
 body {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 36rem;
+  margin: 1rem;
+}
+
+body.wide .content {
+  width: 45rem;
+}
+
+img, video { max-width: 100%;  height: auto; object-fit: contain; }
+
+img { border-radius: .2rem; }
 
 /******************************************************************************
  * Layout
@@ -38,56 +55,52 @@ body {
 
 .layoutRow { display: flex; flex-direction: row; overflow: hidden; }
 .layoutCol { display: flex; flex-direction: column; overflow: hidden; }
+.spacer { flex: 1; }
 
-/* header { background: red; } */
-/* main { background: blue; } */
+aside {
+  width: 10rem;
+  margin: 2rem;
+}
 
-main { width: 34rem; line-height: 1.4rem; }
-main.wide { width: 50rem; }
-
-.default { flex-direction: row; justify-content: center; }
-.default header { width: 11rem; margin: 5rem 1rem 0 2rem; }
-.default main { margin: 5rem 2rem 2rem; }
-.default main > h1:first-child { margin-top: -.3rem; }  /* align with side bar */
-
-.post { flex-direction: column; align-items: center; }
-.post header {
-  width: 45rem;
+header {
+  display: flex;
+  margin: 2rem 0 0;
   align-items: center;
-  justify-content: space-between;
-  margin: 3rem 0 0 0;
+  gap: 1rem;
 }
-.post header h3 {
-  background-color: var(--primary);
+
+main {
+  margin: 2rem 0;
+}
+
+aside { display: none !important; }
+aside nav { display: flex; flex-direction: column; gap: .5rem; padding: 1.5rem;}
+body.sidebar aside { display: flex !important; margin-top: 4.5rem; }
+body.sidebar header { display: none !important; }
+body.sidebar main { margin-top: 3rem; }
+
+/******************************************************************************
+ * Design - aka general styling (tm)
+ *****************************************************************************/
+
+aside h1 { margin: 1rem; font-size: 1.5rem; color: #000; text-align: center; }
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
   border-radius: .2rem;
-  padding: 1px 8px;
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
 }
-.post header h3 a {
-  color: #fff;
-}
-.post header nav { width: 30%; gap: 1.5rem; margin-top: 0; }
-.post header nav a { margin-bottom: 0; font-weight: 500; }
-.post main { width: 45rem; line-height: 1.7; margin-bottom: 5rem; }
-.post article p { margin: 1.1rem 0; }
+header h1 a { color: #000; }
+header nav { display: flex; gap: 1rem; }
 
-.post .info { margin: 5rem 0 3rem 0; }
-.post .subtitle { color: #999; font-size: 1rem; font-weight: 500; }
-.post .date { color: #999; font-size: .9rem; font-weight: 500; }
-.post .footnote { color: #999; font-size: .9rem; font-weight: 400; }
-
-hr {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
-}
-
-img, video { max-width: 100%; }
 
 /******************************************************************************
  * Text
  *****************************************************************************/
 
-main p { margin: .5rem 0; }
+main p { line-height: 1.4; }
 
 h1, h2, h3 { font-family: "Libre Franklin"; font-weight: 700; margin: 1.3em 0 .5em; }
 h1:first-child, h2:first-child, h3:first-child { margin-top: 0; }
@@ -100,100 +113,9 @@ a:hover { text-decoration: underline; }
 /* a:hover { opacity: 0.6; } */
 
 main figure { margin: 1rem 0; text-align: center; }
-main figure img { width: 100%; border-radius: .2rem; }
 main figure figcaption { color: #666; font-size: .9rem; }
 main figure.small img { width: 50%; }
 main figure.medium img { width: 75%; }
-
-/******************************************************************************
- * Header
- *****************************************************************************/
-
-.face { border-radius: 0.2rem; }
-/* .face { box-shadow: 1rem 1rem 0 #ffe23b; margin-bottom: 1rem; } */
-
-header h1 { margin: .9rem 0 1.1rem; text-align: center; }
-header h1 a { color: #000; font-weight: 700 }
-header h1 a:hover, header h1 a:active, header h1 a:visited { color: #000; text-decoration: none; }
-header nav { margin: 1.5rem 1.1rem 0; text-align: left; }
-header nav a { margin-bottom: .8rem; font-weight: 500; }
-
-.socials {
-  gap: .8rem;
-  justify-content: center;
-}
-.mobile-socials { display: none; }
-
-/* .socials a { */
-/*   display: inline-block; */
-/*   width: 1rem; */
-/*   height: 1rem; */
-/*   background-size: contain; */
-/*   background-repeat: no-repeat; */
-/*   font-size: 0; */
-/* } */
-
-/* .socials .email { background-image: url('/assets/icons/email.svg'); } */
-/* .socials .github { background-image: url('/assets/icons/github.svg'); } */
-/* .socials .x { background-image: url('/assets/icons/x.svg'); } */
-/* .socials .linkedin { background-image: url('/assets/icons/linkedin.svg'); } */
-/* .socials .scholar { background-image: url('/assets/icons/scholar.svg'); } */
-
-.socials img {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-}
-
-/******************************************************************************
- * Content
- *****************************************************************************/
-
-/* Pubs */
-.pub > img {
-  width: 7rem; height: 7rem;
-  border-radius: .2rem; background: #eee;
-  border: 1px solid #ccc;
-  margin: .25rem 1rem 0 0;
-}
-
-.pub { margin: 1.3rem 0; }
-.pub h3 { margin: 0; }
-.pub p { margin: .3rem 0; }
-/* .pub .authors { color: #999; } */
-.pub .info { color: #777; }
-.pub .special { padding-left: .3rem; color: var(--primary); font-weight: bold; }
-.pub .description { display: none; }
-.pub .links { margin-top: .6rem; }
-.pub .links a, .pub .links a:visited {
-  display: inline-block;
-  margin: 0 .6rem .5rem 0;
-  padding: .25rem .5rem;
-  font-size: .85rem;
-  background: #eee;
-  color: #666;
-  font-weight: 500;
-  border-radius: .2rem;
-  transition: background .1s, color .1s;
-}
-.pub .links a:hover {
-  background: var(--primary);
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Posts */
-
-.subscribe {
-  margin: 2rem 0;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  background: #eee;
-  border-radius: .2rem;
-}
-
-.subscribe p { margin-top: 0; }
-.subscribe form { display: flex; gap: .5rem; }
 
 input[type=text], input[type=email] {
   font-size: .9rem;
@@ -215,10 +137,117 @@ input[type=submit] {
   cursor: pointer;
 }
 
+main p { margin: .5rem 0; }
+
+hr {
+  margin: 2rem 0;
+  height: 1px;
+  border: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0));
+}
+
+/******************************************************************************
+ * Sidebar
+ *****************************************************************************/
+
+/* .post header { width: 45rem; align-items: center; justify-content: space-between; margin: 3rem 0 0 0; } */
+/*  */
+/* .post header nav { width: 30%; gap: 1.5rem; margin-top: 0; } */
+/* .post header nav a { margin-bottom: 0; font-weight: 500; } */
+/* .post main { width: 45rem; line-height: 1.7; margin-bottom: 5rem; } */
+/* article { width: 34rem; } */
+
+
+/* header h3 { background-color: var(--primary); border-radius: .2rem; padding: 1px 8px; } */
+/* header h3 a { color: #fff; } */
+
+/* header h1 { margin: .9rem 0 1.1rem; text-align: center; } */
+
+/* header h1 a { color: #000; font-weight: 700 } */
+/* header h1 a:hover, header h1 a:active, header h1 a:visited { color: #000; text-decoration: none; } */
+
+.socials {
+  gap: .8rem;
+  justify-content: center;
+}
+.mobile-socials { display: none; }
+
+.socials img {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+/******************************************************************************
+ * Publications
+ *****************************************************************************/
+
+/* Pubs */
+.pub > img {
+  width: 7rem; height: 7rem;
+  border: 1px solid #ccc;
+  margin: .25rem 1rem 0 0;
+}
+
+.pub { margin: 1.3rem 0; }
+.pub h3 { margin: 0; }
+.pub p { margin: .3rem 0; }
+/* .pub .authors { color: #999; } */
+.pub .info { color: #777; }
+.pub .special { padding-left: .3rem; color: var(--primary); font-weight: bold; }
+.pub .description { display: none; }
+.pub .links { margin-top: .6rem; }
+.pub .links a, .pub .links a:visited {
+  display: inline-block;
+  margin: 0 .6rem .5rem 0;
+  padding: .25rem .5rem;
+  font-size: .85rem;
+  background: #e5e5e5;
+  color: #666;
+  font-weight: 500;
+  border-radius: .2rem;
+  transition: background .1s, color .1s;
+}
+.pub .links a:hover {
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+/******************************************************************************
+ * Posts
+ *****************************************************************************/
+
+.subscribe {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  background: #eee;
+  border-radius: .2rem;
+}
+
+.subscribe p { margin-top: 0; }
+.subscribe form { display: flex; gap: .5rem; }
+
 .posts { padding: 0; list-style: none; }
 .posts li { margin: 1rem 0; }
 .posts h3 { margin: .5rem 0 0; display: inline-block; margin-right: .8rem; }
 .posts .date { color: #999; font-size: .9rem; font-weight: 500; }
+
+article {
+  line-height: 1.7;
+}
+article p {
+  line-height: 1.7;
+  margin: 1.1rem 0;
+}
+
+article h1:first-child { margin-top: 5rem; }
+article .subtitle, article .date, article .footnote {
+  color: #999;
+  font-size: .9rem;
+  font-weight: 500;
+}
+article .subtitle, article .date { margin: 0.2rem 0; }
 
 article .summary-box {
   margin: 2rem 0;
@@ -232,24 +261,34 @@ article .summary-heading {
   font-weight: 700;
 }
 
-blockquote { 
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 40px;
-  margin-inline-end: 40px;
-  unicode-bidi: isolate;
+article .blockquote {
+  margin: 0 1.5rem;
 }
 
-blockquote br {
 
+article div.code {
+  background-color: #f8f8f8;
+  border-radius: .2rem;
+  padding: 0.5rem 0.7rem;
+  line-height: 0.5rem;
+}
+article pre, article code {
+  line-height: 0.5rem;
+  font-size: 0.7rem;
+  overflow: auto;
+	white-space: pre-wrap;
+  word-break: normal;
+	max-width: 100%;
+  line-height: 1.5rem;
 }
 
-/* Photography */
+/******************************************************************************
+ * Gallery
+ *****************************************************************************/
+
 .gallery {
   column-count: 2;
   column-gap: 10px;
-  line-height: 2;
 }
 
 .gallery img { width: 100%; }
@@ -286,11 +325,10 @@ blockquote br {
 }
 
 .gallery .img-small {
-  filter: blur(50px);
+  filter: blur(10%);
   /* this is needed so Safari keeps sharp edges */
   transform: scale(1);
 }
-
 
 /* Fun */
 .projects { padding: 0; list-style: none; }
@@ -299,70 +337,15 @@ blockquote br {
 /******************************************************************************
  * Mobile
  *****************************************************************************/
-@media (max-width: 768px) {
-  /* Adjust font sizes for smaller screens */
-  html, body {
-    font-size: 16px;
-    overflow-x: hidden;
-  }
-  body {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  main {
-    margin: 1rem 0;
-    width: 100%;
-    line-height: 1.5rem;
-  }
-  /* Adjust figure image widths */
-  main figure img { width: 100%;   }
 
-  /* Default layout adjustments */
-  /* Horizontal navigation bar on smaller screens */
-  .face {
-    width: 20%;
-  }
-  .default {
-    flex-direction: column;
-    align-items: center;
-  }
+@media (max-width: 45rem) {
+  /* Show top nav instead of sidebar */
+  body.sidebar aside { display: none !important; }
+  body.sidebar header { display: flex !important; }
+  /* Show socials inline */
   .socials { display: none; }
   .mobile-socials { display: flex; gap: 1rem; }
-  .default header {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    margin: 2rem 0 0 0;
-  }
-  .default header nav { width: 30%; justify-content: space-around; margin-top: 0; }  
-
-  /* Post layout adjustments */
-  .post {
-    width: 100%;
-    padding: 0 1.5rem;
-  }
-  .post header, .post main { width: 100%; }*/
-
-  /* Gallery adjustments for mobile */
-  main.wide { width: 100%; }
+  main article { width: 100%; }
   .gallery { column-count: 1; column-gap: 0; padding: 0; }
 
-  /* Post and project lists padding adjustments */
-  .posts, .projects {
-    padding: 0;
-    margin: 0;
-  }
-
-  /* Subscribe form adjustment */
-  .subscribe form {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  /* Adjust input fields and button for mobile */
-  input[type="text"], input[type="email"], input[type="submit"] {
-    width: 100%;
-  }
 }
-
