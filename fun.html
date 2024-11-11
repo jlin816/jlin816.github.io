@@ -3,12 +3,12 @@ title: Jessy Lin &#8226; Fun
 layout: default
 ---
 
-<h1>Projects</h1>
+<h1>Reads</h1>
 
-<p>Some things I've made:</p>
+<p>I keep track of everything I've read on <a href="https://www.goodreads.com/user/show/1576868-jessy">Goodreads</a>. Here are some of my all-time favorites:</p>
 
-<ul class="projects">
-  {% for project in site.data.projects %}
+<ul>
+  {% for project in site.data.books %}
   {% assign project = project_hash[1] %}
     <li class="project">
       <a class="project-title" href={{ project.link }}>
@@ -18,13 +18,12 @@ layout: default
     </li>
   {% endfor %}
 </ul>
+<h1>Projects</h1>
 
-<h1>Reads</h1>
+<p>Some things I've made:</p>
 
-<p>I've kept track of everything I've read since 2008 on <a href="https://www.goodreads.com/user/show/1576868-jessy">Goodreads</a>. Here are some of my all-time favorites:</p>
-
-<ul>
-  {% for project in site.data.books %}
+<ul class="projects">
+  {% for project in site.data.projects %}
   {% assign project = project_hash[1] %}
     <li class="project">
       <a class="project-title" href={{ project.link }}>
