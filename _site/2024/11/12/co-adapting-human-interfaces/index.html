@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Co-Adapting Human Interfaces and LMs</title>
+<link rel="shortcut icon" href="/favicon.ico" />
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
+<!-- <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css?family=Rubik:500|Lora|Average|Neuton" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:700&display=swap" rel="stylesheet">
+
+<!--<meta name="author" content="Jessy Lin" />-->
+<!--<meta name="description" content="" />-->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122603722-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-122603722-1');
+</script>
+
+</head>
+<body class=" wide">
+
+<aside class="layoutCol">
+  <a href="/">
+    <img src="/images/jessy.jpg" class="face" width="300" />
+    <h1>Jessy Lin</h1>
+  </a>
+  <p class="socials layoutRow">
+    <a class="email" href="mailto:jessy_lin@berkeley.edu" target="_blank"><img src="/assets/icons/email.svg"/></a>
+    <a class="github" href="https://github.com/jlin816"><img src="/assets/icons/github.svg"/></a>
+    <a class="x" href="https://x.com/realJessyLin"><img src="/assets/icons/x.svg"/></a>
+    <!-- <a class="linkedin" href="https://linkedin.com/in/jessylin"> -->
+    <!--   <img src="/assets/icons/linkedin.svg"/></a> -->
+    <a class="scholar" href="https://scholar.google.com/citations?user=jTMUPNkAAAAJ&hl=en"><img src="/assets/icons/scholar.svg"/></a>
+  </p>
+  <nav class="layoutCol">
+    <a href="/blog">Blog</a>
+    <a href="/photo">Photography</a>
+    <a href="/fun">Fun</a>
+  </nav>
+</aside>
+
+<div class="content">
+
+  <header>
+    <h1><a href="/">Jessy Lin</a></h1>
+    <div class="spacer"></div>
+    <nav class="layoutRow">
+      <a href="/blog">Blog</a>
+      <a href="/photo">Photography</a>
+      <a href="/fun">Fun</a>
+    </nav>
+  </header>
+
+  <main>
+  <article>
+  <h1>Co-Adapting Human Interfaces and LMs</h1>
+  <p class="subtitle">When the world adapts to LMs, the boundary between agent and environment start to blur</p>
+  <p class="date">12 Nov 2024</p>
+  <p>With the explosion of computer use agents like Claude Computer Use and search wars between Perplexity, SearchGPT, and Gemini — it seems inevitable that AI will change the way we access information. So far, we’ve been obsessed with building agents that are better at understanding the world. But at this point, it’s important to realize that the world adapts itself to LMs, too. Codebases, websites, and documents were made for humans, but they start to look different once LMs become “users,” too.</p>
+
+<p>In this post I’ll explore some emerging signs of what this future might look like – how is the world adapting already, and what might the Internet like at the end of it all? As a researcher or developer, this poses some interesting questions. If we realize that the digital world is fundamentally malleable, the line between “agent” and “environment” starts to blur. Instead of building better <em>models</em>, what end-to-end <em>systems</em> should we be building instead?</p>
+
+<h1 id="how-it-begins">How it begins</h1>
+
+<p>When I code side-by-side with GitHub Copilot, I often notice how my behavior changes in subtle ways to adapt to the tool. Code autocomplete naturally lends itself to “docstring-first programming” — you’re much more likely to get a helpful code snippet if the model has some description of what you’re trying to accomplish first. So naturally, you might type in a comment or a descriptive name first, and then pause to see if you get the right snippet back:</p>
+
+<figure class="medium">
+  <img src="/assets/posts/co-adapting-interfaces/copilot.png" alt="Github Copilot completing a piece of code." />
+  
+</figure>
+
+<p>Put simply, to make Copilot work better, you can make the code look a certain way. The end result is that the codebase ends up looking more chunk-by-chunk commented than it otherwise would. Code written for human comprehensibility looks different from the one that emerges from programmers micro-optimizing for LMs. The environment adapts to the tool.</p>
+
+<p>More interestingly, this adaptation is happening beyond the code we write. As a library / framework / tool developer in 2024, you can bet that a good portion of your human users will be interacting with your framework via their coding assistant. Being “dev-friendly,” i.e. building for the workflow that users have, means building for their LMs. FastHTML from Jeremy Howard, for example, includes <a href="https://llmstxt.org/">llm-ctx</a> files — docs intended for LM rather than human consumption. It’s the inklings of a new, parallel world built for LMs.</p>
+
+<figure class="">
+  <img src="/assets/posts/co-adapting-interfaces/fasthtml.png" alt="" />
+  
+  <figcaption>FastHTML <a href="https://docs.fastht.ml/">docs for humans</a> vs. <a href="https://docs.fastht.ml/llms-ctx.txt">llm-ctx.txt for LMs</a>. Content for humans is rich — visually organized, hyperlinked, and often interactive — whereas context for LMs focuses on information-dense text.</figcaption>
+  
+</figure>
+
+<h1 id="agent-computer-interfaces">Agent-computer interfaces</h1>
+
+<p>The same principle appears across many applications — to make LM agents work better, give it the right context in a format it can understand.
+We want LMs to operate on websites, GUIs, documents, spreadsheets, and more. Already, for each of those environments, a hidden part of modeling is actually adapting the <em>environment</em>, massaging the input so that it’s more comprehensible to the LM.</p>
+
+<p>SWE-agent first made this case explicitly: by building an “agent-computer interface,” a layer on top of the file viewer, editor, terminal, etc. for a computer-using agent, you can get huge performance boosts. Short of end-to-end pixel-based control, these design decisions are in every agent: for instance, even for multimodal agents, it helps to augment the UI with <a href="https://jykoh.com/vwa">high-level interactable entities and actions</a> so that web agents can just output “click element [36] [A] outdoor table lamp” (instead of <code class="language-plaintext highlighter-rouge">&lt;a class='_quad-multi-linkContainer'...&gt;</code>).</p>
+
+<figure class="">
+  <img src="/assets/posts/co-adapting-interfaces/aci.png" alt="" />
+  
+  <figcaption>Examples of agent-computer interfaces. (left) SWE-agent editor + linter. (right) SoM from VisualWebArena.</figcaption>
+  
+</figure>
+
+<p>The reason why we have to do this is because UIs are designed for <em>human</em> users. We create webpages with design principles like visual hierarchy or “<a href="https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content-discovered/">F-shaped pattern reading</a>” because we discovered humans have shared biases in how they process visual content. LMs have no such priors, so we just end up baking the same inductive biases back into the model, teaching it through lots of data that e.g. “if an <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> icon is to the left of a form field, they’re probably semantically related.”</p>
+
+<p>When we step back, this feels roundabout — I have some underlying data I want to show to a user, so I design an interface that communicates that intuitively to them. Now, instead of a human seeing that UI, we spend a lot of time building a model to effectively parse out that visual information back into the underlying data or API request. (Hm… 🤔)</p>
+
+<p>We have increasingly sophisticated models and tooling to do this kind of “postprocessing” of human interfaces for LMs, like <a href="https://jina.ai/news/reader-lm-small-language-models-for-cleaning-and-converting-html-to-markdown/">converting an HTML webpage into Markdown</a> or <a href="https://arxiv.org/abs/2407.09025">encoding spreadsheets</a> to be more digestible by a model. This will certainly be useful in the near-term because most websites won’t be natively adapted to LMs for a long time. But I’m pretty excited about work pushing the alternative approach further. If the raw data in spreadsheets is more often manipulated by an LM than by a human at some point, what if we made a spreadsheet for a language model from the ground up? Or a computer OS? And then what would the human interface look like at that point, once we leave the low-level manipulation to machines?</p>
+
+<p>In other words, we can improve how well LMs use human interfaces in two ways:</p>
+
+<ol>
+  <li>Make the LM smarter (e.g. better reasoning, multimodal understanding)</li>
+  <li>Make the interface easier for LMs to understand</li>
+</ol>
+
+<p>I think these are two distinct bets: one, where sufficiently intelligent LMs can just be slotted in where humans are, using the same interfaces; and two, where LMs will just be “something different,” with their own ecosystem and comparative strengths. Which approach will dominate in the long term?</p>
+
+<p>From a research perspective, (1) is appealing because it’s foundational. If you care about AGI, “using a computer” is just a testbed for intelligence.</p>
+
+<p>If we care about useful agents, (2) feels underexplored. LM interfaces may seem ad-hoc today, but there’s no reason that they can’t be just as general as human interfaces if we commit to bet (2) (e.g. build the OS). And there are distinct benefits: efficiency (e.g. function calling vs. multimodal pixel control), safety (limiting the set of actions available to LM interfaces), and a wider design space (parallelization without spinning up 500 VMs). Unlike the physical world, which we have to model with general methods because nature just is a certain way, we built the digital world. And we can build it differently.</p>
+
+<h1 id="the-world-changes-when-we-build-tools-for-it">The world changes when we build tools for it</h1>
+
+<figure class="">
+  <img src="/assets/posts/co-adapting-interfaces/pyramid.png" alt="" />
+  
+</figure>
+
+<p>When a new technology comes along, individuals are often the first to change their behaviors. Many of the instances above are individual teams of researchers and engineers figuring out prompting schemes or hacking together APIs / agent interfaces for their LMs to work better.</p>
+
+<p>Then you notice businesses and providers adapting: as more people use language models to interact with their devtools, for example, it makes sense to write docs for LMs. We’re not there yet, but it’s not hard to imagine that if web agents actually become a widespread utility, it makes sense for websites to make their UIs slightly easier to parse so they’re more usable by LMs, and then maybe then to build full-fledged products that are designed for compatibility with LM agents. Before you know it, the Internet starts looking different.</p>
+
+<p>This story sounds familiar: search engines are one of our primary interfaces to the Internet today, and they’ve certainly changed the shape of the Internet since the 1990s and 2000s. PageRank was an effective algorithm because it identified useful heuristics for finding high quality websites then; primarily that “more important websites are more likely to receive more links from other websites.” But as Google gained popularity, it wasn’t just that they adapted to how the Internet was, but websites adapted themselves <em>to Google</em>. The formats and content that PageRank understood to be “high quality” were built more often. Sites became more standardly templated. People put entire essays and FAQs before the actual recipe. And so on into the SEO-optimized Internet we have today.</p>
+
+<figure class="">
+  <img src="/assets/posts/co-adapting-interfaces/verge.png" alt="" />
+  
+  <figcaption>SEO is an example of the symbiosis between the Internet and search engines like Google. Webpages often have the same uniform structure today because they optimize for SEO ranking. Image from <a href="https://www.theverge.com/c/23998379/google-search-seo-algorithm-webpage-optimization">The Verge</a>.</figcaption>
+  
+</figure>
+
+<p>What will the web look like when LMs become one of the standard interfaces, whether through chatbots like ChatGPT, AI search engines like Perplexity, or web agents? I think it’s an interesting future to speculate on, but maybe more importantly, what we anticipate can affect the things we build today. People who develop agents might see the Internet “environment” as fixed, but in reality, the entire digital world co-evolves with the tools we build. And given that agent-computer interfaces do seem like an underutilized lever (vs. the popular orientation towards general agents using human interfaces), there’s a lot of unexplored territory. For one, we don’t actually know what kind of interface will be best suited for LMs. I’m pretty excited about research that tries to understand and distill the “design principles” that drastically improve performance and utility of models today. It’s a systems-building approach to AI research: instead of just improving models in isolation, we can expand our view to improve the systems they operate in as a whole.</p>
+
+<h1 id="how-will-human-interfaces-change-with-lms">How will human interfaces change with LMs?</h1>
+
+<p>Considering how the world will adapt to LMs also might change what applications will be useful. LMs don’t just provide a window to the Internet — in some cases, they might “replace” some functions of the Internet entirely. If I have a personal AI agent, do I still go to OpenTable to book a reservation, or fill out forms ever again? Once I get “generative answers” synthesized from an LM reading the web, do I still need to go to the webpages myself?</p>
+
+<p>I don’t think humans will get <em>all</em> their content through a LM — and then the interesting question is <em>which</em> parts of the web will primarily be for LMs vs. humans.</p>
+
+<p>It does seem like a lot of applications are optimized for the near-term without taking a stance on this question. For example, today, people are obsessed with voice interfaces (perhaps also because they’re “general”), with applications like agents for businesses to take calls or field customer service requests from customers. But voice is a good interface because it’s <em>good for humans</em>. When you realize that we’re headed toward a future where the customer also has their own Google Assistant to <em>call</em> the business, and they have to do this all robustly… we might be making the problem more difficult than it has to be.</p>
+
+<figure class="medium">
+  <img src="/assets/posts/co-adapting-interfaces/voice.png" alt="" />
+  
+  <figcaption>A fictional LM-LM phone call.</figcaption>
+  
+</figure>
+
+<p>In the long term, we should ask what humans will still have to do. I hope that calling in to reschedule my package delivery isn’t something I have to do manually in 10 years, and if so, then maybe we don’t need to keep building around a fundamentally human interface (voice) to solve this problem. The “thing I want done” is not “making a phone call to the doctor” but “booking an appointment,” and if technology can coordinate appointments, then no one needs to take a call after all. We build LMs to help people do things, but we do a lot of the things we do because we don’t have AI.</p>
+
+<p>This isn’t just about UX/graphic design of interfaces, but fundamentally a question about <em>what work</em> will be done by LMs vs. humans. If LMs can indeed handle a lot of the low-level action and information synthesis we do today, then we’ll need new interfaces for humans to do something else — maybe the high-level management, or specification of what we want, or some other fundamentally human communication. Sometimes, I don’t just want the LM to tell me the answer, but I want to read the experiences and look at the photos from a human who actually did something in the real world. Once LMs handle the tasks for machines, maybe new tasks and new content, for humans, will emerge.</p>
+
+
+  <hr>
+  <p class="footnote">
+    Thanks to Sahaj Garg, John Yang, Jiayi Pan, Rob Cheung, and Ofir Press for feedback and thoughtful discussions :)
+    <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts or comments.
+  </p>
+</article>
+<div class="subscribe">
+  <p>Subscribe to get updates when I write new posts:</p>
+  <form class="layoutRow"
+      action="https://gmail.us3.list-manage.com/subscribe/post?u=be23d5873db42578ecc753d32&amp;id=0544272743"
+      method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+    <input type="email" value="" name="EMAIL" placeholder="Email address" required>
+    <!-- to distract bots -->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+      <input type="text" name="b_be23d5873db42578ecc753d32_0544272743" tabindex="-1" value="">
+    </div>
+    <input type="submit" value="Subscribe" name="subscribe">
+  </form>
+</div>
+
+
+  </main>
+
+</div>
+
+</body>
+</html>

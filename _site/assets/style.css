@@ -104,6 +104,7 @@ main p { line-height: 1.4; }
 
 h1, h2, h3 { font-family: "Libre Franklin"; font-weight: 700; margin: 1.3em 0 .5em; }
 h1:first-child, h2:first-child, h3:first-child { margin-top: 0; }
+h2#hi { margin-top: 0.3rem; }
 h1 { font-size: 2rem; }
 h2 { font-size: 1.6rem; }
 h3 { font-size: 1.2rem; }
@@ -115,7 +116,7 @@ a:hover { text-decoration: underline; }
 main figure { margin: 1rem 0; text-align: center; }
 main figure figcaption { color: #666; font-size: .9rem; }
 main figure.small img { width: 50%; }
-main figure.medium img { width: 75%; }
+main figure.medium img { max-height: 20rem; width: 75%; }
 
 input[type=text], input[type=email] {
   font-size: .9rem;
@@ -344,8 +345,10 @@ article pre, article code {
   body.sidebar header { display: flex !important; }
   /* Show socials inline */
   .socials { display: none; }
-  .mobile-socials { display: flex; gap: 1rem; }
+  .mobile-socials { display: flex; gap: 1rem; margin-top: 2rem; }
   main article { width: 100%; }
   .gallery { column-count: 1; column-gap: 0; padding: 0; }
-
+  body.sidebar main { margin-top: 2rem; }
+  article h1:first-child { margin-top: 2rem; }
+  .pub .links a, .pub .links a:visited { font-size: 1rem; }
 }
