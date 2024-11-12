@@ -4,7 +4,12 @@ title: Co-Adapting Human Interfaces and LMs
 subtitle: When the world adapts to LMs, the boundary between agent and environment start to blur
 date: 2024-11-12
 ack: Thanks to Sahaj Garg, John Yang, Jiayi Pan, Rob Cheung, and Ofir Press for feedback and thoughtful discussions :)
+image: /assets/posts/co-adapting-interfaces/header.png
 ---
+
+{% include figure.html
+url="/assets/posts/co-adapting-interfaces/header.png"
+%}
 With the explosion of computer use agents like Claude Computer Use and search wars between Perplexity, SearchGPT, and Gemini — it seems inevitable that AI will change the way we access information. So far, we've been obsessed with building agents that are better at understanding the world. But at this point, it's important to realize that the world adapts itself to LMs, too. Codebases, websites, and documents were made for humans, but they start to look different once LMs become "users," too.
 
 In this post I'll explore some emerging signs of what this future might look like – how is the world adapting already, and what might the Internet like at the end of it all? As a researcher or developer, this poses some interesting questions. If we realize that the digital world is fundamentally malleable, the line between "agent" and "environment" starts to blur. Instead of building better _models_, what end-to-end _systems_ should we be building instead?
@@ -50,7 +55,7 @@ In other words, we can improve how well LMs use human interfaces in two ways:
 1. Make the LM smarter (e.g. better reasoning, multimodal understanding)
 2. Make the interface easier for LMs to understand
 
-I think these are two distinct bets: one, where sufficiently intelligent LMs can just be slotted in where humans are, using the same interfaces; and two, where LMs will just be "something different," with their own ecosystem and comparative strengths. Which approach will dominate in the long term? 
+I think these are two distinct bets: one, where sufficiently intelligent LMs can just be slotted in where humans are, using the same interfaces; and two, where LMs will just be "something different," with their own ecosystem and comparative strengths. Which approach will dominate in the long term?
 
 From a research perspective, (1) is appealing because it's foundational. If you care about AGI, "using a computer" is just a testbed for intelligence.
 
@@ -79,7 +84,7 @@ What will the web look like when LMs become one of the standard interfaces, whet
 
 Considering how the world will adapt to LMs also might change what applications will be useful. LMs don't just provide a window to the Internet — in some cases, they might "replace" some functions of the Internet entirely. If I have a personal AI agent, do I still go to OpenTable to book a reservation, or fill out forms ever again? Once I get "generative answers" synthesized from an LM reading the web, do I still need to go to the webpages myself?
 
-I don't think humans will get _all_ their content through a LM — and then the interesting question is _which_ parts of the web will primarily be for LMs vs. humans. 
+I don't think humans will get _all_ their content through a LM — and then the interesting question is _which_ parts of the web will primarily be for LMs vs. humans.
 
 It does seem like a lot of applications are optimized for the near-term without taking a stance on this question. For example, today, people are obsessed with voice interfaces (perhaps also because they're "general"), with applications like agents for businesses to take calls or field customer service requests from customers. But voice is a good interface because it's _good for humans_. When you realize that we're headed toward a future where the customer also has their own Google Assistant to _call_ the business, and they have to do this all robustly… we might be making the problem more difficult than it has to be.
 
