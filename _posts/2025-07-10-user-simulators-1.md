@@ -135,3 +135,12 @@ This gives some idea of how to think about approaches -- which we'll discuss in 
 As a final question, one might ask whether it's really necessary to build user simulators. It seems challenging to build user simulators that are robust enough to train against, and even harder to think about how we might [scale these simulated environments](https://kevinlu.ai/the-only-important-technology-is-the-internet) to train generalist models that work on any real-world problem. Besides training with real humans in the loop, it's unclear what the alternatives are — especially if we're serious about discovering intelligent behavior via RL, rather than large-scale supervised learning, and _improving on the tasks we actually care about_. Similar to robotics (another data-constrained domain), perhaps the right approach will require a combination of techniques, along with much more data-efficient algorithms. Another thought is that we likely won't need user simulators that match human behavior fully; we may just need "partial models" that simulate the important behaviors in the context of a particular task.
 
 If you have any ideas, let us know!
+
+If you'd like to cite this post:
+```
+@misc{lintomlin2025usersim,
+  author       = {Jessy Lin and Nick Tomlin},
+  title        = {User Simulators Bridge RL with Real-World Interaction},
+  howpublished = {\url{https://jessylin.com/2025/07/10/user-simulators-1/}},
+}
+```
