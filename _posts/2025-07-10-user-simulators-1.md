@@ -94,7 +94,7 @@ Humans are inconsistent too, but in predictable ways. We might compromise our st
 
 This is bad news for any domain where users might change over the course of an interaction. We want user simulators to be convinced with _good reasons_, or understand _good explanations_, but the mechanism for how LMs are influenced is perhaps much more like "what mode does the context pull on in the data"? Knowledge and in-context belief updates for models aren't as "smooth" of a manifold as we'd expect them to be.
 
-<div id="problem-5-shallow-acting-models-dont-really-want-things" class="toc-anchor" data-toc="Problem 5: \"Shallow acting\": Models don't \"really want\" things" data-toc-level="3"></div>
+<div id="problem-5-shallow-acting-models-dont-really-want-things" class="toc-anchor" data-toc='Problem 5: "Shallow acting": Models don&apos;t "really want" things.' data-toc-level="3"></div>
 **Problem 5. "Shallow acting": Models don't "really want" things.**
 
 We ultimately want to build models that help humans achieve what they want. But user simulators don't "really want" anything, unless you tell them to. Let's say we prompt a model:
