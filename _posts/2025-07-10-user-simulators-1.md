@@ -1,7 +1,8 @@
 ---
 layout: post
 title: User simulators bridge RL with real-world interaction
-subtitle: To make RL work on tasks we care about, we need better user simulators. What's missing?<br><i>Co-written with <a href="https://people.eecs.berkeley.edu/~nicholas_tomlin/">Nick Tomlin</a>.</i>
+subtitle: >-
+  [User Sims / Part I] To make RL work on tasks we care about, we need better user simulators. What's missing?<br><i>Co-written with <a href="https://people.eecs.berkeley.edu/~nicholas_tomlin/">Nick Tomlin</a>.</i>
 date: 2025-07-10
 ack: Thanks to Kawin, Michelle, Allen, Justin, Wenting, and Micah for feedback and thoughtful discussions :)
 image: /assets/posts/user-sims-1/applications.png
