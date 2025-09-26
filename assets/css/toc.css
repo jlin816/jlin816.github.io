@@ -1,0 +1,53 @@
+.toc {
+  flex: 0 0 12rem;
+  position: sticky;
+  top: 3rem; /* sticks under header */
+  align-self: flex-start;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-top: 12rem;
+  margin-left: 2rem;
+}
+
+.toc-header {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #ddd;
+  color: #000;
+}
+
+.toc:empty {
+  display: none; /* hide if no content */
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.toc li {
+  margin: 0.2rem 0;
+}
+
+.toc li ul {
+  margin-left: 1rem; /* indent nested h3 */
+}
+
+.toc a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.toc a:hover,
+.toc a.active {
+  color: var(--primary); /* red highlight */
+/*  font-weight: 600; */
+}
+
+@media (max-width: 60rem) {
+  .toc { display: none !important; }
+}

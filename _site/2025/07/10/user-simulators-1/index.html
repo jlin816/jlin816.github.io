@@ -71,9 +71,12 @@
   <main>
   <article>
   <h1>User simulators bridge RL with real-world interaction</h1>
-  <p class="subtitle">To make RL work on tasks we care about, we need better user simulators. What's missing?<br><i>Co-written with <a href="https://people.eecs.berkeley.edu/~nicholas_tomlin/">Nick Tomlin</a>.</i></p>
+  <p class="subtitle">[User Sims / Part I] To make RL work on tasks we care about, we need better user simulators. What's missing?<br><i>Co-written with <a href="https://people.eecs.berkeley.edu/~nicholas_tomlin/">Nick Tomlin</a>.</i></p>
   <p class="date">10 Jul 2025</p>
-  <p>RL finally works, unlocking a whole host of new capabilities for LMs. The idea is simple: if you can <em>verify</em> what success looks like, just try a bunch of different generations and reinforce the ones that do well. As some have said, it seems like the time to “build verifiers for everything we can build verifiers for.” So far, we’ve applied this paradigm to “easy-to-verify” domains like math (“do you get the right answer?”) and code (“do the test cases pass?”). But it’s not really clear how to generalize to the longer-horizon tasks we really care about—tasks that go beyond interacting with a computational sandbox to interacting with the real world, particularly with <em>humans</em>: doing any nontrivial job, tutoring students, or helping people with everyday tasks. In these settings, we need to teach models how to <em>work with humans</em>: how would a customer respond if the model said X? What kind of explanation would clear up this student’s misconception? How can a model steer people towards good outcomes?</p>
+
+  <!-- Post content needs this class for TOC to work -->
+  <div class="post-content">
+    <p>RL finally works, unlocking a whole host of new capabilities for LMs. The idea is simple: if you can <em>verify</em> what success looks like, just try a bunch of different generations and reinforce the ones that do well. As some have said, it seems like the time to “build verifiers for everything we can build verifiers for.” So far, we’ve applied this paradigm to “easy-to-verify” domains like math (“do you get the right answer?”) and code (“do the test cases pass?”). But it’s not really clear how to generalize to the longer-horizon tasks we really care about—tasks that go beyond interacting with a computational sandbox to interacting with the real world, particularly with <em>humans</em>: doing any nontrivial job, tutoring students, or helping people with everyday tasks. In these settings, we need to teach models how to <em>work with humans</em>: how would a customer respond if the model said X? What kind of explanation would clear up this student’s misconception? How can a model steer people towards good outcomes?</p>
 
 <p>These problems only become more relevant as models gain the raw intelligence to handle more complex tasks. Arguably, some of the hardest problems are <em>hard to define</em> rather than <em>hard to solve</em>, meaning that they require more interaction with humans, rather than more hands-off autonomy.</p>
 
@@ -252,12 +255,15 @@
 }
 </code></pre></div></div>
 
+  </div>
+
   <hr>
   <p class="footnote">
     Thanks to Kawin, Michelle, Allen, Justin, Wenting, and Micah for feedback and thoughtful discussions :)
     <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts or comments.
   </p>
 </article>
+
 <div class="subscribe">
   <p>Subscribe to get updates when I write new posts:</p>
   <form class="layoutRow"
@@ -273,9 +279,16 @@
 </div>
 
 
+<link rel="stylesheet" href="/assets/css/toc.css">
+<script src="/assets/js/toc.js" defer></script>
+
   </main>
 
 </div>
+
+
+  <nav class="toc"></nav>
+
 
 </body>
 </html>

@@ -53,10 +53,6 @@ On the other hand, there’s reason for excitement, with new ways to give feedba
 
 This essay will explore some of the possibilities to rethink how humans and “intelligent” machines interact today. The focus is on _practical application_ — how can technology that exists today be leveraged creatively to make applications that are vastly more powerful and useful?
 
-**Table of Contents**
-* TOC
-{:toc}
-
 # I / The state of human-AI interaction
 
 The allure of modern machine learning is that it often just _works_ — collect a large dataset, feed it through a giant model, and it somehow learns to do the task. It could be as simple as identifying objects in images or as complicated as playing Go. The “[unreasonable effectiveness of data](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/35179.pdf),” combined with computing power, makes it possible for machine learning to accomplish things that we didn’t think possible.

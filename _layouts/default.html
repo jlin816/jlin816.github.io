@@ -46,5 +46,9 @@ class:
 
 </div>
 
+{% if page.layout == "post" or layout == "post" or has_toc %}
+  <nav class="toc"></nav>
+{% endif %}
+
 </body>
 </html>

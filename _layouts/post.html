@@ -7,11 +7,20 @@ class: wide
   <h1>{{ page.title }}</h1>
   <p class="subtitle">{{ page.subtitle }}</p>
   <p class="date">{{ page.date | date_to_string }}</p>
-  {{ content }}
+
+  <!-- Post content needs this class for TOC to work -->
+  <div class="post-content">
+    {{ content }}
+  </div>
+
   <hr>
   <p class="footnote">
     {{ page.ack }}
     <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts or comments.
   </p>
 </article>
+
 {% include subscribe.html %}
+
+<link rel="stylesheet" href="/assets/css/toc.css">
+<script src="/assets/js/toc.js" defer></script>
