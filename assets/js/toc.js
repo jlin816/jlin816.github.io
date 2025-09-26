@@ -6,17 +6,27 @@
     const tocContainer = document.querySelector('.toc');
     if (!postContent || !tocContainer) return;
 
-    const headings = postContent.querySelectorAll('h1, h2, h3');
-    if (!headings.length) {
+    // include virtual markers
+    const nodes = postContent.querySelectorAll('h1, h2, h3, [data-toc]');
+    if (!nodes.length) {
       tocContainer.remove();
       return;
     };
 
+    // helper to read level/text
+    function getLevel(el) {
+      if (el.hasAttribute('data-toc')) return +(el.getAttribute('data-toc-level') || 3);
+      return Number(el.tagName[1]); // 1..6
+    }
+    function getText(el) {
+      return el.hasAttribute('data-toc') ? el.getAttribute('data-toc') : el.textContent.trim();
+    }
+
     // Generate IDs if missing
-    headings.forEach((h, i) => {
-      if (!h.id) {
-        h.id = h.textContent
-          .trim()
+    nodes.forEach((node, i) => {
+      if (!node.id) {
+        const title = getText(node);
+        node.id = title
           .toLowerCase()
           .replace(/[^\w\s-]/g, '')
           .replace(/\s+/g, '-')
@@ -38,8 +48,9 @@
     ulForLevel[0] = root; // root level list
     let h2n = 0;
 
-    headings.forEach(h => {
-      let level = Number(h.tagName[1]); // 1..6
+    nodes.forEach(node => {
+      const level = getLevel(node);
+      const title = getText(node);
 
       // Find nearest existing parent UL below this level
       let parentLevel = Math.max(0, level - 1);
@@ -50,13 +61,13 @@
       // Create item
       const li = document.createElement('li');
       const a = document.createElement('a');
-      a.href = `#${h.id}`;
+      a.href = `#${node.id}`;
       a.className = 'toc-link';
       if (level === 2) {
         h2n += 1;
-        a.textContent = `${h2n}  ${h.textContent.trim()}`; // no space after number
+        a.textContent = `${h2n}  ${title}`; // no space after number
       } else {
-        a.textContent = h.textContent.trim();
+        a.textContent = title;
       }
       li.appendChild(a);
       parentUL.appendChild(li);
@@ -96,7 +107,8 @@
       });
     }, { rootMargin: '-40% 0px -50% 0px' });
 
-    headings.forEach(h => observer.observe(h));
+    // for IntersectionObserver, observe both real headings and [data-toc]
+    nodes.forEach(n => observer.observe(n));
   }
 
   if (document.readyState === 'loading') {

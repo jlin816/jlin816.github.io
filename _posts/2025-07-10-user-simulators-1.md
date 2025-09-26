@@ -33,6 +33,7 @@ While prompting this way yields user simulators that can carry out realistic dia
 
 ## Models outperform humans
 
+<div id="problem-1-models-are-already-experts" class="toc-anchor" data-toc="Problem 1: Models are already experts" data-toc-level="3"></div>
 **Problem 1: Models are already experts.** Consider training a tutor LM against a LM acting as a "student."
 
 {% include figure.html
@@ -53,6 +54,7 @@ url="/assets/posts/user-sims-1/education-3.png"
 
 For RL to work, the tutor model must only be rewarded for _good behavior_, but if the student model is "too easy to work with," then it's never incentivized to discover how to offer _good_ explanations, or navigate situations where a human student is truly confused. Human teachers have to learn to overcome this, too: [expert blindness](https://psycnet.apa.org/record/1999-03662-006) often makes it difficult for someone who's already experienced to even remember what it feels like to not understand a concept. Education highlights an unexpected reason why LMs are bad user simulators: they already _surpass_ average human ability in many domains. The "hole" in the user simulator, where any explanation passes the check, becomes a hole in a tutor model that is trained against it.
 
+<div id="problem-2-models-have-perfect-memory" class="toc-anchor" data-toc="Problem 2: Models have perfect memory" data-toc-level="3"></div>
 **Problem 2. Models have perfect memory.**  Real humans also have limitations. For example, we can't hold large amounts of information in working memory. An interesting tidbit is that language models [substantially outperform humans at the task of next-word prediction](https://arxiv.org/html/2212.11281v2), in large part because they are better than humans at remembering and effectively conditioning on their context windows. Human dialogue is evolved to build in [redundancies](https://cdn.aaai.org/Symposia/Spring/1993/SS-93-05/SS93-05-020.pdf).
 
 However, this also means that to best collaborate with humans, models need to account for these limitations. A model could feasibly reason over a 10,000 line code change, but PRs typically aren't this size for a reason 🙂 Instead, it might be more effective for coding agents or Cursor-style assistants to [decompose code](https://arxiv.org/abs/2406.04604) into pieces that best help the human verify it does what they want it to do, and perhaps even learn to guide the human sequentially through changes in a way that helps them best build a mental model of what's happening.
@@ -63,7 +65,8 @@ Even with present-day capabilities, we can easily spin up 100 background agents 
 url="/assets/posts/user-sims-1/manus.png"
 caption="Agents like Manus can already do a dizzying array of research across the Internet to \"find a property in New York that's safe and affordable,\" but it seems unlikely that users will simply buy one of the four final suggested properties without being convinced or guided through the model's process (not to mention these are likely not the best options!)."
 %}
-
+.
+<div id="problem-3-models-are-too-eager-to-comply" class="toc-anchor" data-toc="Problem 3: Models are too eager to comply" data-toc-level="3"></div>
 **Problem 3. Models are too eager to comply.** Part of the skill of being a good doctor is asking good questions when [many patients deliberately avoid disclosing information](https://pubmed.ncbi.nlm.nih.gov/30646397/) that could actually be critical to make an informed diagnosis. There is the additional complication that people often don't _recall_ useful information unless prompted the right way – because a patient doesn't have the same mental model as an expert, they may not realize that the night of insomnia they had last month is actually a relevant data point.
 
 However, if you take a simulated "patient" LM, it helpfully spoonfeeds all the relevant information in its prompt to the other agent – "I am 45 y/o" → "I have symptoms ABC" → "I also have symptom D." RLHF trains models to be _assistants_; they're always trying hard to be helpful.  For any question the doctor asks, the "patient" is eager to answer, sometimes too comprehensively. Part of the issue is that simulated users must be prompted with all the relevant context to act out a particular persona, making it difficult to simulate humans that sometimes recall useful information over the course of an interaction.
@@ -82,6 +85,7 @@ To resolve some of the problems above, one might imagine using a smaller (less c
 
 We expect these kinds of problems will go away as general-purpose capabilities improve. However, there are also other limitations of current language models that are less clearly aligned with raw intelligence.
 
+<div id="problem-4-models-dont-have-consistent-knowledge-or-beliefs" class="toc-anchor" data-toc="Problem 4: Models don't have consistent knowledge or beliefs" data-toc-level="3"></div>
 **Problem 4. Models don't have consistent knowledge or beliefs.**
 
 Do models really "believe" anything and update their beliefs in a meaningful sense? Even in the same generation, models will often say things that are obviously self-contradictory to any human (e.g. the famous recent example where a host of LMs rationalize "9.11 is greater than 9.9" for reasons like "the decimal value is larger," despite obviously being able to explain how to compare decimals in other contexts). Instead of a set of latent beliefs, models are perhaps better conceptualized as an average "soup" of facts and behaviors from pretraining and finetuning. The 9.11 > 9.9 example is explained by the model recalling [bible verses](https://transluce.org/observability-interface) or section headers.
@@ -90,6 +94,7 @@ Humans are inconsistent too, but in predictable ways. We might compromise our st
 
 This is bad news for any domain where users might change over the course of an interaction. We want user simulators to be convinced with _good reasons_, or understand _good explanations_, but the mechanism for how LMs are influenced is perhaps much more like "what mode does the context pull on in the data"? Knowledge and in-context belief updates for models aren't as "smooth" of a manifold as we'd expect them to be.
 
+<div id="problem-5-shallow-acting-models-dont-really-want-things" class="toc-anchor" data-toc="Problem 5: \"Shallow acting\": Models don't \"really want\" things" data-toc-level="3"></div>
 **Problem 5. "Shallow acting": Models don't "really want" things.**
 
 We ultimately want to build models that help humans achieve what they want. But user simulators don't "really want" anything, unless you tell them to. Let's say we prompt a model:

@@ -48,6 +48,17 @@
 /*  font-weight: 600; */
 }
 
+.toc-anchor {
+  display: block;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.post-content .toc-anchor {
+  scroll-margin-top: 80px;
+}
+
 @media (max-width: 60rem) {
   .toc { display: none !important; }
 }
