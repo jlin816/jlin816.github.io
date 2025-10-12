@@ -1,3 +1,12 @@
+- title: "Learning Facts at Scale with Active Reading"
+  authors: "Jessy Lin*, Vincent-Pierre Berges*, Xilun Chen, Wen-tau Yih, Gargi Ghosh, Barlas Oğuz*"
+  thumbnail: /assets/pubs/activereading.png
+  description: ""
+  conference: Preprint
+  links:
+    Paper: https://www.arxiv.org/abs/2508.09494
+    Twitter: https://x.com/realJessyLin/status/1960779750752051529
+
 - title: "Learning to Model the World with Language"
   authors: "Jessy Lin, Yuqing Du, Olivia Watkins, Danijar Hafner, Pieter Abbeel, Dan Klein, Anca Dragan"
   thumbnail: /assets/pubs/dynalang.png
