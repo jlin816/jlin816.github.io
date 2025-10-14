@@ -20,7 +20,7 @@ I've worked on:
 Previously, I worked on research and product at [Lilt](https://lilt.com/research), where I worked on continual adaptation and human-in-the-loop machine translation (Copilot for expert translators). I graduated with a double-major in computer science and philosophy from MIT, where I did research on human-inspired AI with the [Computational Cognitive Science Group](http://cocosci.mit.edu/), advised by Kelsey Allen and Josh Tenenbaum, and machine learning security as a founding member of [labsix](http://labsix.org/). I also spent a great summer with the [Natural Language Understanding](https://research.google/teams/language/) group at Google Research NY working on long-context memory architectures.
 
 <p class="mobile-socials layoutRow">
-  <a class="email" href="mailto:jessy_lin@berkeley.edu" target="_blank">
+  <a class="email" href="mailto:mail@jessylin.com" target="_blank">
     Email
   </a>
   / <a class="github" href="https://github.com/jlin816">
