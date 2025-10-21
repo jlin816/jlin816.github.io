@@ -88,10 +88,9 @@ We apply a learned projection to the output of the previous layer $$x$$ to get a
 
 $$
 \begin{aligned}
-\mathbb{I} &= \text{TopKIndices}(Kq(x), k)
-  && \text{\# Retrieve top-k indices} \\
-s &= \text{softmax}(K_{\mathbb{I}} q(x)) && \text{\# Compute scores}\\
-y &= s V_{\mathbb{I}}  && \text{\# Compute weighted output} \\
+\mathbb{I} &= \text{TopKIndices}(Kq(x), k) \\
+s &= \text{softmax}(K_{\mathbb{I}} q(x)) \\
+y &= s V_{\mathbb{I}}
 \end{aligned}
 $$
 
@@ -102,7 +101,6 @@ Finally, we apply an input-dependent gating to get the output of the layer:
 $$
 \begin{aligned}
 \text{output} &= (y \odot \text{silu}(x^{\intercal} W_1))^{\intercal} W_2
-  && \text{\# Apply input-dependent gating}
 \end{aligned}
 $$
 

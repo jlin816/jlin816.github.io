@@ -161,10 +161,9 @@
 <p>We apply a learned projection to the output of the previous layer \(x\) to get a query \(q(x) \in \mathbb{R}^{d_k}\) and attend into the pool with our favorite operation, dot-product attention. Rather than taking a weighted sum over the entire memory, we only use the top-k most similar slots (where \(K_{\mathbb{I}} \in \mathbb{R}^{k \times d}\) are the top-k keys):</p>
 
 \[\begin{aligned}
-\mathbb{I} &amp;= \text{TopKIndices}(Kq(x), k)
-  &amp;&amp; \text{\# Retrieve top-k indices} \\
-s &amp;= \text{softmax}(K_{\mathbb{I}} q(x)) &amp;&amp; \text{\# Compute scores}\\
-y &amp;= s V_{\mathbb{I}}  &amp;&amp; \text{\# Compute weighted output} \\
+\mathbb{I} &amp;= \text{TopKIndices}(Kq(x), k) \\
+s &amp;= \text{softmax}(K_{\mathbb{I}} q(x)) \\
+y &amp;= s V_{\mathbb{I}}
 \end{aligned}\]
 
 <p>While the memory pool may be on the order of 1M-10M slots, we might only use \(k=32\), a tiny subset of the total parameters (e.g. on the order of 0.03%-0.0002% of total memory parameters).</p>
@@ -173,7 +172,6 @@ y &amp;= s V_{\mathbb{I}}  &amp;&amp; \text{\# Compute weighted output} \\
 
 \[\begin{aligned}
 \text{output} &amp;= (y \odot \text{silu}(x^{\intercal} W_1))^{\intercal} W_2
-  &amp;&amp; \text{\# Apply input-dependent gating}
 \end{aligned}\]
 
 <p>where \(W_1 \in \mathbb{R}^{n \times d}\) and \(W_2 \in \mathbb{R}^{d \times n}\) are learned projection matrices, and \(\text{silu}(x) = x \,\text{sigmoid}(x)\).</p>
