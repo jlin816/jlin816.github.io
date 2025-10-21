@@ -16,7 +16,7 @@ class: wide
   <hr>
   <p class="footnote">
     {{ page.ack }}
-    <a href="mailto:jessy81697@gmail.com">Email me</a> if you have thoughts or comments.
+    <a href="mailto:mail@jessylin.com">Email me</a> if you have thoughts or comments.
   </p>
 </article>
 
@@ -24,3 +24,7 @@ class: wide
 
 <link rel="stylesheet" href="/assets/css/toc.css">
 <script src="/assets/js/toc.js" defer></script>
+
+{% if page.include_mathjax %}
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+{% endif %}

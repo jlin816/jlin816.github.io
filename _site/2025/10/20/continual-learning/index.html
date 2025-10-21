@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Continual Learning Problem</title>
+<link rel="shortcut icon" href="/favicon.ico" />
+
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
+<!-- <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet"> -->
+<!-- <link href="https://fonts.googleapis.com/css?family=Rubik:500|Lora|Average|Neuton" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Libre+Franklin:700&display=swap" rel="stylesheet">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@realJessyLin">
+<meta name="twitter:title" content="The Continual Learning Problem">
+<meta name="twitter:image" content="http://localhost:4000/assets/posts/user-sims-2/env.png">
+<meta name="og:image" property="og:image" content="http://localhost:4000/assets/posts/user-sims-2/env.png">
+
+<!--<meta name="author" content="Jessy Lin" />-->
+<!--<meta name="description" content="" />-->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122603722-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-122603722-1');
+</script>
+
+</head>
+<body class=" wide">
+
+<aside class="layoutCol">
+  <a href="/">
+    <img src="/images/jessy.jpg" class="face" width="300" />
+    <h1>Jessy Lin</h1>
+  </a>
+  <p class="socials layoutRow">
+    <a class="email" href="mailto:mail@jessylin.com" target="_blank"><img src="/assets/icons/email.svg"/></a>
+    <a class="github" href="https://github.com/jlin816"><img src="/assets/icons/github.svg"/></a>
+    <a class="x" href="https://x.com/realJessyLin"><img src="/assets/icons/x.svg"/></a>
+    <!-- <a class="linkedin" href="https://linkedin.com/in/jessylin"> -->
+    <!--   <img src="/assets/icons/linkedin.svg"/></a> -->
+    <a class="scholar" href="https://scholar.google.com/citations?user=jTMUPNkAAAAJ&hl=en"><img src="/assets/icons/scholar.svg"/></a>
+  </p>
+  <nav class="layoutCol">
+    <a href="/blog">Blog</a>
+    <a href="/photo">Photography</a>
+    <a href="/fun">Fun</a>
+  </nav>
+</aside>
+
+<div class="content">
+
+  <header>
+    <h1><a href="/">Jessy Lin</a></h1>
+    <div class="spacer"></div>
+    <nav class="layoutRow">
+      <a href="/blog">Blog</a>
+      <a href="/photo">Photography</a>
+      <a href="/fun">Fun</a>
+    </nav>
+  </header>
+
+  <main>
+  <article>
+  <h1>The Continual Learning Problem</h1>
+  <p class="subtitle">A perspective on continual learning, motivating our paper on sparse memory finetuning</p>
+  <p class="date">20 Oct 2025</p>
+
+  <!-- Post content needs this class for TOC to work -->
+  <div class="post-content">
+    <p>If we want to move towards a world where models are “always training” and continually learning from experience over time, we need to address a basic challenge: how do we keep updating the parameters of a model without breaking it? In this post, I’ll motivate <em>memory layers</em> as a natural architecture for this paradigm: high-capacity, but sparse (few active parameters) on each forward pass. In our recent paper, we found that finetuning memory layers enables learning without forgetting much more effectively than LoRA: when learning TriviaQA facts, NaturalQuestions performance drops by 89% with full finetuning and 71% with LoRA, but only 11% with memory layers. Along the way, I’ll also discuss the challenges of the continual learning problem broadly.</p>
+
+<p>Check out the paper here: <a href="https://arxiv.org/abs/2510.15103">Continual Learning via Sparse Memory Finetuning</a></p>
+
+<h2 id="generalization-vs-integration">Generalization vs. Integration</h2>
+
+<p>Continual learning has been studied for decades at this point. I think a lot of the discussion today is muddied by the fact that there are many classic formalizations of this idea, potentially none of which align with what we think of as real-world continual learning.</p>
+
+<p>Intuitively, what many people think of is a system that can be taught like an intern: every time it encounters a new experience, learns a new fact, or gets feedback from the user, the system should get smarter over time, just like people do.</p>
+
+<p>What are the research questions we need to solve before this is a reality?</p>
+
+<p>I think of continual learning as two subproblems:</p>
+
+<p><strong>Generalization</strong>: given a piece of data (user feedback, a piece of experience, etc.), what update should we do to learn the “important bits” from that data?</p>
+
+<p>Learning to regurgitate information is easy (just overfit / memorize). The challenge is learning something that can be used in diverse future settings. This is well-understood now for fact learning: when we see a string like “Barack Obama was born in Hawaii” in the training corpus, what I want the model to learn is not that the word <code class="language-plaintext highlighter-rouge">Hawaii</code> always follows <code class="language-plaintext highlighter-rouge">in</code>, but the semantic content that the tokens represent: “Barack Obama,” a real-world entity, was “born” (abstractly, “came into existence”) in “Hawaii,” a real-world entity. From the perspective of a language model consuming the raw tokens, it’s ambiguous which “hypothesis” it’s trying to learn from the data. This explains why paraphrasing is necessary to robustly teach models new facts (<a href="https://arxiv.org/abs/2309.14316">Physics of Language Models</a>). Augmentation disambiguates what hypothesis we want the model to learn.</p>
+
+<p>This is less clear for other types of data. If the model is learning from a math textbook, what augmentations would help? Or if an agent tries a coding problem and fails to solve it, what update should we apply? This is the essence of effective human learning: a good math student doesn’t read a textbook in one pass, but comes up with their own augmentations: working through some toy examples, combining the theorems with ones they already know, etc. This was the intuition behind our recent paper: language models learn much more effectively with <a href="https://arxiv.org/abs/2508.09494">Active Reading</a>. We found general augmentations beyond paraphrasing even help dramatically with factual retention, but it’s yet to be seen how well this works for other data.</p>
+
+<p>Better generalization comes down to the fact that we implicitly expect continually learning systems to <em>self-supervise</em> in more sophisticated ways, since most of the world doesn’t provide a neatly packaged SFT dataset or environment to RL on. Naive next-token prediction on the raw data stream isn’t enough. There’s a lot more to say here, but in our work we tackle the second challenge: forgetting and integration.</p>
+
+<p><strong>Forgetting/Integration</strong>: given a piece of data, how do we integrate it with what we already know?</p>
+
+<p>The other side of the coin is not forgetting what we’ve already learned: the classic <em>catastrophic forgetting</em> problem. I think <em>integration</em> is a more accurate term for the behavior we want – sometimes we <em>do</em> want to “forget” or update things we knew previously, like the fact that the current president of the United States is no longer Obama.</p>
+
+<p>A system that only <em>adds</em> to its knowledge (e.g. by adding new MoE experts for new tasks) never forgets, but doesn’t <em>compress</em> information in the right way. Is the expected behavior with the query “Who is the current president of the United States” for the model to upweight new expert N+1 over expert 1,…,N? Having conflicting knowledge in the model seems like it would only worsen robustness issues, and additionally doesn’t fully allow the model to benefit from transfer between tasks across its lifetime the same way pretraining does. To solve catastrophic forgetting and integration, we’ll likely want solutions where models can learn what to overwrite and what to preserve, without artificial boundaries between “new” and “old” knowledge. In our paper, “Continual Learning via Sparse Memory Finetuning,” we propose that <em>memory layers</em> provide a potential answer.</p>
+
+<h2 id="the-design-space">The Design Space</h2>
+
+<p>To motivate memory layers, let’s consider the design space of solutions. Intuitively, we don’t want to update all the parameters of a model when learning a new piece of information, and work like <a href="https://arxiv.org/abs/2302.06600">grafting</a> has shown that we don’t need to: the set of parameters responsible for a particular task is often a very sparse set (~0.01%).</p>
+
+<p>What we want is a system with:</p>
+<ul>
+  <li><strong>Targeted updates</strong>: touches only the minimal set of parameters needed to learn a particular data point</li>
+  <li><strong>High capacity</strong>: scales to large amounts of new information for lifelong learning</li>
+  <li><strong>Adaptive integration</strong>: learns how to partition and organize information based on the input—overwriting when needed, transferring skills between tasks when helpful, etc.</li>
+</ul>
+
+<p>With this in mind, let’s consider commonly proposed solutions to lifelong learning or personalization for LLMs:</p>
+
+<figure class="">
+  <img src="/assets/posts/continual-learning/overview.png" alt="" />
+  
+  <figcaption>Design space of continual learning approaches.</figcaption>
+  
+</figure>
+
+<p>So far, I’ve implicitly assumed a form of continual learning that updates model parameters. Ultimately, we want to make the models themselves smarter over time, in the same way that pretraining does—compressing knowledge from diverse data into weights, rather than building systems around fixed black-box models. However, it’s worth touching briefly on non-parametric methods since they’re the default solution today.</p>
+
+<div id="In-context learning (ICL)" class="toc-anchor" data-toc="In-context learning (ICL)" data-toc-level="3"></div>
+<p><strong>In-context learning (ICL):</strong> models get pretty smart in context. I can give the model feedback or put previous interactions in context, and it’s really good at adapting accordingly—up to a point. One problem today is “<a href="https://research.trychroma.com/context-rot">context rot</a>,” where the model gets confused as the context gets filled with more information, rather than being able to pick out the relevant information as we would expect. Conditioning on previous errors sometimes makes the model <a href="https://x.com/arvindh__a/status/1966526380151083176"><em>more likely</em></a> to produce errors. This is likely because ICL is inherently limited by the context lengths of the data we’re post-training on. ICL is useful as a ceiling for short-term memory, but without new research it doesn’t yet look like we’ll get infinite context generalization out of the box.</p>
+
+<div id="RAG" class="toc-anchor" data-toc="RAG" data-toc-level="3"></div>
+<p><strong>RAG:</strong> another approach is to retrieve over a growing buffer of data/experiences, bringing things into context on demand. This is high capacity (just add more documents) and targeted (we don’t need to touch most of the buffer when we add new information), but doesn’t <em>compress</em> knowledge. Consider reasoning and coding tasks. We want the model itself to get better at coding with experience and <em>distill</em> the efforts of its reasoning, not to retrieve previous coding sessions verbatim. Good retrieval is also a bottleneck, particularly for tasks like coding. In a lot of cases, knowing there is a abstractly similar past datapoint to retrieve is half the challenge. Just like humans use both written “scratchpad” memory and internalized memory, I’d expect that future continual learning systems should have both.</p>
+
+<p>A more thorough investigation into non-parametric vs. parametric learning deserves a paper of its own. In our work, we focus on pushing the frontier of parametric continual learning and compare to parametric baselines accordingly.</p>
+
+<div id="Finetuning with replay" class="toc-anchor" data-toc="Finetuning with replay" data-toc-level="3"></div>
+<p><strong>Finetuning with replay:</strong> the simplest parametric baseline is to keep finetuning the full model on new data. This doesn’t lead to targeted updates, but a common solution is to continually replay old data to avoid forgetting. The downside is that replay isn’t a scalable solution to true lifelong learning: imagine rehearsing all the books you’ve ever read every time you code! Additionally, modern models go through multiple rounds of pretraining, midtraining, alignment, etc., making it increasingly complicated to implement this effectively (e.g. we want to mix in pretraining data, but maintain the model’s instruction following capabilities).</p>
+
+<div id="Parameter-efficient finetuning (PEFT)" class="toc-anchor" data-toc="Parameter-efficient finetuning (PEFT)" data-toc-level="3"></div>
+<p><strong>Parameter-efficient finetuning (PEFT): LoRA, adapters, prefix tuning, Cartridges:</strong> to avoid finetuning all the parameters of the model, we might add a small set of new parameters. By freezing the rest of the model, we get targeted updates, but this is inherently low-capacity. As we grow the amount of experience, we might imagine adding more and more adapters and swapping them out, but it’s unclear when to add new adapters vs. update old ones when the real world doesn’t have discrete “task” boundaries. Ideally, the choice of which adapter or set of parameters to use would also be learnable.</p>
+
+<div id="MoEs/modular experts" class="toc-anchor" data-toc="MoEs/modular experts" data-toc-level="3"></div>
+<p><strong>MoEs/modular experts</strong>: MoE architectures naturally implement learned routing, and <a href="https://arxiv.org/abs/2408.15901v1">some</a> <a href="https://arxiv.org/abs/2306.04640">work</a> has proposed adding new experts to support new domains at test-time. This is high-capacity, learned, and somewhat targeted—depending on the total number of experts, a single expert can still be a large portion of the parameters.</p>
+
+<p>What if we made the experts much smaller and had many more of them? Instead of each of 8-128 experts that each represent broad domains of the data, we might imagine scaling to 1M or 10M tiny (linear) experts, enabling storage and retrieval at a much finer granularity. This way, we get targeted updates through <em>sparsity</em>. This is the key feature of recently-proposed memory architectures: <a href="https://arxiv.org/abs/2407.04153">PEER: He et al. 2024</a>, <a href="https://arxiv.org/abs/2412.09764">Memory Layers: Berges et al. 2024</a>, <a href="https://arxiv.org/abs/2411.12364v1">UltraMem: Huang et al. 2024</a>.</p>
+
+<h2 id="memory-layers">Memory Layers</h2>
+
+<p>I’ll introduce how memory layers work before getting into how our method uses this architecture for continual learning. The idea is simple: a memory layer swaps out one or more of the FFNs in the Transformer with a sparse attention lookup into a pool of learned keys and values.</p>
+
+<figure class="">
+  <img src="/assets/posts/continual-learning/memory-layer.png" alt="" />
+  
+  <figcaption>Memory layer architecture.</figcaption>
+  
+</figure>
+
+<p>Concretely, the memory pool is a set of \(N\) slots, with learned key and value <em>parameters</em> for each slot \(K \in \mathbb{R}^{N \times d_k}, V \in \mathbb{R}^{N \times d_v}\).</p>
+
+<p>We apply a learned projection to the output of the previous layer \(x\) to get a query \(q(x) \in \mathbb{R}^{d_k}\) and attend into the pool with our favorite operation, dot-product attention. Rather than taking a weighted sum over the entire memory, we only use the top-k most similar slots (where \(K_{\mathbb{I}} \in \mathbb{R}^{k \times d}\) are the top-k keys):</p>
+
+\[\begin{aligned}
+\mathbb{I} &amp;= \text{TopKIndices}(Kq(x), k)
+  &amp;&amp; \text{\# Retrieve top-k indices} \\
+s &amp;= \text{softmax}(K_{\mathbb{I}} q(x)) &amp;&amp; \text{\# Compute scores}\\
+y &amp;= s V_{\mathbb{I}}  &amp;&amp; \text{\# Compute weighted output} \\
+\end{aligned}\]
+
+<p>While the memory pool may be on the order of 1M-10M slots, we might only use \(k=32\), a tiny subset of the total parameters (e.g. on the order of 0.03%-0.0002% of total memory parameters).</p>
+
+<p>Finally, we apply an input-dependent gating to get the output of the layer:</p>
+
+\[\begin{aligned}
+\text{output} &amp;= (y \odot \text{silu}(x^{\intercal} W_1))^{\intercal} W_2
+  &amp;&amp; \text{\# Apply input-dependent gating}
+\end{aligned}\]
+
+<p>where \(W_1 \in \mathbb{R}^{n \times d}\) and \(W_2 \in \mathbb{R}^{d \times n}\) are learned projection matrices, and \(\text{silu}(x) = x \,\text{sigmoid}(x)\).</p>
+
+<p>This is the basic idea, along with some additional details like <a href="https://arxiv.org/abs/1907.05242">product keys</a> to make the huge lookup efficient. In contrast to attention, the keys and values here are learned parameters, rather than activations. The backward pass nudges the value parameters to be helpful for prediction, and nudges the keys so that the most useful slots are accessed. We might think of the values as “caching” useful information.</p>
+
+<p>Memory architectures have been revisited throughout the years (e.g. <a href="https://arxiv.org/abs/1410.5401">Neural Turing Machines</a> from Alex Graves in 2014, or <a href="https://arxiv.org/abs/1503.08895">Memory Networks</a> from FAIR in 2015), but only recently have these ideas been <a href="https://arxiv.org/abs/2412.09764">scaled up</a> to billion-parameter models and shown to outperform in FLOPs-controlled settings.</p>
+
+<p>We pretrain this architecture on <a href="https://arxiv.org/abs/2406.11794">DCLM</a>, enabling the model to learn how to organize its memory pool on a diverse set of data. The exciting thing about memory layers is that the sparsity enables us to do continual learning with minimal forgetting. With memory slots, we have much finer control over what parameters are updated for new data points.</p>
+
+<h2 id="sparse-memory-finetuning">Sparse Memory Finetuning</h2>
+
+<p>The main idea of our work is that we can get high capacity, targeted updates with <em>sparsity</em>, enabled by memory layers. The model learns how to organize its knowledge through end-to-end gradient updates, but we can achieve much more selective updates.</p>
+
+<p>Let’s take a look at how memory layer finetuning can enable continual learning on the tasks from our paper. We evaluate parametric continual learning methods on two settings: learning from a stream of facts from TriviaQA, and learning from a stream of documents from Wikipedia from SimpleQA (to simulate reading and retaining information from new documents). In the fact learning setting, we convert TriviaQA questions into statements and paraphrase it to fill a batch, so on each gradient step we want the model to learn one fact.</p>
+
+<p>Intuitively, what we’d like to do is only finetune the slots that “store” the fact. For example, given the prefix “Barack Obama was,” the pretrained model might access slots 53, 6111, and 9235 to predict the next token. It’s natural to think of these sparse accesses as storing something meaningful about Barack Obama. However, some of these memory slots might also serve general purposes, such as helping predict syntactic structures or language features (“what word tends to follow <code class="language-plaintext highlighter-rouge">was</code>?”).</p>
+
+<p>What we want to do is finetune only the slots that are <em>specific</em> to this data point. This is a common primitive in document retrieval: in TF-IDF or BM25, we retrieve documents where a term in the query frequently appears <em>and</em> doesn’t appear frequently in other documents (discounting the effect of terms like “the” or “and”). We adopt TF-IDF as the ranking metric to count up <em>memory slot accesses</em>: a memory index $i$ ranks highly if it is accessed frequently on this batch and infrequently accessed on other data (we use DCLM pretraining data), suggesting that it is selective to this data sample. We call this <strong>sparse memory finetuning.</strong></p>
+
+<figure class="medium">
+  <img src="/assets/posts/continual-learning/tfidf.png" alt="" />
+  
+  <figcaption>To identify the indices to finetune on a particular batch, we count up all the accesses on this batch, and rank them with TF-IDF relative to the memory access counts on pretraining data.</figcaption>
+  
+</figure>
+
+<p>This works really well! We compare to full finetuning and LoRA as baselines, given that LoRA is popularly proposed for continual adaptation/personalization. Both full finetuning and LoRA degrade quite a bit on held-out benchmarks (we use Natural Questions and GSM8K) when learning from new facts. Sparse memory finetuning can learn to the same degree, while exhibiting much less forgetting:</p>
+
+<figure class="">
+  <img src="/assets/posts/continual-learning/main-tqa.png" alt="" />
+  
+  <figcaption>When finetuning on a stream of TriviaQA facts, sparse memory finetuning learns just as much as full finetuning and LoRA (left), but exhibits much less forgetting on held-out benchmarks NaturalQuestions (middle) and GSM8K (right).</figcaption>
+  
+</figure>
+
+<p>We can better characterize each of these methods by sweeping over the parameters that control learning and forgetting. There is a fundamental tradeoff between the two: to maximize learning, one can specialize the model to a task by updating more parameters at a higher learning rate for more steps; to minimize forgetting, one can (trivially) keep the model fixed at initialization. For full finetuning, the main parameter is learning rate; for LoRA, rank/alpha/learning rate/trainable modules, and for sparse memory finetuning, learning rate/the number of indices we finetune. We can see from this plot that we can increase the learning capacity of memory finetuning without much degradation on held-out tasks.</p>
+
+<figure class="">
+  <img src="/assets/posts/continual-learning/pareto.png" alt="" />
+  
+  <figcaption>We characterize the tradeoff between learning and forgetting by plotting target task performance (TriviaQA) against held-out task performance (NaturalQuestions) while sweeping across hyperparameters that control learning capacity. We sweep learning rate for FT; rank, alpha, learning rate, and trainable modules (all vs. attn only) for LoRA; and number of trainable memory indices and learning rate for sparse memory finetuning. Sparse memory finetuning achieves a better tradeoff compared to full finetuning and LoRA.</figcaption>
+  
+</figure>
+
+<h2 id="looking-forward">Looking Forward</h2>
+
+<p>I think this paper raises more new questions than answers :)  We’ve seen promising results on small models (1.3B base + 1B memory pool) and simple benchmarks. As a next step, it’s important to characterize memory for larger models up to frontier scale (where I’d actually expect memory layers to potentially shine even more, because smaller models are forced into <a href="https://transformer-circuits.pub/2022/toy_model/index.html">superposition</a>). It’s possible we could go even sparser with larger models + memory pools). And of course, to bridge the gap to real-world continual learning, we <em>really</em> need better benchmarks.</p>
+
+<p>The full paper covers more ablations on finetuning different parts of the memory layer, using different held-out corpora for the TF-IDF reranking, etc., but there are some tidbits worth highlighting:</p>
+
+<div id="Optimizer" class="toc-anchor" data-toc="Optimizer" data-toc-level="3"></div>
+<p><strong>Optimizer.</strong> We initially used AdamW for all methods, and sparse memory finetuning still exhibited much less forgetting than full finetuning and LoRA. However, at some point we realized that the features of the optimizer—adaptive per-parameter step sizes, weight decay, and momentum—can interact with sparsity in unexpected ways. Switching to SGD for sparse memory finetuning led to <em>much less</em> forgetting and could match the performance of AdamW at convergence if we set the learning rates high (lr=2 or 10!). Interestingly, SGD didn’t work as well for full finetuning and LoRA even with a comprehensive sweep, echoing <a href="https://arxiv.org/abs/1810.12488">past work</a> that found that Adam isn’t the best choice for continual learning. Various assumptions baked into our favorite optimizers are broken in this setting, and I think it’s worth revisiting some of these design decisions as we move into an “always training” regime.</p>
+
+<div id="Interpretability" class="toc-anchor" data-toc="Interpretability" data-toc-level="3"></div>
+<p><strong>Interpretability.</strong> We did some very basic analysis to investigate to what extent memory slots align with human-interpretable concepts (e.g. storing information about “Barack Obama”). At each token position, we access k=32 memory slots. If we just visualize the ones that are trainable after ranking with TF-IDF, we see that they line up with entity boundaries and “high information content” tokens:</p>
+
+<figure class="">
+  <img src="/assets/posts/continual-learning/interp.png" alt="" />
+  
+  <figcaption>Preliminary analysis of memory slot accesses suggests alignment with entity boundaries.</figcaption>
+  
+</figure>
+
+<p>There’s clearly a lot more thorough analysis that could be done here along the lines of memory editing and localization like <a href="https://rome.baulab.info/">ROME</a>.</p>
+
+<div id="Pretrained vs. post-trained memory" class="toc-anchor" data-toc="Pretrained vs. post-trained memory" data-toc-level="3"></div>
+<p><strong>Pretrained vs. post-trained memory.</strong> Because memory layers just use attention, there’s a rich design space interpolating between in-context attention or KV cache-based approaches, and memory layers. For example, <a href="https://arxiv.org/abs/2506.06266">Cartridges</a> also learn a trainable set of keys and value parameters, but initialize these parameters from scratch to compress a desired corpus and attend over them as part of the context. In contrast, in our work we pretrain the memory layer and attend over the values at an intermediate layer of the network. Switching to a new architecture at pretraining time has a high cost, but there are reasons we might want this (besides the <a href="https://arxiv.org/abs/2412.09764">better scaling behavior</a>): the model can learn to organize its memory from scratch, and once we’ve already “allocated” this high-capacity memory pool, there’s a clearer path to learning on multiple tasks and corpora over time. It’s worth exploring the space in between! For example, one could imagine adding a memory pool to a pretrained base model, or slotting in Cartridges to a larger sparse pool over time.</p>
+
+<div id="Evaluation" class="toc-anchor" data-toc="Evaluation" data-toc-level="3"></div>
+<p><strong>Evaluation.</strong> The evaluation setup we used in this paper is clearly just a starting point. We’d expect any continual learning to be able to learn new facts without forgetting other things it knows, how to code, etc. While retrieval is certainly a more natural fit if we only care about continual fact learning, we can think of this as a “table stakes” testbed for any parametric learning method, on the way to more sophisticated continual learning of skills and general kinds of experience (if you’re working on continual learning benchmarks, I’d love to chat!).</p>
+
+<p>My goal in this post was to motivate memory layers as a way to enable continual updates without forgetting, but also to share how I’ve been thinking about the continual learning problem more broadly. Continual learning and memory is a huge, rich space to explore, and at this point in 2025 we’re only just starting to reach the point where we can imagine what it might look like to have models that learn online in the real world—the research is only just beginning.</p>
+
+<p>If you’re working on these problems or exploring applications of models that learn from user feedback, feel free to reach out!</p>
+
+  </div>
+
+  <hr>
+  <p class="footnote">
+    Thanks to Parth, Sabri, Sewon, Dan, and Jack for feedback and thoughtful discussions :)
+    <a href="mailto:mail@jessylin.com">Email me</a> if you have thoughts or comments.
+  </p>
+</article>
+
+<div class="subscribe">
+  <p>Subscribe to get updates when I write new posts:</p>
+  <form class="layoutRow"
+      action="https://gmail.us3.list-manage.com/subscribe/post?u=be23d5873db42578ecc753d32&amp;id=0544272743"
+      method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+    <input type="email" value="" name="EMAIL" placeholder="Email address" required>
+    <!-- to distract bots -->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+      <input type="text" name="b_be23d5873db42578ecc753d32_0544272743" tabindex="-1" value="">
+    </div>
+    <input type="submit" value="Subscribe" name="subscribe">
+  </form>
+</div>
+
+
+<link rel="stylesheet" href="/assets/css/toc.css">
+<script src="/assets/js/toc.js" defer></script>
+
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+
+  </main>
+
+</div>
+
+
+  <nav class="toc"></nav>
+
+
+</body>
+</html>
