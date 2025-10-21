@@ -15,7 +15,7 @@ I've worked on:
     ([multimodal agents](https://dynalang.github.io/), [coding](https://arxiv.org/abs/2204.05999))
 - environments for collaboration
     ([decision-making](https://arxiv.org/abs/2305.20076), [preference elicitation](https://arxiv.org/abs/2204.02515))
-- continual learning & memory (my work at Meta, Google Research, and Lilt)
+- continual learning & memory ([synthetic data](https://www.arxiv.org/abs/2508.09494), [memory architectures](https://arxiv.org/abs/2510.15103), Lilt)
 
 Previously, I worked on research and product at [Lilt](https://lilt.com/research), where I worked on continual adaptation and human-in-the-loop machine translation (Copilot for expert translators). I graduated with a double-major in computer science and philosophy from MIT, where I did research on human-inspired AI with the [Computational Cognitive Science Group](http://cocosci.mit.edu/), advised by Kelsey Allen and Josh Tenenbaum, and machine learning security as a founding member of [labsix](http://labsix.org/). I also spent a great summer with the [Natural Language Understanding](https://research.google/teams/language/) group at Google Research NY working on long-context memory architectures.
 

@@ -1,3 +1,11 @@
+- title: "Continual Learning via Sparse Memory Finetuning"
+  authors: "Jessy Lin, Luke Zettlemoyer, Gargi Ghosh, Wen-Tau Yih, Aram Markosyan, Vincent-Pierre Berges, Barlas Oğuz"
+  thumbnail: /assets/pubs/sparse-memory.png
+  description: ""
+  conference: Preprint
+  links:
+    Paper: https://arxiv.org/abs/2510.15103
+
 - title: "Learning Facts at Scale with Active Reading"
   authors: "Jessy Lin*, Vincent-Pierre Berges*, Xilun Chen, Wen-tau Yih, Gargi Ghosh, Barlas Oğuz*"
   thumbnail: /assets/pubs/activereading.png
