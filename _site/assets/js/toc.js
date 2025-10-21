@@ -39,7 +39,7 @@
     // Header "Contents"
     const header = document.createElement('div');
     header.className = 'toc-header';
-    header.textContent = 'Contents';
+    header.textContent = 'CONTENTS';
     tocContainer.appendChild(header);
 
     // Build nested list using a UL-per-level map
