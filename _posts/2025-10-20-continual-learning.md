@@ -4,7 +4,7 @@ title: The Continual Learning Problem
 subtitle: A perspective on continual learning, motivating our paper on sparse memory finetuning
 date: 2025-10-20
 ack: Thanks to Parth, Sabri, Sewon, Dan, and Jack for feedback and thoughtful discussions :)
-image: /assets/posts/user-sims-2/env.png
+image: /assets/posts/continual-learning/overview.png
 include_mathjax: true
 ---
 
